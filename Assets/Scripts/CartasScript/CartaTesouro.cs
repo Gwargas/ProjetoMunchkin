@@ -1,0 +1,6 @@
+using UnityEngine;
+
+public abstract class CartaTesouro : Carta
+{
+    [SerializeField] private int preco;
+}

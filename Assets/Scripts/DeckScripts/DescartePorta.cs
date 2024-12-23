@@ -11,4 +11,9 @@ public class DescartePorta : Deck
     {
         baralhoDescarteP = baralhoDescarteP.OrderBy(x => UnityEngine.Random.Range(0f, 1f)).ToList();
     }
+
+    public override void CompraCarta()
+    {
+        //throw new System.NotImplementedException();
+    }
 }

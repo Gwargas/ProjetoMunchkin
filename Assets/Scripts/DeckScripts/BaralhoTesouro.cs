@@ -19,4 +19,9 @@ public class BaralhoTesouro : Deck
 
     }
     */
+
+    public override void CompraCarta()
+    {
+        //throw new System.NotImplementedException();
+    }
 }

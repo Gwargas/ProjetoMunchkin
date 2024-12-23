@@ -19,4 +19,8 @@ public class BaralhoPorta : Deck
 
     }
     */
+    public override void CompraCarta()
+    {
+        //throw new System.NotImplementedException();
+    }
 }

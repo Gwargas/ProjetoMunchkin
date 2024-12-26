@@ -13,5 +13,9 @@ public class Jogador : ScriptableObject
     bool morto;
 
 
+    public void abrirPorta(){
     
+    
+    }
+
 }

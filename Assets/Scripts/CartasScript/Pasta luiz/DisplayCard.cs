@@ -23,6 +23,7 @@ public class DisplayCard : MonoBehaviour
         Description = displayCard[0].description;
         nametext.text = Cardname;
         desctext.text = Description;
+
     }
     void update()
     {

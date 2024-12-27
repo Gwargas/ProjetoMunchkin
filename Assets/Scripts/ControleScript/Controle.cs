@@ -10,6 +10,7 @@ public class Controle : ScriptableObject
     private List<Jogador> jogadores = new List<Jogador>();
     private BaralhoPorta baralhoPorta = new BaralhoPorta();
     private BaralhoTesouro baralhoTesouro = new BaralhoTesouro();
+    private EstadoJogo estadoAtual;
 
     public int Dado()
     {

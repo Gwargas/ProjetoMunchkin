@@ -6,16 +6,30 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Jogador", menuName = "Scriptable Objects/Jogador")]
 public class Jogador : ScriptableObject
 {
-    int nivel;
-    int poder;
-    List<string> raca = new List<string>();//Botar um header para não ter que importar toda hora
-    List<string> classe = new List<string>();
-    bool morto;
+    private int nivel;
+    private int poder;
+    private List<string> raca = new List<string>();//Botar um header para nï¿½o ter que importar toda hora
+    private List<string> classe = new List<string>();
+    private bool morto;
+    private Hand mao;
 
-
-    public void abrirPorta(){
-    
-    
+    public int Nivel
+    {
+        get => nivel;
+        set => nivel = value;
     }
 
+    public int Poder
+    {
+        get => poder;
+        set => poder = value;
+    }
+
+    public Hand Mao
+    {
+        get => mao;
+    }
+
+
+    
 }

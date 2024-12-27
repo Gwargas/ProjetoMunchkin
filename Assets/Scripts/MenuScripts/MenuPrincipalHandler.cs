@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 public class MenuPrincipalHandler : MonoBehaviour
 {
     [SerializeField] private string nomeDaSceneJogo;
-    [SerializeField]private GameObject painelMenuInicial;
-    [SerializeField]private GameObject painelMenuOpcoes;
+    [SerializeField] private GameObject painelMenuInicial;
+    [SerializeField] private GameObject painelMenuOpcoes;
+    [SerializeField] private GameObject painelMenuConfig;
     public void Jogar()
     {
-        SceneManager.LoadScene(nomeDaSceneJogo);
+        painelMenuInicial.SetActive(false);
+        painelMenuConfig.SetActive(true);
     }
 
     public void Opcoes()
@@ -21,6 +23,17 @@ public class MenuPrincipalHandler : MonoBehaviour
     {
         painelMenuOpcoes.SetActive(false);
         painelMenuInicial.SetActive(true);
+    }
+
+    public void SairConfig()
+    {
+        painelMenuConfig.SetActive(false);
+        painelMenuInicial.SetActive(true);
+    }
+
+    public void IniciarJogo()
+    {
+        SceneManager.LoadScene(nomeDaSceneJogo);
     }
 
     public void SairJogo()

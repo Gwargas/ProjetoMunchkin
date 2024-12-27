@@ -1,26 +1,28 @@
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BaralhoPorta", menuName = "Scriptable Objects/BaralhoPorta")]
 public class BaralhoPorta : Deck
 {
-    [SerializeField] List<Carta> baralhoPorta;
-
-    /*
-    public Carta CompraCartaPorta()
+    public override Carta CompraCarta()
     {
-        return baralhoPorta[0];
+        if (baralho.Count == 0){
+            baralho = Embaralha(descarte);
+            descarte.Clear();
+        }
+        Carta cartaComprada = baralho[0];
+        baralho.RemoveAt(0);
+        return cartaComprada;
     }
-    */
 
-    /*
-    public void EmbaralhaPorta()
+    public override List<Carta> Embaralha(List<Carta> l)
     {
-
+        return l.OrderBy(x => UnityEngine.Random.Range(0f, 1f)).ToList();
     }
-    */
-    public override void CompraCarta()
-    {
-        //throw new System.NotImplementedException();
+
+    public override void Descarte(Carta c){
+        descarte.Add(c);
     }
 }

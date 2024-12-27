@@ -7,6 +7,7 @@ public class MenuPrincipalHandler : MonoBehaviour
     [SerializeField] private GameObject painelMenuInicial;
     [SerializeField] private GameObject painelMenuOpcoes;
     [SerializeField] private GameObject painelMenuConfig;
+    
     public void Jogar()
     {
         painelMenuInicial.SetActive(false);

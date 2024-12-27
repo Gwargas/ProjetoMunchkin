@@ -8,8 +8,8 @@ using UnityEngine;
 public class Controle : ScriptableObject
 {
     private List<Jogador> jogadores = new List<Jogador>();
-    private BaralhoPorta baralho_porta = new BaralhoPorta();
-    private BaralhoTesouro baralho_tesouro = new BaralhoTesouro();
+    private BaralhoPorta baralhoPorta = new BaralhoPorta();
+    private BaralhoTesouro baralhoTesouro = new BaralhoTesouro();
 
     public int Dado()
     {
@@ -19,10 +19,10 @@ public class Controle : ScriptableObject
     public void Turno(int i)
     {
         Jogador jogador = jogadores[i];
-        Carta cartaComprada = baralho_porta.CompraCarta();
+        Carta cartaComprada = baralhoPorta.CompraCarta();
         cartaComprada.EfeitoCompra();
         //O que fazer apos tirar a primeira carta de porta
-        //...
+        //... //Implementar a questao de estados
     }
 
     public void Combate(Jogador jogador, CartaMonstro monstro)
@@ -30,7 +30,7 @@ public class Controle : ScriptableObject
         //VerificaAjuda();
         if (jogador.Poder > monstro.Nivel){
             for(int i = 0; i < monstro.Recompensa; i++){
-                Carta cartaComprada = baralho_tesouro.CompraCarta();
+                Carta cartaComprada = baralhoTesouro.CompraCarta();
                 jogador.Mao.Add(cartaComprada);
             }
             jogador.Nivel = monstro.NiveisAGanhar;
@@ -50,9 +50,9 @@ public class Controle : ScriptableObject
         for(int i = 0; i < jogadores.Count; i++){
             Jogador jogador = jogadores[i];
             for(int j = 0; j < 4; j++){
-                c = baralho_porta.CompraCarta();
+                c = baralhoPorta.CompraCarta();
                 jogador.Mao.Add(c);
-                c = baralho_tesouro.CompraCarta();
+                c = baralhoTesouro.CompraCarta();
                 jogador.Mao.Add(c);
             }
         }
@@ -60,12 +60,12 @@ public class Controle : ScriptableObject
 
     public void DescartarCartaPorta(Carta c)
     {
-        baralho_porta.Descarte(c);
+        baralhoPorta.Descarte(c);
     }
 
     public void DescartarCartaTesouro(Carta c)
     {
-        baralho_tesouro.Descarte(c);
+        baralhoTesouro.Descarte(c);
     }
     
 }

@@ -21,10 +21,16 @@ public class DisplayCard : MonoBehaviour
 
     public GameObject Hand;
     public int numberOfCardsInDeck;
+
+    public bool canBeDragged;
+    public bool StoppedDragging;
+    public GameObject battlezone;
     void Start()
     {
         displayCard[0] = CartaDatabase.listacarta[displayId];
         numberOfCardsInDeck = PlayerDeck.deckSize;
+        canBeDragged = true;
+        StoppedDragging = true;
 
     }
     void Update()
@@ -50,6 +56,6 @@ public class DisplayCard : MonoBehaviour
             cardBack = false;
             this.tag = "Untagged";
         }
-
+        battlezone = GameObject.Find("Zone");
     }
 }

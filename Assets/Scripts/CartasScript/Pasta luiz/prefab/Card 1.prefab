@@ -224,8 +224,9 @@ GameObject:
   - component: {fileID: 8259771572635811091}
   - component: {fileID: 1809264179620706933}
   - component: {fileID: 982985559959030698}
+  - component: {fileID: 619610742102591414}
   m_Layer: 5
-  m_Name: Card
+  m_Name: Card 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,9 +316,11 @@ MonoBehaviour:
   nametext: {fileID: 5327278599058992950}
   desctext: {fileID: 5453982380113574254}
   cardBack: 1
-  deck: {fileID: 0}
   Hand: {fileID: 0}
   numberOfCardsInDeck: 0
+  canBeDragged: 1
+  StoppedDragging: 1
+  battlezone: {fileID: 0}
 --- !u!114 &982985559959030698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +334,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardBack: {fileID: 4284403616883883825}
+--- !u!114 &619610742102591414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434471692010990429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a16a106416a18544b03b44fb6a64f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentToReturnTo: {fileID: 0}
+  placeholderParent: {fileID: 0}
 --- !u!1 &4440869882018650292
 GameObject:
   m_ObjectHideFlags: 0

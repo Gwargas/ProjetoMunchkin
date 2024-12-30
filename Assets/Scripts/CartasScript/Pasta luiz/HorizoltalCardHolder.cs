@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 using System.Linq;
+/*
 
 public class HorizontalCardHolder : MonoBehaviour
 {
@@ -163,3 +164,4 @@ public class HorizontalCardHolder : MonoBehaviour
     }
 
 }
+*/

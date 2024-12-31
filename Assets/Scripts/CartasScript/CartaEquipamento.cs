@@ -9,6 +9,7 @@ public class CartaEquipamento : CartaTesouro
     [SerializeField] private string limitacaoClasse;
 
     public bool condicaoUso(){
+        throw new System.NotImplementedException();
         // (Note: David) Lógica de uso 
     } 
 

@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Controle controle;
-    public static List<Carta> listacarta = new List<Carta> { };
-    public int i = 0;
+    //public static List<Carta> listacarta = new List<Carta> { };
 
     private void Awake()
     {

@@ -3,10 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CartaEquipamento", menuName = "Scriptable Objects/CartaEquipamento")]
 public class CartaEquipamento : CartaTesouro
 {
-    [SerializedField] private int ehGrande;
-    [SerializedField] private string parteCorpo;
-    [SerializedField] private string limitacaoRaca; 
-    [SerializedField] private string limitacaoClasse;
+    [SerializeField] private int ehGrande;
+    [SerializeField] private string parteCorpo;
+    [SerializeField] private string limitacaoRaca; 
+    [SerializeField] private string limitacaoClasse;
 
     public bool condicaoUso(){
         // (Note: David) Lógica de uso 

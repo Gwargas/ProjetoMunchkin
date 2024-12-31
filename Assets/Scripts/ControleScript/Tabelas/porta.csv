@@ -1,0 +1,64 @@
+imagem,classe,efeito,descricao,nome,nivel,niveisAGanhar,recompensa
+classeGuerreiro.png,CartaClasse,,,Guerreiro,,,
+classeClerigo.png,CartaClasse,,,Clérigo,,,
+classeMago.png,CartaClasse,,,Mago,,,
+racaHalfling.png,CartaRaca,,,Halfling,,,
+racaElfo.png,CartaRaca,,,Elfo,,,
+racaAnao.png,CartaRaca,,,Anão,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,5; 1,Inteligente,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,10; 2,Ancião,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,5; 1,Enfurecido,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,10; 2,Imenso,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,2; 1,Bebê,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,-10; 1,Intervenção divina,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,-5; 2,Monstro errante,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,-6; -1,Em horário de almoço,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,-6; 0,Ilusão,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,-10; 2,Parceiro,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,-4; 0,Trapacear,,,
+aumentaMonstro.png,CartaPorta,EfeitoAumentaMonstro,-1; 1,Dá uma mãozinha,,,
+perdeClasse.png,CartaMaldicao,EfeitoPerdeClasse,,Maldição! Perca sua classe,,,
+perdeRaca.png,CartaMaldicao,EfeitoPerdeRaca,,Maldição! Perca sua raça,,,
+perdeItemElmo.png,CartaMaldicao,EfeitoPerdeElmo,elmo,Maldição!,,,
+perdeItemCalca.png,CartaMaldicao,EfeitoPerdeCalca,calca,Maldição realmente irritante!,,,
+perdeItemCalcado.png,CartaMaldicao,EfeitoPerdeCalcado,calcado,Maldição!,,,
+perdeItemArmadura.png,CartaMaldicao,EfeitoPerdeArmadura,armadura,Maldição!,,,
+perdeItemPequeno.png,CartaMaldicao,EfeitoPerdeItemPequeno,pequeno,Maldição! Perca 1 item pequeno,,,
+perdeItemGrande.png,CartaMaldicao,EfeitoPerdeItemGrande,grande,Maldição! Perca 1 item grande,,,
+perdeNivel.png,CartaMaldicao,EfeitoPerdeNivel,1,Maldição!,,,
+perdeNivel.png,CartaMaldicao,EfeitoPerdeNivel,2,Maldição! Pato da perdição,,,
+monstro1.png,CartaMonstro,EfeitoMorte,,3872 orcs,10,1,3
+monstro2.png,CartaMonstro,EfeitoMorte,,Boirog,18,2,5
+monstro3.png,CartaMonstro,EfeitoPerdeNivel,4,Carniceiras carniçais,8,1,2
+monstro4.png,CartaMonstro,EfeitoPerdeNivel,2,Cavalo (morto-vivo),4,1,2
+monstro5.png,CartaMonstro,EfeitoPerdeElmo,elmo,Chupa cara,8,1,2
+monstro1.png,CartaMonstro,EfeitoPerdeNivel,3,Coreto de praça monstruoso,8,1,2
+monstro2.png,CartaMonstro,EfeitoPerdeNivel,2,Demônia linguaruda,12,1,3
+monstro3.png,CartaMonstro,EfeitoMorte,,Dragão de plutônio,20,2,5
+monstro4.png,CartaMonstro,EfeitoPerdeNivel,1,Galinha grande e irritada,2,1,1
+monstro5.png,CartaMonstro,EfeitoPerdeNivel,1,Goblin aleijado,1,1,1
+monstro1.png,CartaMonstro,EfeitoMorte,,Golem chapado,14,1,4
+monstro2.png,CartaMonstro,EfeitoPerdeNivel,2,Harpia,4,1,2
+monstro3.png,CartaMonstro,EfeitoPerdeCalca,calca,Hipogrifo,16,2,4
+monstro4.png,CartaMonstro,EfeitoMorte,,Horror aterrador indescritível,14,1,4
+monstro5.png,CartaMonstro,EfeitoPerdeNivel,3,Irmãos wight (morto-vivo),16,2,4
+monstro1.png,CartaMonstro,EfeitoPerdeNivel,2,João do Caixão (morto-vivo),2,1,1
+monstro2.png,CartaMonstro,EfeitoMorte,,Leprachau,4,1,2
+monstro3.png,CartaMonstro,EfeitoPerdeCalcado,calcado,Lodo babão,1,1,1
+monstro4.png,CartaMonstro,EfeitoMorte,,Lullazilla,18,2,4
+monstro5.png,CartaMonstro,EfeitoPerdeNivel,3,Nariz flutuante,10,1,3
+monstro1.png,CartaMonstro,EfeitoPerdeClasse,,Nerd guinchador,6,1,2
+monstro2.png,CartaMonstro,EfeitoPerdeItemGrande,grande,Octaedro gelatinoso,2,1,1
+monstro3.png,CartaMonstro,EfeitoPerdeNivel,3,Paga-pau de vampiro,12,1,3
+monstro4.png,CartaMonstro,EfeitoPerdeElmo,elmo,Pé grande,12,1,3
+monstro5.png,CartaMonstro,EfeitoPerdeCalca,calca,Piolho-das-virilhas,1,1,1
+monstro1.png,CartaMonstro,EfeitoPerdeNivel,2,Pit bull,2,1,1
+monstro2.png,CartaMonstro,EfeitoPerdeRaca,2,Plantícora,6,1,2
+monstro3.png,CartaMonstro,EfeitoPerdeNivel,2,Rãs voadoras,2,1,1
+monstro4.png,CartaMonstro,EfeitoPerdeNivel,1,Ratricinha com malho,1,1,1
+monstro5.png,CartaMonstro,EfeitoMorte,,Rei-tut (morto-vivo),16,2,4
+monstro1.png,CartaMonstro,EfeitoPerdeItemGrande,grande,Troll da net,10,1,3
+monstro2.png,CartaMonstro,EfeitoPerdeItemPequeno,pequeno,Vaso de planta,1,1,1
+monstro3.png,CartaMonstro,EfeitoPerdeItemPequeno,pequeno,Vendedor de seguros,14,1,4
+,,,,,,,
+,,,,{},,,

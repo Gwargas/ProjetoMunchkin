@@ -97,6 +97,33 @@ public class Controle : ScriptableObject
         }
     }
 
+    public void CriaCartas() {
+        // nomes dos arquivos csv com as informações das cartas
+        List<string> arquivos = new List<string> {
+            "Tabelas/porta.csv",
+            "Tabelas/tesouro.csv"
+        };
+
+        // lista com as informações das cartas de porta
+        List<string[]> infosCartaPorta = Extrator.CsvToList(arquivos[0]);
+
+        // lista de cartas de porta
+        List<CartaPorta> listaCartasPorta = new List<CartaPorta>();
+
+        // cria as cartas de porta
+        foreach (string[] info in infosCartaPorta) {
+            // classe, imagem, efeito, descricao, nome, nivel, niveisAGanhar, recompensa
+            CartaPorta novaCarta = Extrator.ExtraiCartaPorta(info);
+            listaCartasPorta.Add(novaCarta);
+            // ainda não acabei mas tbm não sei se tem erro pq não consigo testar
+        }
+        
+
+        // lista com as informações das cartas de tesouro
+        List<string[]> infosCartaTesouro = Extrator.CsvToList(arquivos[1]);
+        
+    }
+
     public void TrocaEstado(EstadoJogo novoEstado)
     {
         estadoAtual = novoEstado;

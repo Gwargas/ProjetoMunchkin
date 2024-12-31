@@ -8,7 +8,7 @@ public class Jogador : ScriptableObject
 {
     private int nivel = 1;
     private int bonus = 0;
-    private List<string> raca = new List<string>();//Botar um header para n�o ter que importar toda hora
+    private List<string> raca = new List<string>(); //Botar um header para nao ter que importar toda hora
     private List<string> classe = new List<string>();
     private bool morto = false;
     private Hand mao = new Hand();

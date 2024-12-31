@@ -1,7 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class EstadoFimTurno : EstadoJogo
+[CreateAssetMenu(fileName = "EstadoMaldicao", menuName = "Scriptable Objects/EstadoMaldicao")]
+public class EstadoMaldicao : EstadoJogo
 {
     public override void IniciarEstado(Controle constrole)
     {

@@ -7,7 +7,6 @@ public class CartaMonstro : CartaPorta
     [SerializeField] private int niveisAGanhar;
     [SerializeField] private int recompensa;
 
-
     public int Nivel
     {
         get => nivel;
@@ -27,8 +26,8 @@ public class CartaMonstro : CartaPorta
     }
 
 
-    public override void EfeitoCompra()
+    public override void EfeitoCompra(Controle controle)
     {
-        throw new System.NotImplementedException();
+        controle.TrocaEstado(new EstadoCombate());
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Controle", menuName = "Scriptable Objects/Controle")]
@@ -10,7 +11,13 @@ public class Controle : ScriptableObject
     private Deck baralhoPorta = new BaralhoPorta();
     private Deck baralhoTesouro = new BaralhoTesouro();
     private EstadoJogo estadoAtual;
+    private Carta cartaJogo;
 
+    public Carta CartaJogo
+    {
+        get => cartaJogo;
+        set => cartaJogo = value;
+    }
 
     public Deck BaralhoPorta
     {
@@ -27,11 +34,12 @@ public class Controle : ScriptableObject
         return(UnityEngine.Random.Range(1, 7));
     }
 
+    /* (Note: David) REMOVER => Mecânica de estados substitui esses métodos 
     public void Turno(int i)
     {
         Jogador jogador = jogadores[i];
         Carta cartaComprada = baralhoPorta.CompraCarta();
-        cartaComprada.EfeitoCompra();
+        cartaComprada.EfeitoCompra(this);
         //O que fazer apos tirar a primeira carta de porta
         //... //Implementar a questao de estados
     }
@@ -54,6 +62,7 @@ public class Controle : ScriptableObject
             }
         }
     }
+    */
 
     public void DistribuirCartas()
     {
@@ -98,5 +107,16 @@ public class Controle : ScriptableObject
     {
         estadoAtual.RunEstado(this);
     }
+
+    public void Interferir()
+    {
+        throw new System.NotImplementedException();
+        // Tela de opções 
+    }
+
+    /*public Jogador getJogadorAtual()
+    {
+        int index =
+    }*/
 
 }

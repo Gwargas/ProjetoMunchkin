@@ -4,7 +4,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     public Controle controle;
     //public static List<Carta> listacarta = new List<Carta> { };
 

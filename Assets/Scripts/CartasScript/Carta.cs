@@ -5,6 +5,7 @@ public abstract class Carta : ScriptableObject
     [SerializeField] private string nome;
     [SerializeField] private string descricao;
     [SerializeField] private Efeito efeito;
+    [SerializeField] private string cartaPath;
 
     public string Nome
     {
@@ -18,5 +19,5 @@ public abstract class Carta : ScriptableObject
         set => descricao = value;
     }
 
-    public abstract void EfeitoCompra();
+    public abstract void EfeitoCompra(Controle controle);
 }

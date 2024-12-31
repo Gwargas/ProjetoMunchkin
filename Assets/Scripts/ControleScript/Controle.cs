@@ -39,7 +39,7 @@ public class Controle : ScriptableObject
     public void Combate(Jogador jogador, CartaMonstro monstro)
     {
         //VerificaAjuda();
-        if (jogador.Poder > monstro.Nivel){
+        if (jogador.Bonus > monstro.Nivel){
             for(int i = 0; i < monstro.Recompensa; i++){
                 Carta cartaComprada = baralhoTesouro.CompraCarta();
                 jogador.Mao.Add(cartaComprada);

@@ -6,12 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Jogador", menuName = "Scriptable Objects/Jogador")]
 public class Jogador : ScriptableObject
 {
-    private int nivel;
-    private int poder;
+    private int nivel = 1;
+    private int bonus = 0;
     private List<string> raca = new List<string>();//Botar um header para n�o ter que importar toda hora
     private List<string> classe = new List<string>();
-    private bool morto;
-    private Hand mao;
+    private bool morto = false;
+    private Hand mao = new Hand();
 
     public int Nivel
     {
@@ -19,10 +19,10 @@ public class Jogador : ScriptableObject
         set => nivel = value;
     }
 
-    public int Poder
+    public int Bonus
     {
-        get => poder;
-        set => poder = value;
+        get => bonus;
+        set => bonus = value;
     }
 
     public Hand Mao

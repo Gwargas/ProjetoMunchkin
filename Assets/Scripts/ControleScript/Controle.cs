@@ -7,17 +7,17 @@ using UnityEngine;
 public class Controle : ScriptableObject
 {
     private List<Jogador> jogadores = new List<Jogador>();
-    private BaralhoPorta baralhoPorta = new BaralhoPorta();//Esses Baralhos vão ser do tipo Deck ou BaralhoP/T?
-    private BaralhoTesouro baralhoTesouro = new BaralhoTesouro();
+    private Deck baralhoPorta = new BaralhoPorta();
+    private Deck baralhoTesouro = new BaralhoTesouro();
     private EstadoJogo estadoAtual;
 
 
-    public BaralhoPorta BaPo
+    public Deck BaralhoPorta
     {
         get => baralhoPorta;
         set => baralhoPorta = value;
     }
-    public BaralhoTesouro BaT
+    public Deck BaralhoTesouro
     {
         get => baralhoTesouro;
         set => baralhoTesouro = value;

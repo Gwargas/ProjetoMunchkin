@@ -9,14 +9,12 @@ public class CartaEquipamento : CartaTesouro
     [SerializeField] private string limitacaoClasse;
 
     public override void EfeitoCompra(Controle controle)
+    {
+        
+    }
 
     public bool condicaoUso(){
         throw new System.NotImplementedException();
         // (Note: David) Lógica de uso 
     } 
-
-    public override void EfeitoCompra()
-    {
-        throw new System.NotImplementedException();
-    }
 }

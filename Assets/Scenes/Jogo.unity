@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc6f8df553d5cd47bb3198d1b4aa049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baralhoPorta: {fileID: 0}
 --- !u!1 &492448477
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7cd7160541cc14da0d386d5ba2897c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baralhoTesouro: {fileID: 0}
 --- !u!1 &1008926557
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +595,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008926557}
   m_CullTransparentMesh: 1
+--- !u!1 &1386188943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1386188945}
+  - component: {fileID: 1386188944}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1386188944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386188943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381b63a13f3a5b8429278c0d9ba92514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controle: {fileID: 0}
+  i: 0
+--- !u!4 &1386188945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386188943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 808.77405, y: 581.2828, z: -8.150623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1536051954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,3 +1179,4 @@ SceneRoots:
   - {fileID: 1997662978}
   - {fileID: 2008476855}
   - {fileID: 1536051957}
+  - {fileID: 1386188945}

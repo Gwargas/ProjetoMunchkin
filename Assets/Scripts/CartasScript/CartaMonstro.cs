@@ -7,6 +7,7 @@ public class CartaMonstro : CartaPorta
     [SerializeField] private int niveisAGanhar;
     [SerializeField] private int recompensa;
 
+
     public int Nivel
     {
         get => nivel;
@@ -24,6 +25,7 @@ public class CartaMonstro : CartaPorta
         get => recompensa;
         set => recompensa = value;
     }
+
 
     public override void EfeitoCompra()
     {

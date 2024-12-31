@@ -4,14 +4,24 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Controle", menuName = "Scriptable Objects/Controle")]
 
-//static?????
 public class Controle : ScriptableObject
 {
     private List<Jogador> jogadores = new List<Jogador>();
-    private BaralhoPorta baralhoPorta = new BaralhoPorta();
+    private BaralhoPorta baralhoPorta = new BaralhoPorta();//Esses Baralhos vão ser do tipo Deck ou BaralhoP/T?
     private BaralhoTesouro baralhoTesouro = new BaralhoTesouro();
     private EstadoJogo estadoAtual;
 
+
+    public BaralhoPorta BaPo
+    {
+        get => baralhoPorta;
+        set => baralhoPorta = value;
+    }
+    public BaralhoTesouro BaT
+    {
+        get => baralhoTesouro;
+        set => baralhoTesouro = value;
+    }
     public int Dado()
     {
         return(UnityEngine.Random.Range(1, 7));
@@ -49,12 +59,11 @@ public class Controle : ScriptableObject
     {
         Carta c;
         for(int i = 0; i < jogadores.Count; i++){
-            Jogador jogador = jogadores[i];
             for(int j = 0; j < 4; j++){
                 c = baralhoPorta.CompraCarta();
-                jogador.Mao.Add(c);
+                jogadores[i].Mao.Add(c);
                 c = baralhoTesouro.CompraCarta();
-                jogador.Mao.Add(c);
+                jogadores[i].Mao.Add(c);
             }
         }
     }
@@ -68,5 +77,26 @@ public class Controle : ScriptableObject
     {
         baralhoTesouro.Descarte(c);
     }
-    
+
+    public void CriaJogadores()
+    {
+        Jogador jogador;
+        for(int i = 0; i < GameSettings.qtdJogadores; i++){
+            jogador = new Jogador();
+            //resto da inicialização de jogador
+            jogadores.Add(jogador);
+        }
+    }
+
+    public void TrocaEstado(EstadoJogo novoEstado)
+    {
+        estadoAtual = novoEstado;
+        estadoAtual.IniciarEstado(this);
+    }
+
+    public void RunEstadoAtual()
+    {
+        estadoAtual.RunEstado(this);
+    }
+
 }

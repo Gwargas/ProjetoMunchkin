@@ -1,4 +1,6 @@
 # Testando Unity LFS
+### Decisões
+- Começar pelo back-end,não pelo front-end
 
 ### Peguntas e dúvidas
 - Botar um header para não ter que importar toda hora.
@@ -14,3 +16,5 @@
 ### Diagramas
 
 <img src="https://drive.google.com/uc?id=1AFQGMk2hiTPSMlCgYX9Ialu1EJBZY9aI" width="800" alt="Diagrama de Classes"/>
+
+

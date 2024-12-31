@@ -1,4 +1,5 @@
 //luiz
+/*
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -75,3 +76,4 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
 
 }
+*/

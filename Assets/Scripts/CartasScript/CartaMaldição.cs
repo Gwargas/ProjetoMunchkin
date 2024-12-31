@@ -5,8 +5,8 @@ public class CartaMaldição : CartaPorta
 {
     //[SerializeField] private Jogador vitima;
 
-    public override void EfeitoCompra()
+    public override void EfeitoCompra(Controle controle)
     {
-        throw new System.NotImplementedException();
+        controle.TrocaEstado(new EstadoMaldicao());
     }
 }

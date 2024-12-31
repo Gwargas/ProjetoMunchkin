@@ -3,8 +3,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CartaEquipamento", menuName = "Scriptable Objects/CartaEquipamento")]
 public class CartaEquipamento : CartaTesouro
 {
-    public override void EfeitoCompra()
+    [SerializeField] private int ehGrande;
+    [SerializeField] private string parteCorpo;
+    [SerializeField] private string limitacaoRaca; 
+    [SerializeField] private string limitacaoClasse;
+
+    public override void EfeitoCompra(Controle controle)
     {
-        throw new System.NotImplementedException();
+        
     }
+
+    public bool condicaoUso(){
+        throw new System.NotImplementedException();
+        // (Note: David) Lógica de uso 
+    } 
 }

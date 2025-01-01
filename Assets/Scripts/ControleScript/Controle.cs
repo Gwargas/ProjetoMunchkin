@@ -98,30 +98,35 @@ public class Controle : ScriptableObject
     }
 
     public void CriaCartas() {
-        // nomes dos arquivos csv com as informações das cartas
-        List<string> arquivos = new List<string> {
-            "Tabelas/porta.csv",
-            "Tabelas/tesouro.csv"
-        };
+        // B: to achando que isso devia ir pra dentro da classe baralho
 
         // lista com as informações das cartas de porta
-        List<string[]> infosCartaPorta = Extrator.CsvToList(arquivos[0]);
+        List<string[]> infosCartaPorta = Extrator.CsvToList("Tabelas/porta.csv");
 
         // lista de cartas de porta
         List<CartaPorta> listaCartasPorta = new List<CartaPorta>();
 
         // cria as cartas de porta
         foreach (string[] info in infosCartaPorta) {
-            // classe, imagem, efeito, descricao, nome, nivel, niveisAGanhar, recompensa
-            CartaPorta novaCarta = Extrator.ExtraiCartaPorta(info);
+            CartaPorta novaCarta = Extrator.CriaCartaPorta(info);
             listaCartasPorta.Add(novaCarta);
-            // ainda não acabei mas tbm não sei se tem erro pq não consigo testar
         }
-        
+
+        // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE PORTA
 
         // lista com as informações das cartas de tesouro
-        List<string[]> infosCartaTesouro = Extrator.CsvToList(arquivos[1]);
+        List<string[]> infosCartaTesouro = Extrator.CsvToList("Tabelas/tesouro.csv");
         
+        // lista de cartas de tesouro
+        List<CartaTesouro> listaCartasTesouro = new List<CartaTesouro>();
+
+        // cria as cartas de tesouro
+        foreach (string[] info in infosCartaTesouro) {
+            CartaTesouro novaCarta = Extrator.CriaCartaTesouro(info);
+            listaCartasTesouro.Add(novaCarta);
+        }
+
+        // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE TESOURO
     }
 
     public void TrocaEstado(EstadoJogo novoEstado)

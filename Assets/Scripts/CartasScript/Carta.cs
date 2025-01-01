@@ -7,6 +7,14 @@ public abstract class Carta : ScriptableObject
     [SerializeField] private Efeito efeito;
     [SerializeField] private string cartaPath;
 
+    //  construtor
+    public Carta(string nome, string descricao, Efeito efeito, string cartaPath) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.efeito = efeito;
+        this.cartaPath = cartaPath;
+    }
+
     public string Nome
     {
         get => nome;

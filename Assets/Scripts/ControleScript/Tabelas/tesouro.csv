@@ -1,72 +1,72 @@
-imagem,classe,efeito,descricao,nome,preco
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,2; 1mao; pequeno,Broquel da bravata,400
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,3; 1mao; pequeno,Ralador de queijo da paz,400
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,3; 1mao; pequeno,Adaga da traição,400
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,3; 1mao; pequeno,Florete da injustiça,600
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,5; 1mao; pequeno,Cajado de napalm,800
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,2; 1mao; pequeno,Espada bastarda sorrateira,400
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,1; 1mao; pequeno,Espetinho de rato,0
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,1; 1mao; grande,Trombone encantado,300
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,4; 1mao; grande,Escudo da ubiquidade,600
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,4; 1mao; pequeno,Martelo quebra-joelho,600
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,4; 1mao; pequeno,Maça afiada,600
-mao2.png,CartaEquipamento,EfeitoGanhaBonus,3; 2mao; grande,Moto-serra do desmembramento sanguinolento,600
-mao2.png,CartaEquipamento,EfeitoGanhaBonus,4; 2mao; pequeno,Arco com fitas,800
-mao2.png,CartaEquipamento,EfeitoGanhaBonus,1; 2mao; pequeno,Vara de 3 metros,200
-mao2.png,CartaEquipamento,EfeitoGanhaBonus,3; 2mao; grande,Pedra gigante,0
-mao2.png,CartaEquipamento,EfeitoGanhaBonus,4; 2mao; grande,Arma de haste do exército suíço,600
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,2; 1mao; pequeno,Espada que canta e dança,400
-elmo.png,CartaEquipamento,EfeitoGanhaBonus,3; elmo; pequeno,Título realmente impressionante,0
-armadura.png,CartaEquipamento,EfeitoGanhaBonus,1; armadura; pequeno,Mercenário,0
-mao2.png,CartaEquipamento,EfeitoGanhaBonus,3; 2mao; grande,Escada de mão,400
-mao1.png,CartaEquipamento,EfeitoGanhaBonus,2; 1mao; pequeno,Membúrger com anchovas,400
-armadura.png,CartaEquipamento,EfeitoGanhaBonus,2; armadura; pequeno,Manto da obscuridade,600
-armadura.png,CartaEquipamento,EfeitoGanhaBonus,2; armadura; pequeno,Armadura flamejante,400
-armadura.png,CartaEquipamento,EfeitoGanhaBonus,1; armadura; pequeno,Armadura viscosa,200
-armadura.png,CartaEquipamento,EfeitoGanhaBonus,3; armadura; pequeno,Armadura larga pequena,400
-armadura.png,CartaEquipamento,EfeitoGanhaBonus,1; armadura; pequeno,Armadura de couro,200
-armadura.png,CartaEquipamento,EfeitoGanhaBonus,3; armadura; pequeno,Armadura de mithril,600
-calca.png,CartaEquipamento,EfeitoGanhaBonus,1; calca; pequeno,Meia-calça da força do gigante,600
-calca.png,CartaEquipamento,EfeitoGanhaBonus,3; calca; pequeno,Joelheiras da sedução,600
-calca.png,CartaEquipamento,EfeitoGanhaBonus,3; calca; pequeno,Joelhos pontudos,200
-calcado.png,CartaEquipamento,EfeitoGanhaBonus,2; calcado; pequeno,Botas de dar um pé na bunda,400
-calcado.png,CartaEquipamento,EfeitoGanhaBonus,2; calcado; pequeno,Sandálias da proteção,700
-calcado.png,CartaEquipamento,EfeitoGanhaBonus,2; calcado; pequeno,Botas para correr muito rápido,400
-elmo.png,CartaEquipamento,EfeitoGanhaBonus,3; elmo; pequeno,Bandana do machão,400
-elmo.png,CartaEquipamento,EfeitoGanhaBonus,1; elmo; pequeno,Elmo da coragem,200
-elmo.png,CartaEquipamento,EfeitoGanhaBonus,3; elmo; pequeno,Chapéu de bruxo do poder,400
-elmo.png,CartaEquipamento,EfeitoGanhaBonus,1; elmo; pequeno,Elmo chifrudo,600
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,5,Míssil mágico,300
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Poção transferal,300
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,3,Varinha rabdomântica,1100
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,3,Provisões!,0
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Poção de invisibilidade,200
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Invocar regras obscuras,0
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Poção de halitose,100
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,2,Poção da amizade,200
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,2,Tubo de cola,100
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Intervenção divina,0
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,3,Anel do desejo,500
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Água yuppie,100
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Bebida isotônica de sabor desagradável,200
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,3,Poção de veneno flamejante,100
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,5,Bexigas bonitinhas,0
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Poção de virar macho,0
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Lâmpada mágica,500
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,3,Poção explosiva congelante,100
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Matar o mercenário,0
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Barreira instantânea,300
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,3,Coção de ponfusão,100
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Mutilar os corpos,0
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,3,Poção do polimorfismo,1300
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Ferver um formigueiro,0
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,6,Dado viciado,300
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Subornar o mestre com comida,0
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Roubar um nível,0
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Choramingar para o GM,0
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,1000 peças de ouro,0
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,5,Poção ácida elétrico-radioativa,200
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,2,Dupploganger,300
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Poção do sono,100
-ganhaNivel.png,CartaItem,EfeitoGanhaNivel,1,Erro de adição oportuno,0
-ganhaBonus.png,CartaItem,EfeitoGanhaBonus,2,Poção de coragem estúpida,100
+classe,imagem,efeito,descricao,nome,preco
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,2; 1mao; 0,Broquel da bravata,400
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,3; 1mao; 0,Ralador de queijo da paz,400
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,3; 1mao; 0,Adaga da traição,400
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,3; 1mao; 0,Florete da injustiça,600
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,5; 1mao; 0,Cajado de napalm,800
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,2; 1mao; 0,Espada bastarda sorrateira,400
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,1; 1mao; 0,Espetinho de rato,0
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,1; 1mao; 1,Trombone encantado,300
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,4; 1mao; 1,Escudo da ubiquidade,600
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,4; 1mao; 0,Martelo quebra-joelho,600
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,4; 1mao; 0,Maça afiada,600
+CartaEquipamento,mao2.png,EfeitoGanhaBonus,3; 2mao; 1,Moto-serra do desmembramento sanguinolento,600
+CartaEquipamento,mao2.png,EfeitoGanhaBonus,4; 2mao; 0,Arco com fitas,800
+CartaEquipamento,mao2.png,EfeitoGanhaBonus,1; 2mao; 0,Vara de 3 metros,200
+CartaEquipamento,mao2.png,EfeitoGanhaBonus,3; 2mao; 1,Pedra gigante,0
+CartaEquipamento,mao2.png,EfeitoGanhaBonus,4; 2mao; 1,Arma de haste do exército suíço,600
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,2; 1mao; 0,Espada que canta e dança,400
+CartaEquipamento,elmo.png,EfeitoGanhaBonus,3; elmo; 0,Título realmente impressionante,0
+CartaEquipamento,armadura.png,EfeitoGanhaBonus,1; armadura; 0,Mercenário,0
+CartaEquipamento,mao2.png,EfeitoGanhaBonus,3; 2mao; 1,Escada de mão,400
+CartaEquipamento,mao1.png,EfeitoGanhaBonus,2; 1mao; 0,Membúrger com anchovas,400
+CartaEquipamento,armadura.png,EfeitoGanhaBonus,2; armadura; 0,Manto da obscuridade,600
+CartaEquipamento,armadura.png,EfeitoGanhaBonus,2; armadura; 0,Armadura flamejante,400
+CartaEquipamento,armadura.png,EfeitoGanhaBonus,1; armadura; 0,Armadura viscosa,200
+CartaEquipamento,armadura.png,EfeitoGanhaBonus,3; armadura; 0,Armadura larga pequena,400
+CartaEquipamento,armadura.png,EfeitoGanhaBonus,1; armadura; 0,Armadura de couro,200
+CartaEquipamento,armadura.png,EfeitoGanhaBonus,3; armadura; 0,Armadura de mithril,600
+CartaEquipamento,calca.png,EfeitoGanhaBonus,1; calca; 0,Meia-calça da força do gigante,600
+CartaEquipamento,calca.png,EfeitoGanhaBonus,3; calca; 0,Joelheiras da sedução,600
+CartaEquipamento,calca.png,EfeitoGanhaBonus,3; calca; 0,Joelhos pontudos,200
+CartaEquipamento,calcado.png,EfeitoGanhaBonus,2; calcado; 0,Botas de dar um pé na bunda,400
+CartaEquipamento,calcado.png,EfeitoGanhaBonus,2; calcado; 0,Sandálias da proteção,700
+CartaEquipamento,calcado.png,EfeitoGanhaBonus,2; calcado; 0,Botas para correr muito rápido,400
+CartaEquipamento,elmo.png,EfeitoGanhaBonus,3; elmo; 0,Bandana do machão,400
+CartaEquipamento,elmo.png,EfeitoGanhaBonus,1; elmo; 0,Elmo da coragem,200
+CartaEquipamento,elmo.png,EfeitoGanhaBonus,3; elmo; 0,Chapéu de bruxo do poder,400
+CartaEquipamento,elmo.png,EfeitoGanhaBonus,1; elmo; 0,Elmo chifrudo,600
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,5,Míssil mágico,300
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Poção transferal,300
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,3,Varinha rabdomântica,1100
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,3,Provisões!,0
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Poção de invisibilidade,200
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Invocar regras obscuras,0
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Poção de halitose,100
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,2,Poção da amizade,200
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,2,Tubo de cola,100
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Intervenção divina,0
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,3,Anel do desejo,500
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Água yuppie,100
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Bebida isotônica de sabor desagradável,200
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,3,Poção de veneno flamejante,100
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,5,Bexigas bonitinhas,0
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Poção de virar macho,0
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Lâmpada mágica,500
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,3,Poção explosiva congelante,100
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Matar o mercenário,0
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Barreira instantânea,300
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,3,Coção de ponfusão,100
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Mutilar os corpos,0
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,3,Poção do polimorfismo,1300
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Ferver um formigueiro,0
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,6,Dado viciado,300
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Subornar o mestre com comida,0
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Roubar um nível,0
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Choramingar para o GM,0
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,1000 peças de ouro,0
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,5,Poção ácida elétrico-radioativa,200
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,2,Dupploganger,300
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Poção do sono,100
+CartaItem,ganhaNivel.png,EfeitoGanhaNivel,1,Erro de adição oportuno,0
+CartaItem,ganhaBonus.png,EfeitoGanhaBonus,2,Poção de coragem estúpida,100

@@ -20,60 +20,127 @@ class Extrator {
             // adicionar os dados à lista
             informacoes.Add(dados);
         }
+
+        return informacoes;
     }
 
-    static CartaPorta ExtraiCartaPorta(string[] info) {
+    static CartaPorta CriaCartaPorta(string[] info) {
 
-        // classe, imagem, efeito, descricao, nome, nivel, niveisAGanhar, recompensa
+        // 0 - classe, 1 - imagem, 2 - efeito, 3 - descricao, 4 - nome, 5 - nivel, 6 - niveisAGanhar, 7 - recompensa
+        string nome = info[5];
+        string descricao = " ";
+        Efeito efeito = ExtraiEfeito(info[2], info[3]);
+        string imagem = info[1];
+
         switch (info[0]){
-            case "CartaClasse":
-                break;
-            case "CartaMaldicao":
-                break;
-            case "CartaMonstro":
-                break;
             case "CartaPorta":
-                break;
+                // toda carta porta que não for especialização é uma aumenta monstro
+                descricao = $"Esta carta {efeito.titulo}."
+                return new CartaPorta(nome, descricao, efeito, imagem);
+
+            case "CartaMonstro":
+                descricao = $"Monstro nível {info[5]}. Coisa ruim: você {efeito.titulo}.";
+                int nivel = int.Parse(info[5]);
+                int niveisAGanhar = int.Parse(info[6]);
+                int recompensa = int.Parse(info[7]);
+                return new CartaMonstro(nome, descricao, efeito, imagem, nivel, niveisAGanhar, recompensa);
+
+            case "CartaMaldicao":
+                descricao = $"Ai não! Você {efeito.titulo}.";
+                return new CartaMaldicao(nome, descricao, efeito, imagem);
+
+            case "CartaClasse":
+                return new CartaClasse(nome, descricao, efeito, imagem);
+
             case "CartaRaca":
-                break;
-            default:
+                return new CartaRaca(nome, descricao, efeito, imagem);
         }   
     }
 
-    static Efeito ExtraiEfeito(string efeito, string[] descricao) {
+    static CartaTesouro CriaCartaTesouro(string[] info) {
+
+        // 0 - classe, 1 - imagem, 2 - efeito, 3 - descricao, 4 - nome, 5 - preco
+        string nome = info[5];
+        Efeito efeito = ExtraiEfeito(info[2], info[3]);
+        string imagem = info[1];
+        int preco = int.Parse(info[5]);
+
+        switch (info[0]){
+            case "CartaEquipamento":
+                string descricao = $"Você ganha {efeito.titulo} ao utilizar este equipamento.";
+                int bonus = efeito.descricao[0];
+                ehGrande = int.Parse(info[3].Split(';')[2]);
+                parteCorpo = info[3].Split(';')[1];
+                return new CartaEquipamento(nome, descricao, efeito, imagem, preco, bonus, ehGrande, parteCorpo, "limitacaoRaca", "limitacaoClasse");
+
+            case "CartaItem":
+                string descricao = $"Você ganha {efeito.titulo} ao utilizar este item.";
+                int bonus = efeito.descricao[0];
+                return new CartaItem(nome, descricao, efeito, imagem, preco, bonus);
+        }   
+    }
+
+    static Efeito CriaEfeito(string efeito, string[] descricao) {
+
+        string[] atributos = descricao.Split(';');
+
         switch (efeito) {
             case "EfeitoAumentaMonstro":
-                return new EfeitoAumentaMonstro(descricao);
+                int nivel = int.Parse(atributos[0]);
+                int tesouro = int.Parse(atributos[1]);
+                string titulo = $"ajusta o nível do monstro em {nivel} e o tesouro em {tesouro}";
+                return new EfeitoAumentaMonstro(titulo, [nivel, tesouro]);
 
             case "EfeitoMorte":
-                return new EfeitoMorte([]);
+                string titulo = "morre";
+                return new EfeitoMorte(titulo, []);
 
             case "EfeitoPerdeArmadura":
-                return new EfeitoPerdeArmadura(descricao);
+                string titulo = "perde sua armadura";
+                return new EfeitoPerdeArmadura(titulo, []);
 
             case "EfeitoPerdeCalca":
-                return new EfeitoPerdeCalca(descricao);
+                string titulo = "perde sua calça";
+                return new EfeitoPerdeCalca(titulo, []);
 
             case "EfeitoPerdeCalcado":
-                return new EfeitoPerdeCalcado(descricao);
+                string titulo = "perde seu calçado";
+                return new EfeitoPerdeCalcado(titulo, []);
 
             case "EfeitoPerdeClasse":
-                return new EfeitoPerdeClasse([]);
+                string titulo = "perde sua classe";
+                return new EfeitoPerdeClasse(titulo, []);
 
             case "EfeitoPerdeElmo":
-                return new EfeitoPerdeElmo(descricao);
+                string titulo = "perde seu elmo";
+                return new EfeitoPerdeElmo(titulo, []);
 
             case "EfeitoPerdeItemGrande":
-                return new EfeitoPerdeItemGrande(descricao);
+                string titulo = "perde um item grande";
+                return new EfeitoPerdeItemGrande(titulo, []);
 
             case "EfeitoPerdeItemPequeno":
-                return new EfeitoPerdeItemPequeno(descricao);
+                string titulo = "perde um item grande";
+                return new EfeitoPerdeItemPequeno(titulo, []);
 
             case "EfeitoPerdeNivel":
-                return new EfeitoPerdeNivel(descricao);
+                int nivel = int.Parse(atributos[0]);
+                string titulo = (nivel != 1) ? $"perde {nivel} níveis" : "perde 1 nível";
+                return new EfeitoPerdeNivel(titulo, [nivel]);
 
             case "EfeitoPerdeRaca":
-                return new EfeitoPerdeRaça(descricao);
+                string titulo = "perde sua raça e volta a ser humano";
+                return new EfeitoPerdeRaça(titulo, []);
+
+            case "EfeitoGanhaBonus":
+                int bonus = int.Parse(atributos[0]);
+                string titulo = $"ganha um bônus de {bonus}";
+                return new EfeitoGanhaBonus(titulo, [bonus]);
+
+            case "EfeitoGanhaNivel":
+                int nivel = int.Parse(atributos[0]);
+                string titulo = (nivel != 1) ? $"ganha {nivel} níveis" : "ganha 1 nível";
+                return new EfeitoGanhaNivel(titulo, [titulo]);
         }
     }
 }

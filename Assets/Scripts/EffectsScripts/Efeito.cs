@@ -3,8 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Efeito", menuName = "Scriptable Objects/Efeito")]
 public abstract class Efeito : ScriptableObject {
 
-    string titulo;
-    object[] descricao;
+    public string titulo;
+    public object[] descricao;
 
     public Efeito(string titulo, object[] descricao) {
         this.titulo = titulo;

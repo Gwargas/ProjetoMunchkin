@@ -4,7 +4,7 @@ public class CardHighlight : MonoBehaviour {
     [SerializeField] private RectTransform _card;
     private int originalIdx;
     private Vector3 originalPos;
-    private float offset = 10.0f;
+    private float offset = 0.0f;
 
     public void MouseEnter() {
         originalIdx = _card.GetSiblingIndex();

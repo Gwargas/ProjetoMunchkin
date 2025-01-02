@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Draggables : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
     public Transform parentToReturnTo = null;

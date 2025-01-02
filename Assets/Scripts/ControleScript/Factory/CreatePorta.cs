@@ -16,7 +16,7 @@ class CreateCartaPorta {
             case "CartaPorta":
                 // toda carta porta que não for especialização é uma aumenta monstro
                 // infelizmente CartaPorta é abstrata portando vira CartaMaldição
-                descricao = $"Esta carta {efeito.titulo}.";
+                descricao = $"Com esta carta você {efeito.titulo}.";
                 return new CartaMaldição(nome, descricao, efeito, imagem);
 
             case "CartaMonstro":

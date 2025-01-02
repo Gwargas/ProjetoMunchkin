@@ -8,10 +8,9 @@
 
 ### To-Do 
 
-#### Responsável por essas coisas?
-- [X] Coisa 1
-- [ ] Coisa 2
-- [ ] Coisa 3
+#### Efeitos funcionais
+
+- Todos só tem que passar pro genérico;
 
 ### Diagramas
 

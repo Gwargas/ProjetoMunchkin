@@ -31,4 +31,15 @@ public class Hand : ScriptableObject
         naMao.Add(c);
     }
 
+    public List<Carta> Carregada
+    {
+        get => carregada;
+        set => carregada = value;
+    }
+
+    public List<Carta> NaMao
+    {
+        get => naMao;
+        set => naMao = value;
+    }
 }

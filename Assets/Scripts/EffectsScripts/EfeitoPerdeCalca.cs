@@ -1,14 +1,44 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "EfeitoPerdeCalca", menuName = "Scriptable Objects/EfeitoPerdeCalca")]
 public class EfeitoPerdeCalca : Efeito
 {
-    public EfeitoPerdeCalca(string titulo, dynamic[] descricao) : base(titulo, descricao)
+    public EfeitoPerdeCalca(string titulo, int[] descricao) : base(titulo, descricao)
     {
     }
     
-    public override void Apply()
-    {
-        //throw new System.NotImplementedException();
+    public override void Apply(Controle controle) {
+        bool removido = false;
+        Hand mao = controle.JogadorAtual.Mao;
+
+        List<Carta> carregadas = mao.Carregada;
+        for (int i = 0; i < carregadas.Count; i++) {
+            if (carregadas[i].GetType() == typeof(CartaEquipamento)) {
+                CartaEquipamento equipamento = (CartaEquipamento) carregadas[i];
+                if (equipamento.ParteCorpo == "calca") {
+                    equipamento.Efeito.Revert(controle);
+                    carregadas.RemoveAt(i);
+                    // DEVOLVE PRO BARALHO
+                    removido = true;
+                    break;
+                }
+            }
+        }
+
+        if (!removido) {
+            List<Carta> naMao = mao.NaMao;
+            for (int j = 0; j < naMao.Count; j++) {
+                if (naMao[j].GetType() == typeof(CartaEquipamento)) {
+                    CartaEquipamento equipamento = (CartaEquipamento) naMao[j];
+                    if (equipamento.ParteCorpo == "calca") {
+                        equipamento.Efeito.Revert(controle);
+                        naMao.RemoveAt(j);
+                        // DEVOLVE PRO BARALHO
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

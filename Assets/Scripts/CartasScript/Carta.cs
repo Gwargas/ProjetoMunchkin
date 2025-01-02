@@ -27,5 +27,11 @@ public abstract class Carta : ScriptableObject
         set => descricao = value;
     }
 
+    public string CartaPath
+    {
+        get => cartaPath;
+        set => cartaPath = value;
+    }
+
     public abstract void EfeitoCompra(Controle controle);
 }

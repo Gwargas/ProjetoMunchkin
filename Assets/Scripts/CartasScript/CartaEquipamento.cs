@@ -25,4 +25,14 @@ public class CartaEquipamento : CartaTesouro
         throw new System.NotImplementedException();
         // (Note: David) Lógica de uso 
     } 
+
+    public string ParteCorpo {
+        get => parteCorpo;
+        set => parteCorpo = value;
+    }
+
+    public int EhGrande {
+        get => ehGrande;
+        set => ehGrande = value;
+    }
 }

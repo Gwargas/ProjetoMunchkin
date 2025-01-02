@@ -9,8 +9,8 @@ public class Jogador : ScriptableObject
     private string nome;
     private int nivel = 1;
     private int bonus = 0;
-    private List<string> raca = new List<string>(); //Botar um header para nao ter que importar toda hora
-    private List<string> classe = new List<string>();
+    private string raca = "humano"; //Botar um header para nao ter que importar toda hora
+    private string classe = "nada";
     private bool morto = false;
     private Hand mao = new Hand();
 
@@ -26,9 +26,9 @@ public class Jogador : ScriptableObject
         set => bonus = value;
     }
 
-    public Hand Mao
-    {
+    public Hand Mao {
         get => mao;
+        set => mao = value;
     }
 
     public string Nome
@@ -37,4 +37,20 @@ public class Jogador : ScriptableObject
         set => nome = value;
     }
     
+    public bool Morto {
+        get => morto;
+        set => morto = value;
+    }
+
+    public string Raca
+    {
+        get => raca;
+        set => raca = value;
+    }
+
+    public string Classe
+    {
+        get => classe;
+        set => classe = value;
+    }
 }

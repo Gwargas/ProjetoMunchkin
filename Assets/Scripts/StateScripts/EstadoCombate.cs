@@ -58,6 +58,7 @@ public class EstadoCombate : EstadoJogo
         for (int i = 0; i < jogadoresRestantes.Count; i++){
             Debug.Log("Iteracao: " + i);
             nomeJogador.text = jogadoresRestantes[i].Nome;
+            
             if (botaoAjudaClick || botaoAtrapalhaClick){
                 botaoAjudaClick = false;
                 botaoAtrapalhaClick = false;

@@ -8,7 +8,7 @@ public class CartaEquipamento : CartaTesouro
     [SerializeField] private string limitacaoRaca; 
     [SerializeField] private string limitacaoClasse;
 
-    public CartaEquipamento(string nome, string descricao, Efeito efeito, string imagem, int preco, int bonus, int ehGrande, string parteCorpo, string limitacaoRaca, string limitacaoClasse) : base(nome, descricao, efeito, imagem, preco, bonus)
+    public CartaEquipamento(string nome, string descricao, Efeito efeito, string imagem, int preco, int ehGrande, string parteCorpo, string limitacaoRaca, string limitacaoClasse) : base(nome, descricao, efeito, imagem, preco)
     {
         this.ehGrande = ehGrande;
         this.parteCorpo = parteCorpo;

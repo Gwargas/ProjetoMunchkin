@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoPerdeCalca", menuName = "Scriptable Objects/EfeitoPerdeCalca")]
 public class EfeitoPerdeCalca : Efeito
 {
-    public EfeitoPerdeCalca(string titulo, object[] descricao) : base(titulo, descricao)
+    public EfeitoPerdeCalca(string titulo, dynamic[] descricao) : base(titulo, descricao)
     {
     }
     

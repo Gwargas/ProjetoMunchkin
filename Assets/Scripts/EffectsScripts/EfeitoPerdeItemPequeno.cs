@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoPerdeItemPequeno", menuName = "Scriptable Objects/EfeitoPerdeItemPequeno")]
 public class EfeitoPerdeItemPequeno : Efeito
 {
-    public EfeitoPerdeItemPequeno(string titulo, object[] valores) : base(titulo, valores)
+    public EfeitoPerdeItemPequeno(string titulo, dynamic[] valores) : base(titulo, valores)
     {
     }
 

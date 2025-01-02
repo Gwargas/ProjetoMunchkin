@@ -4,9 +4,9 @@ using UnityEngine;
 public abstract class Efeito : ScriptableObject {
 
     public string titulo;
-    public object[] descricao;
+    public dynamic[] descricao;
 
-    public Efeito(string titulo, object[] descricao) {
+    public Efeito(string titulo, dynamic[] descricao) {
         this.titulo = titulo;
         this.descricao = descricao;
     }

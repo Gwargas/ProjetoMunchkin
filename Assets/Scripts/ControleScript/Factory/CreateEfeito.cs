@@ -65,7 +65,7 @@ class CreateEfeito {
             default:
                 nivel = int.Parse(atributos[0]);
                 titulo = (nivel != 1) ? $"ganha {nivel} níveis" : "ganha 1 nível";
-                return new EfeitoGanhaNivel(titulo, new object[] {titulo});
+                return new EfeitoGanhaNivel(titulo, new object[] {nivel});
         }
     }
 }

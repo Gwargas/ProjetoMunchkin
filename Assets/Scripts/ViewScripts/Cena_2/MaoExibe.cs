@@ -28,7 +28,8 @@ public class CartaManager : MonoBehaviour
         foreach (Carta carta in naMao) {
             RectTransform novaCarta = Instantiate(cartaModelo, mao);
             novaCarta.name = carta.Nome;
-            novaCarta.GetComponent<CartaExibe>().Exibe(carta.CartaPath, carta.Nome, carta.Descricao );
+            
+            //novaCarta.GetComponent<CartaExibe>().Exibe(carta.CartaPath, carta.Nome, carta.Descricao );
         }
     }
 }

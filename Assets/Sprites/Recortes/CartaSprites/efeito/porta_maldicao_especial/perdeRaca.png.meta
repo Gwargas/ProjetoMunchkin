@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      perdeRaca_0: 8780023625430844230
+      perdeRaca_1: -1964288897867746794
+      perdeRaca_2: -203462013039952558
+      perdeRaca_3: -6678900792094467283
+      perdeRaca_4: 6676464259721177159
+      perdeRaca_5: 5414197052960634078
+      perdeRaca_6: -2819770004142754507
+      perdeRaca_7: 8997431650704618754
+      perdeRaca_8: 144281990114108503
+      perdeRaca_9: 3330358310998086351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

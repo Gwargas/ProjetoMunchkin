@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      perdeItemPequeno_0: 8274467570887335557
+      perdeItemPequeno_1: -1844421471488885099
+      perdeItemPequeno_2: -348978362686030855
+      perdeItemPequeno_3: 3262997849189271169
+      perdeItemPequeno_4: -8519605591543446787
+      perdeItemPequeno_5: 2606918197038268148
+      perdeItemPequeno_6: -1639319741087840586
+      perdeItemPequeno_7: 7449174806667685639
+      perdeItemPequeno_8: -7809613055098269436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

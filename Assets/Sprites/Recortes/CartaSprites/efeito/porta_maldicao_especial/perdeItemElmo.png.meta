@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      perdeItemElmo_0: -8946390659871440347
+      perdeItemElmo_1: 5681113285781404534
+      perdeItemElmo_2: 9039984538666545424
+      perdeItemElmo_3: -4161820941182467960
+      perdeItemElmo_4: -8122769342630613594
+      perdeItemElmo_5: -3350862106697628178
+      perdeItemElmo_6: 3423756475546786103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

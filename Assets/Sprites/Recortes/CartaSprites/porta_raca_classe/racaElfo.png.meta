@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      racaElfo_0: -8800050924639500324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

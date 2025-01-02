@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      elfo_0: -4515640293786877818
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

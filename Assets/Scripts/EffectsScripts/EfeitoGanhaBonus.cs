@@ -9,17 +9,7 @@ public class EfeitoGanhaBonus : Efeito
         controle.JogadorAtual.Bonus += descricao[0];
     }
 
-    public override CartaMonstro Apply(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Revert(Controle controle) {
         controle.JogadorAtual.Bonus -= descricao[0];
-    }
-
-    public override CartaMonstro Revert(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
     }
 }

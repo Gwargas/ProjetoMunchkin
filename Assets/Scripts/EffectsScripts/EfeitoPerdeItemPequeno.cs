@@ -19,6 +19,8 @@ public class EfeitoPerdeItemPequeno : Efeito
                 if (equipamento.EhGrande == 0) {
                     equipamento.Efeito.Revert(controle);
                     carregadas.RemoveAt(i);
+                    mao.Carregada = carregadas;
+                    controle.JogadorAtual.Mao = mao;
                     // DEVOLVE PRO BARALHO
                     removido = true;
                     break;
@@ -34,22 +36,14 @@ public class EfeitoPerdeItemPequeno : Efeito
                     if (equipamento.EhGrande == 0) {
                         equipamento.Efeito.Revert(controle);
                         naMao.RemoveAt(j);
+                        mao.NaMao = naMao;
+                        controle.JogadorAtual.Mao = mao;
                         // DEVOLVE PRO BARALHO
                         break;
                     }
                 }
             }
         }
-    }
-
-    public override CartaMonstro Apply(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override CartaMonstro Revert(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
     }
 
     public override void Revert(Controle controle)

@@ -10,16 +10,6 @@ public class EfeitoPerdeClasse : Efeito
         controle.JogadorAtual.Classe = "nada";
     }
 
-    public override CartaMonstro Apply(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override CartaMonstro Revert(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Revert(Controle controle)
     {
         throw new System.NotImplementedException();

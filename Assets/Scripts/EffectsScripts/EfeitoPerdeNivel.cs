@@ -7,17 +7,12 @@ public class EfeitoPerdeNivel : Efeito
     {
     }
     public override void Apply(Controle controle) {
-        controle.JogadorAtual.Nivel -= descricao[0];
-    }
-
-    public override CartaMonstro Apply(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override CartaMonstro Revert(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
+        if (controle.JogadorAtual.Nivel - descricao[0] < 1) {
+            controle.JogadorAtual.Nivel = 1;
+            return;
+        } else {
+            controle.JogadorAtual.Nivel -= descricao[0];
+        }
     }
 
     public override void Revert(Controle controle)

@@ -11,9 +11,6 @@ public abstract class Efeito : ScriptableObject {
         this.descricao = descricao;
     }
 
-    public abstract CartaMonstro Apply(CartaMonstro carta);
-    public abstract CartaMonstro Revert(CartaMonstro carta);
-
     public abstract void Apply(Controle controle);
     public abstract void Revert(Controle controle);
 }

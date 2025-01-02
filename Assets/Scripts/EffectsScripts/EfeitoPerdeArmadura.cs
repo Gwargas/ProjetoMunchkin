@@ -17,6 +17,8 @@ public class EfeitoPerdeArmadura : Efeito
                 if (equipamento.ParteCorpo == "armadura") {
                     equipamento.Efeito.Revert(controle);
                     carregadas.RemoveAt(i);
+                    mao.Carregada = carregadas;
+                    controle.JogadorAtual.Mao = mao;
                     // DEVOLVE PRO BARALHO
                     removido = true;
                     break;
@@ -32,6 +34,8 @@ public class EfeitoPerdeArmadura : Efeito
                     if (equipamento.ParteCorpo == "armadura") {
                         equipamento.Efeito.Revert(controle);
                         naMao.RemoveAt(j);
+                        mao.NaMao = naMao;
+                        controle.JogadorAtual.Mao = mao;
                         // DEVOLVE PRO BARALHO
                         break;
                     }
@@ -39,17 +43,7 @@ public class EfeitoPerdeArmadura : Efeito
             }
         }
     }
-
-    public override CartaMonstro Apply(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override CartaMonstro Revert(CartaMonstro carta)
-    {
-        throw new System.NotImplementedException();
-    }
-
+    
     public override void Revert(Controle controle)
     {
         throw new System.NotImplementedException();

@@ -19,13 +19,13 @@ public class EstadoCompraPorta : EstadoJogo
         //Debug.Log("Verificando Qual Carta foi comprada");
 
         if(Input.GetKeyDown(KeyCode.A)){
-            Interferencia inter = GameObject.FindObjectOfType<Interferencia>();
+            /*Interferencia inter = GameObject.FindObjectOfType<Interferencia>();
             if (inter != null){
                 Debug.Log("funcionou");
-            }
-            EstadoCombate estadoCombate = new EstadoCombate();
-            estadoCombate.MenuInterferencia = inter.MenuInteracao;
-            controle.TrocaEstado(estadoCombate);
+            }*/
+            //EstadoCombate estadoCombate = new EstadoCombate();
+            //estadoCombate.MenuInterferencia = inter.MenuInteracao;
+            controle.TrocaEstado(new EstadoCombate());
         }
     }
 }

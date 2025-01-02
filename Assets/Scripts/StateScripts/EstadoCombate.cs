@@ -12,24 +12,25 @@ public class EstadoCombate : EstadoJogo
     private List<Jogador> ajudantes = new List<Jogador>();
     private int interferenciaMonstro = 0;
     private int interferenciaJogador = 0;
-    private GameObject menuInterferencia;
-    private TextMeshProUGUI nomeJogador;
-    private Button botaoAjuda;
-    private Button botaoAtrapalha;
+    //private GameObject menuInterferencia;
+    //private TextMeshProUGUI nomeJogador;
+    //private Button botaoAjuda;
+    //private Button botaoAtrapalha;
 
-    public GameObject MenuInterferencia
+    /*public GameObject MenuInterferencia
     {
         get => menuInterferencia;
         set => menuInterferencia = value;
-    }
+    }*/
     
     public override void IniciarEstado(Controle controle)
     {
-        nomeJogador = menuInterferencia.transform.Find("NomeJogador").GetComponentInChildren<TextMeshProUGUI>();
-        botaoAjuda = menuInterferencia.transform.Find("BotaoAjuda").GetComponentInChildren<Button>();
-        botaoAtrapalha = menuInterferencia.transform.Find("BotaoAtrapalha").GetComponentInChildren<Button>();
+        //nomeJogador = menuInterferencia.transform.Find("NomeJogador").GetComponentInChildren<TextMeshProUGUI>();
+        //botaoAjuda = menuInterferencia.transform.Find("BotaoAjuda").GetComponentInChildren<Button>();
+        //botaoAtrapalha = menuInterferencia.transform.Find("BotaoAtrapalha").GetComponentInChildren<Button>();
         //menuInterferencia.SetActive(true);
-        Interferir(controle, this);
+        Interferencia inter = GameObject.FindObjectOfType<Interferencia>();
+        inter.IniciarInteracao(controle);
     }
 
     public override void RunEstado(Controle controle)
@@ -38,7 +39,7 @@ public class EstadoCombate : EstadoJogo
     }
 
     
-    public void Interferir(Controle controle, EstadoCombate estadoCombate)
+    /*public void Interferir(Controle controle, EstadoCombate estadoCombate)
     {
         List<Jogador> jogadoresRestantes = controle.Jogadores.Where(j => j != controle.JogadorAtual).ToList();
         //Debug.Log("Jogadores Restantes: " + jogadoresRestantes.Count);
@@ -55,6 +56,7 @@ public class EstadoCombate : EstadoJogo
             Debug.Log("Clicou em atrapalhar");
             botaoAtrapalhaClick = true;
         });
+
         for (int i = 0; i < jogadoresRestantes.Count; i++){
             Debug.Log("Iteracao: " + i);
             nomeJogador.text = jogadoresRestantes[i].Nome;
@@ -68,7 +70,7 @@ public class EstadoCombate : EstadoJogo
         
         //menuInterferencia.SetActive(false);
 
-    }
+    }*/
 
     
 }

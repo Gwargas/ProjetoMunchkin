@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.WebSockets;
@@ -24,9 +25,9 @@ public class EstadoCombate : EstadoJogo
     
     public override void IniciarEstado(Controle controle)
     {
-        nomeJogador = menuInterferencia.GetComponentInChildren<TextMeshProUGUI>();
-        botaoAjuda = menuInterferencia.GetComponentInChildren<Button>();
-        botaoAtrapalha = menuInterferencia.GetComponentInChildren<Button>();
+        nomeJogador = menuInterferencia.transform.Find("NomeJogador").GetComponentInChildren<TextMeshProUGUI>();
+        botaoAjuda = menuInterferencia.transform.Find("BotaoAjuda").GetComponentInChildren<Button>();
+        botaoAtrapalha = menuInterferencia.transform.Find("BotaoAtrapalha").GetComponentInChildren<Button>();
         //menuInterferencia.SetActive(true);
         Interferir(controle, this);
     }
@@ -40,7 +41,7 @@ public class EstadoCombate : EstadoJogo
     public void Interferir(Controle controle, EstadoCombate estadoCombate)
     {
         List<Jogador> jogadoresRestantes = controle.Jogadores.Where(j => j != controle.JogadorAtual).ToList();
-        Debug.Log("Jogadores Restantes: " + jogadoresRestantes.Count);
+        //Debug.Log("Jogadores Restantes: " + jogadoresRestantes.Count);
         menuInterferencia.SetActive(true);
         bool botaoAjudaClick = false;
         bool botaoAtrapalhaClick = false;
@@ -54,7 +55,6 @@ public class EstadoCombate : EstadoJogo
             Debug.Log("Clicou em atrapalhar");
             botaoAtrapalhaClick = true;
         });
-
         for (int i = 0; i < jogadoresRestantes.Count; i++){
             Debug.Log("Iteracao: " + i);
             nomeJogador.text = jogadoresRestantes[i].Nome;
@@ -64,6 +64,7 @@ public class EstadoCombate : EstadoJogo
                 continue;
             }
         }
+        
         //menuInterferencia.SetActive(false);
 
     }

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.WebSockets;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,10 +10,11 @@ using UnityEngine;
 public class Controle : ScriptableObject
 {
     private List<Jogador> jogadores = new List<Jogador>();
-    private Deck baralhoPorta = new BaralhoPorta();
-    private Deck baralhoTesouro = new BaralhoTesouro();
+    private BaralhoPorta baralhoPorta;
+    private BaralhoTesouro baralhoTesouro;
     private EstadoJogo estadoAtual;
     private Carta cartaJogo;
+    private Jogador jogadorAtual;
 
     public Carta CartaJogo
     {
@@ -19,15 +22,26 @@ public class Controle : ScriptableObject
         set => cartaJogo = value;
     }
 
-    public Deck BaralhoPorta
+    public BaralhoPorta BaralhoPorta
     {
         get => baralhoPorta;
         set => baralhoPorta = value;
     }
-    public Deck BaralhoTesouro
+    public BaralhoTesouro BaralhoTesouro
     {
         get => baralhoTesouro;
         set => baralhoTesouro = value;
+    }
+
+    public List<Jogador> Jogadores
+    {
+        get => jogadores;
+    }
+
+    public Jogador JogadorAtual
+    {
+        get => jogadorAtual;
+        set => jogadorAtual = value;
     }
     public int Dado()
     {
@@ -77,12 +91,12 @@ public class Controle : ScriptableObject
         }
     }
 
-    public void DescartarCartaPorta(Carta c)
+    public void DescartarCartaPorta(CartaPorta c)
     {
         baralhoPorta.Descarte(c);
     }
 
-    public void DescartarCartaTesouro(Carta c)
+    public void DescartarCartaTesouro(CartaTesouro c)
     {
         baralhoTesouro.Descarte(c);
     }
@@ -92,6 +106,7 @@ public class Controle : ScriptableObject
         Jogador jogador;
         for(int i = 0; i < GameSettings.qtdJogadores; i++){
             jogador = new Jogador();
+            jogador.Nome = "Jogador " + i;
             //resto da inicialização de jogador
             jogadores.Add(jogador);
         }
@@ -115,6 +130,13 @@ public class Controle : ScriptableObject
 
         // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE PORTA
 
+        //var xxx = baralhoPorta.Embaralha(listaCartasPorta); //Teste
+
+        baralhoPorta = new BaralhoPorta((baralhoPorta.Embaralha(listaCartasPorta)));//Compartilha a  mesma instancia que BaralhoPorta tem no inicio
+        //Entender se isso se encaixa nessa técnica de polimorfismo
+        
+
+        
         // lista com as informações das cartas de tesouro
         List<string[]> infosCartaTesouro = Extrator.CsvToList("Factory/tesouro.csv");
         
@@ -126,6 +148,8 @@ public class Controle : ScriptableObject
             CartaTesouro novaCarta = CreateCartaTesouro.Cria(info);
             listaCartasTesouro.Add(novaCarta);
         }
+        
+        baralhoTesouro = new BaralhoTesouro(baralhoTesouro.Embaralha(listaCartasTesouro));
 
         // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE TESOURO
     
@@ -140,12 +164,6 @@ public class Controle : ScriptableObject
     public void RunEstadoAtual()
     {
         estadoAtual.RunEstado(this);
-    }
-
-    public void Interferir()
-    {
-        throw new System.NotImplementedException();
-        // Tela de opções 
     }
 
     /*public Jogador getJogadorAtual()

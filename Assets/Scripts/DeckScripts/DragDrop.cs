@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class DragDrop : MonoBehaviour
 {
-
-
-
+    public GameObject Canvas;
+    private Vector3 dragScale = new Vector3(1.5f, 1.5f, 1.5f);
+    private Vector3 originalScale;
     private bool isDragging = false;
     private bool isOverDropZone = false;
     private bool isDraggable = true;
@@ -17,12 +17,18 @@ public class DragDrop : MonoBehaviour
     private GameObject startParent;
     private Vector2 startPosition;
 
+    private void Start()
+    {
+
+        Canvas = GameObject.Find("Canvas1");
+        originalScale = transform.localScale;
+    }
     void Update()
     {
         if (isDragging)
         {
             transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
+            transform.SetParent(Canvas.transform, true);
         }
     }
 
@@ -42,15 +48,16 @@ public class DragDrop : MonoBehaviour
 
     public void StartDrag()
     {
-        if (!isDraggable) return;
+
         startParent = transform.parent.gameObject;
         startPosition = transform.position;
         isDragging = true;
+        transform.localScale = dragScale;
     }
 
     public void EndDrag()
     {
-        if (!isDraggable) return;
+        transform.localScale = originalScale;
         isDragging = false;
 
         if (isOverDropZone)

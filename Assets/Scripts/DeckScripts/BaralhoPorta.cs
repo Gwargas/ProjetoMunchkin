@@ -4,8 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BaralhoPorta", menuName = "Scriptable Objects/BaralhoPorta")]
-public class BaralhoPorta : Deck
+public class BaralhoPorta : Deck<CartaPorta>
 {
+    public BaralhoPorta(){}
+    public BaralhoPorta(List<CartaPorta> c)
+    {
+        this.baralho = c;
+    }
+
     public override Carta CompraCarta()
     {
         if (baralho.Count == 0){
@@ -17,12 +23,12 @@ public class BaralhoPorta : Deck
         return cartaComprada;
     }
 
-    public override List<Carta> Embaralha(List<Carta> l)
+    public override List<CartaPorta> Embaralha(List<CartaPorta> l)
     {
         return l.OrderBy(x => UnityEngine.Random.Range(0f, 1f)).ToList();
     }
 
-    public override void Descarte(Carta c){
+    public override void Descarte(CartaPorta c){
         descarte.Add(c);
     }
 }

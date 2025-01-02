@@ -22,12 +22,12 @@ public class Controle : ScriptableObject
         set => cartaJogo = value;
     }
 
-    public BaralhoPorta BaralhoPorta
+    public BaralhoPorta BaralhoPortas
     {
         get => baralhoPorta;
         set => baralhoPorta = value;
     }
-    public BaralhoTesouro BaralhoTesouro
+    public BaralhoTesouro BaralhoTesouros
     {
         get => baralhoTesouro;
         set => baralhoTesouro = value;
@@ -45,7 +45,7 @@ public class Controle : ScriptableObject
     }
     public int Dado()
     {
-        return(UnityEngine.Random.Range(1, 7));
+        return (UnityEngine.Random.Range(1, 7));
     }
 
     /* (Note: David) REMOVER => Mecânica de estados substitui esses métodos 
@@ -81,8 +81,10 @@ public class Controle : ScriptableObject
     public void DistribuirCartas()
     {
         Carta c;
-        for(int i = 0; i < jogadores.Count; i++){
-            for(int j = 0; j < 4; j++){
+        for (int i = 0; i < jogadores.Count; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
                 c = baralhoPorta.CompraCarta();
                 jogadores[i].Mao.Add(c);
                 c = baralhoTesouro.CompraCarta();
@@ -104,7 +106,8 @@ public class Controle : ScriptableObject
     public void CriaJogadores()
     {
         Jogador jogador;
-        for(int i = 0; i < GameSettings.qtdJogadores; i++){
+        for (int i = 0; i < GameSettings.qtdJogadores; i++)
+        {
             jogador = new Jogador();
             jogador.Nome = "Jogador " + i;
             //resto da inicialização de jogador
@@ -112,7 +115,8 @@ public class Controle : ScriptableObject
         }
     }
 
-    public void CriaCartas() {
+    public void CriaCartas()
+    {
 
         // B: to achando que isso devia ir pra dentro da classe baralho
 
@@ -123,7 +127,8 @@ public class Controle : ScriptableObject
         List<CartaPorta> listaCartasPorta = new List<CartaPorta>();
 
         // cria as cartas de porta
-        foreach (string[] info in infosCartaPorta) {
+        foreach (string[] info in infosCartaPorta)
+        {
             CartaPorta novaCarta = CreateCartaPorta.Cria(info);
             listaCartasPorta.Add(novaCarta);
         }
@@ -133,26 +138,27 @@ public class Controle : ScriptableObject
         //var xxx = baralhoPorta.Embaralha(listaCartasPorta); //Teste
 
         baralhoPorta = new BaralhoPorta((baralhoPorta.Embaralha(listaCartasPorta)));//Compartilha a  mesma instancia que BaralhoPorta tem no inicio
-        //Entender se isso se encaixa nessa técnica de polimorfismo
-        
+                                                                                    //Entender se isso se encaixa nessa técnica de polimorfismo
 
-        
+
+
         // lista com as informações das cartas de tesouro
         List<string[]> infosCartaTesouro = Extrator.CsvToList("Factory/tesouro.csv");
-        
+
         // lista de cartas de tesouro
         List<CartaTesouro> listaCartasTesouro = new List<CartaTesouro>();
 
         // cria as cartas de tesouro
-        foreach (string[] info in infosCartaTesouro) {
+        foreach (string[] info in infosCartaTesouro)
+        {
             CartaTesouro novaCarta = CreateCartaTesouro.Cria(info);
             listaCartasTesouro.Add(novaCarta);
         }
-        
+
         baralhoTesouro = new BaralhoTesouro(baralhoTesouro.Embaralha(listaCartasTesouro));
 
         // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE TESOURO
-    
+
     }
 
     public void TrocaEstado(EstadoJogo novoEstado)
@@ -170,5 +176,6 @@ public class Controle : ScriptableObject
     {
         int index =
     }*/
+
 
 }

@@ -11,9 +11,19 @@ public class EfeitoAumentaMonstro : Efeito
         return carta;
     }
 
+    public override void Apply(Controle controle)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override CartaMonstro Revert(CartaMonstro carta) {
         carta.Nivel -= descricao[0];
         carta.Recompensa -= descricao[1];
         return carta;
+    }
+
+    public override void Revert(Controle controle)
+    {
+        throw new System.NotImplementedException();
     }
 }

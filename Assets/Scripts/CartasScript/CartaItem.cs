@@ -3,7 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CartaItem", menuName = "Scriptable Objects/CartaItem")]
 public class CartaItem : CartaTesouro
 {
-    // construtor
     public void Inicializa(string nome, string descricao, Efeito efeito, string imagem, int preco){
         this.Nome = nome;
         this.Descricao = descricao;

@@ -16,6 +16,11 @@ public class Interferencia : MonoBehaviour
     private List<Carta> cartasInterferencia = new List<Carta>();
     private Jogador ajudante;
 
+
+    [SerializeField] private GameObject menuAjudantes;
+    [SerializeField] private Transform listaAjudantesBox;
+    [SerializeField] private GameObject prefabAjudante;
+
     public GameObject MenuInteracao
     {
         get => menuInteracao;
@@ -77,4 +82,45 @@ public class Interferencia : MonoBehaviour
 
         onInteracaoCompleta?.Invoke();
     }
+
+    public void IniciarEscolhaAjudante(Controle controle, Action<Jogador> onAjudanteSelecionado)
+    {
+        StartCoroutine(EscolherAjudante(controle, onAjudanteSelecionado));
+    }
+
+    public IEnumerator EscolherAjudante(Controle controle, Action<Jogador> onAjudanteSelecionado)
+    {
+        Debug.Log("Numero de Ajudantes: " + ajudantes.Count);
+        foreach(Transform child in listaAjudantesBox){
+            Destroy(child.gameObject);
+        }
+
+        if (ajudantes.Count == 0)
+        {
+            Debug.Log("Nenhum ajudante disponível.");
+            menuAjudantes.SetActive(false);
+            yield break;
+        }
+
+        menuAjudantes.SetActive(true);
+        foreach(Jogador ajudanteAtual in ajudantes){
+
+            GameObject botaoAj = Instantiate(prefabAjudante, listaAjudantesBox);
+            Button botao = botaoAj.GetComponent<Button>();
+            TextMeshProUGUI textoBotao = botaoAj.GetComponentInChildren<TextMeshProUGUI>();
+            
+            textoBotao.text = $"{ajudanteAtual.Nome} - Nível: {ajudanteAtual.Nivel}, Poder: {ajudanteAtual.Bonus}";
+
+            botao.onClick.AddListener(() => {
+                Debug.Log("Ajudante escolhido: " + ajudanteAtual.Nome);
+                ajudante = ajudanteAtual;
+                menuAjudantes.SetActive(false);
+                onAjudanteSelecionado?.Invoke(ajudanteAtual);
+            });
+        }
+        yield return new WaitUntil(() => ajudante != null);
+
+        menuAjudantes.SetActive(false);
+    }
+      
 }

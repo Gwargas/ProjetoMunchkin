@@ -21,7 +21,7 @@ public class BaralhoTeste : MonoBehaviour
     {
         controle = new Controle();
         controle.CriaCartas();
-        deck = controle.BaralhoPortas;
+        deck = controle.BaralhoPorta;
 
     }
 

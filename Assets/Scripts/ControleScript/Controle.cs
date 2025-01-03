@@ -22,12 +22,12 @@ public class Controle : ScriptableObject
         set => cartaJogo = value;
     }
 
-    public BaralhoPorta BaralhoPortas
+    public BaralhoPorta BaralhoPorta
     {
         get => baralhoPorta;
         set => baralhoPorta = value;
     }
-    public BaralhoTesouro BaralhoTesouros
+    public BaralhoTesouro BaralhoTesouro
     {
         get => baralhoTesouro;
         set => baralhoTesouro = value;

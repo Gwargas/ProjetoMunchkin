@@ -5,7 +5,10 @@ public class EstadoMaldicao : EstadoJogo
 {
     public override void IniciarEstado(Controle controle)
     {
-        //controle.CartaJogo.
+        Carta c = controle.CartaJogo;
+        Efeito efeito = c.Efeito;
+        efeito.Apply(controle);
+        controle.TrocaEstado(new EstadoPreparacao2());
     }
 
     public override void RunEstado(Controle controle)

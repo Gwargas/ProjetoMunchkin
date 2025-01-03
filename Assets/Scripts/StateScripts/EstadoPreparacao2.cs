@@ -20,7 +20,7 @@ public class EstadoPreparacao2 : EstadoJogo
     {
         //Encrenca fica true quando ocorre a movimentacao das cartas
         if(encrenca){
-            controle.TrocaEstado(new EstadoEncrenca());
+            controle.TrocaEstado(EstadoEncrenca.CreateInstance<EstadoEncrenca>());
         }
     }
 }

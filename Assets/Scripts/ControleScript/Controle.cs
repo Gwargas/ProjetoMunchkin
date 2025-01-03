@@ -15,6 +15,7 @@ public class Controle : ScriptableObject
     private EstadoJogo estadoAtual;
     private Carta cartaJogo;
     private Jogador jogadorAtual;
+    private int turno; 
 
     public Carta CartaJogo
     {
@@ -172,10 +173,10 @@ public class Controle : ScriptableObject
         estadoAtual.RunEstado(this);
     }
 
-    /*public Jogador getJogadorAtual()
+    public Jogador getJogadorAtual()
     {
-        int index =
-    }*/
+        int index = turno % jogadores.Count
+    }
 
 
 }

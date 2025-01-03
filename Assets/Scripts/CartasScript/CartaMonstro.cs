@@ -40,6 +40,6 @@ public class CartaMonstro : CartaPorta
 
     public override void EfeitoCompra(Controle controle)
     {
-        controle.TrocaEstado(new EstadoCombate());
+        controle.TrocaEstado(EstadoCombate.CreateInstance<EstadoCombate>());
     }
 }

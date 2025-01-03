@@ -7,6 +7,6 @@ public class CartaMaldição : CartaPorta
     
     public override void EfeitoCompra(Controle controle)
     {
-        controle.TrocaEstado(new EstadoMaldicao());
+        controle.TrocaEstado(EstadoMaldicao.CreateInstance<EstadoMaldicao>());
     }
 }

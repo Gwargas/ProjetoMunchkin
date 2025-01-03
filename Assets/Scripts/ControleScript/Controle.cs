@@ -17,7 +17,11 @@ public class Controle : ScriptableObject
     private Jogador jogadorAtual;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     private int turno; 
+=======
+    private int turno = 0;
+>>>>>>> Stashed changes
 =======
     private int turno = 0;
 >>>>>>> Stashed changes
@@ -196,12 +200,15 @@ public class Controle : ScriptableObject
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public Jogador getJogadorAtual()
     {
         int index = turno % jogadores.Count;
     }
 
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

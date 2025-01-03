@@ -13,6 +13,7 @@ public class EstadoCombate : EstadoJogo
     private Jogador ajudante;
     private List<Carta> cartasInterferencia;
     Interferencia[] refs;
+    Interferencia inter;
 
     //private int interferenciaMonstro = 0;
     //private int interferenciaJogador = 0;
@@ -30,22 +31,20 @@ public class EstadoCombate : EstadoJogo
     public override void IniciarEstado(Controle controle)
     //Tratar o cara morto,remover suas cartas tanto em mão quanto equipada/carregada mas deixar o nível e cartas classe e raca
     {
-        //nomeJogador = menuInterferencia.transform.Find("NomeJogador").GetComponentInChildren<TextMeshProUGUI>();
-        //botaoAjuda = menuInterferencia.transform.Find("BotaoAjuda").GetComponentInChildren<Button>();
-        //botaoAtrapalha = menuInterferencia.transform.Find("BotaoAtrapalha").GetComponentInChildren<Button>();
-        //menuInterferencia.SetActive(true);
-        //Interferencia inter = GameObject.FindObjectOfType<Interferencia>();
         refs = FindObjectsByType<Interferencia>(FindObjectsSortMode.None);
         if(refs[0] != null){
             Debug.Log("Encontrou o gerenciador de interferência");
         }
-        Interferencia inter = refs[0];
+        inter = refs[0];
         inter.IniciarInteracao(controle, () =>
         {
-            ajudante = inter.Ajudante;
             cartasInterferencia = inter.CartasInterferencia;
             //Movimentação de cartas do JogadorAtual...
-            TratarCombate(controle);
+            inter.IniciarEscolhaAjudante(controle, (Jogador ajudanteEscolhido) =>
+            {
+                ajudante = ajudanteEscolhido;
+                TratarCombate(controle);
+            });
         });
     }
 

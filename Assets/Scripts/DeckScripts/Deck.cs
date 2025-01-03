@@ -13,6 +13,6 @@ public abstract class Deck<T> : ScriptableObject where T : Carta
     public abstract List<T> Embaralha(List<T> l);
 
     public abstract void Descarte(T c);
-    
+
 
 }

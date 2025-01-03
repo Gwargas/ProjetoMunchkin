@@ -14,7 +14,8 @@ public class BaralhoTesouro : Deck<CartaTesouro>
 
     public override Carta CompraCarta()
     {
-        if (baralho.Count == 0){
+        if (baralho.Count == 0)
+        {
             baralho = Embaralha(descarte);
             descarte.Clear();
         }
@@ -33,4 +34,9 @@ public class BaralhoTesouro : Deck<CartaTesouro>
         descarte.Add(c);
     }
 
+    public List<CartaTesouro> Baralho
+    {
+        get => baralho;
+        set => baralho = value;
+    }
 }

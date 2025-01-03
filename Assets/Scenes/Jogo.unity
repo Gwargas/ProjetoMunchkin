@@ -482,6 +482,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f337273742846e4e85df0d8b88c6526, type: 3}
+--- !u!1 &266603820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266603821}
+  - component: {fileID: 266603822}
+  m_Layer: 0
+  m_Name: DeckPorta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &266603821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266603820}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 985.3485, y: 496.7835, z: -6.3417487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266603822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266603820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd14512675dfb84fb2b03e35c4dd2f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  CardtoHand: {fileID: 0}
+  Clones: []
+  Hand: {fileID: 0}
 --- !u!1 &289433960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,7 +3377,7 @@ MonoBehaviour:
   menuInteracao: {fileID: 1949684094}
   nomeJogador: {fileID: 41189695}
   botaoAjuda: {fileID: 1396104558}
-  botaoAtrapalha: {fileID: 1120434769}
+  botaoAtrapalha: {fileID: 0}
 --- !u!4 &1581997061
 Transform:
   m_ObjectHideFlags: 0
@@ -4269,6 +4317,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884655189}
   m_CullTransparentMesh: 1
+--- !u!1 &1920311107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920311108}
+  m_Layer: 0
+  m_Name: DeckTesouro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1920311108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920311107}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 985.3485, y: 496.7835, z: -6.3417487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949684094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4301,6 +4380,7 @@ RectTransform:
   m_Children:
   - {fileID: 41189694}
   - {fileID: 684639509}
+  - {fileID: 1396104557}
   m_Father: {fileID: 504155494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5498,3 +5578,6 @@ SceneRoots:
   - {fileID: 1536051957}
   - {fileID: 1386188945}
   - {fileID: 1884655190}
+  - {fileID: 1581997061}
+  - {fileID: 1920311108}
+  - {fileID: 266603821}

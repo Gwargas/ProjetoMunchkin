@@ -15,7 +15,7 @@ public class Controle : ScriptableObject
     private EstadoJogo estadoAtual;
     private Carta cartaJogo;
     private Jogador jogadorAtual;
-    private int turno; 
+    private int turno = 0; 
 
     public Carta CartaJogo
     {
@@ -44,40 +44,16 @@ public class Controle : ScriptableObject
         get => jogadorAtual;
         set => jogadorAtual = value;
     }
+
+    public int Turno
+    {
+        get => turno;
+        set => turno = value;
+    }
     public int Dado()
     {
         return (UnityEngine.Random.Range(1, 7));
     }
-
-    /* (Note: David) REMOVER => Mecânica de estados substitui esses métodos 
-    public void Turno(int i)
-    {
-        Jogador jogador = jogadores[i];
-        Carta cartaComprada = baralhoPorta.CompraCarta();
-        cartaComprada.EfeitoCompra(this);
-        //O que fazer apos tirar a primeira carta de porta
-        //... //Implementar a questao de estados
-    }
-
-    public void Combate(Jogador jogador, CartaMonstro monstro)
-    {
-        //VerificaAjuda();
-        if (jogador.Bonus > monstro.Nivel){
-            for(int i = 0; i < monstro.Recompensa; i++){
-                Carta cartaComprada = baralhoTesouro.CompraCarta();
-                jogador.Mao.Add(cartaComprada);
-            }
-            jogador.Nivel = monstro.NiveisAGanhar;
-        }
-
-        else{
-            int dado = Dado();
-            if(dado < 5){
-                //Coisa Ruim
-            }
-        }
-    }
-    */
 
     public void DistribuirCartas()
     {
@@ -92,6 +68,18 @@ public class Controle : ScriptableObject
                 jogadores[i].Mao.Add(c);
             }
         }
+    }
+
+    public void ReviveMorto(Jogador jogador)
+    {
+        Carta c;
+            for(int j = 0; j < 4; j++){
+                c = baralhoPorta.CompraCarta();
+                jogador.Mao.Add(c);
+                c = baralhoTesouro.CompraCarta();
+                jogador.Mao.Add(c);
+            }
+            jogador.Morto = false;
     }
 
     public void DescartarCartaPorta(CartaPorta c)

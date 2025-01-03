@@ -25,7 +25,7 @@ public class EstadoCompraPorta : EstadoJogo
             }*/
             //EstadoCombate estadoCombate = new EstadoCombate();
             //estadoCombate.MenuInterferencia = inter.MenuInteracao;
-            controle.TrocaEstado(new EstadoCombate());
+            controle.TrocaEstado(EstadoCombate.CreateInstance<EstadoCombate>());
         }
     }
 }

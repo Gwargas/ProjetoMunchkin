@@ -28,9 +28,7 @@ public class GameManager : MonoBehaviour
         
         //controle.DistribuirCartas();
         controle.JogadorAtual = controle.Jogadores[0];
-        //controle.TrocaEstado(new EstadoPreparacao());
-
-        //criações de todas as insts(deck,carta,jogador...)
+        controle.TrocaEstado(EstadoPreparacao.CreateInstance<EstadoPreparacao>());
     }
 
     void Update()
@@ -39,7 +37,7 @@ public class GameManager : MonoBehaviour
         // Controle.RunEstadoAtual () (at Assets/Scripts/ControleScript/Controle.cs:172)
         // GameManager.Update () (at Assets/Scripts/GameManager.cs:40)
 
-        //controle.RunEstadoAtual();
+        controle.RunEstadoAtual();
     }
 }
 

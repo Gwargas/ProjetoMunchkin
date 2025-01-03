@@ -10,7 +10,7 @@ public class EstadoSaquear : EstadoJogo
             Debug.Log("Botão Clicado");
             Carta c = controle.BaralhoPorta.CompraCarta();
             controle.JogadorAtual.Mao.Add(c);
-            controle.TrocaEstado(new EstadoFimTurno());
+            controle.TrocaEstado(EstadoFimTurno.CreateInstance<EstadoFimTurno>());
         });
     }
 

@@ -14,19 +14,13 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {   
-        //controle = new Controle();
         controle = Controle.CreateInstance<Controle>();
 
-        //listacarta.Add(new CartaMonstro());
-
-        //criar carta e dps add em Deck(em cada baralho)
-        //Bea vai instanciar as cartas
         controle.CriaCartas();
         Carta c = controle.BaralhoPorta.CompraCarta();
 
         controle.CriaJogadores();
-        
-        //controle.DistribuirCartas();
+        controle.DistribuirCartas();
         controle.JogadorAtual = controle.Jogadores[0];
         controle.TrocaEstado(EstadoPreparacao.CreateInstance<EstadoPreparacao>());
     }

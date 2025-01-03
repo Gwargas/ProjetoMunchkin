@@ -12,10 +12,16 @@ public class EstadoMaldicao : EstadoJogo
             Debug.Log("Efeito não é de aumento de monstro");
             efeito.Apply(controle);
             Debug.Log("Maldição aplicada");
+            controle.DescartarCartaPorta((CartaPorta)c);
+            //controle.CartaJogo = null;
+            Debug.Log("Maldição descartada");
             controle.TrocaEstado(EstadoPreparacao2.CreateInstance<EstadoPreparacao2>());
         }
         else{
             Debug.Log("Efeito é de aumento de monstro");
+            controle.DescartarCartaPorta((CartaPorta)c);
+            //controle.CartaJogo = null;
+            Debug.Log("Maldição descartada");
             controle.TrocaEstado(EstadoPreparacao2.CreateInstance<EstadoPreparacao2>());
         }
         

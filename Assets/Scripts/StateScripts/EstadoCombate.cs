@@ -14,19 +14,6 @@ public class EstadoCombate : EstadoJogo
     private List<Carta> cartasInterferencia;
     Interferencia[] refs;
     Interferencia inter;
-
-    //private int interferenciaMonstro = 0;
-    //private int interferenciaJogador = 0;
-    //private GameObject menuInterferencia;
-    //private TextMeshProUGUI nomeJogador;
-    //private Button botaoAjuda;
-    //private Button botaoAtrapalha;
-
-    /*public GameObject MenuInterferencia
-    {
-        get => menuInterferencia;
-        set => menuInterferencia = value;
-    }*/
     
     public override void IniciarEstado(Controle controle)
     //Tratar o cara morto,remover suas cartas tanto em mão quanto equipada/carregada mas deixar o nível e cartas classe e raca
@@ -88,6 +75,7 @@ public class EstadoCombate : EstadoJogo
                     Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
+                Debug.Log("Fugiu");
             }
         }
         else{
@@ -105,46 +93,18 @@ public class EstadoCombate : EstadoJogo
                     Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
+                Debug.Log("Fugiu");
             }
         }
         Debug.Log("Fim do Combate");
+
+        foreach(Carta carta in cartasInterferencia){
+            carta.Efeito.Revert(controle);
+            controle.BaralhoPorta.Descarte((CartaPorta)carta);
+        }
+        controle.BaralhoPorta.Descarte(monstro);
         controle.TrocaEstado(EstadoFimTurno.CreateInstance<EstadoFimTurno>());
         
     }
-
-    
-    /*public void Interferir(Controle controle, EstadoCombate estadoCombate)
-    {
-        List<Jogador> jogadoresRestantes = controle.Jogadores.Where(j => j != controle.JogadorAtual).ToList();
-        //Debug.Log("Jogadores Restantes: " + jogadoresRestantes.Count);
-        menuInterferencia.SetActive(true);
-        bool botaoAjudaClick = false;
-        bool botaoAtrapalhaClick = false;
-
-        botaoAjuda.onClick.AddListener(() => {
-            Debug.Log("Clicou na ajuda");
-            botaoAjudaClick = true;
-        });
-
-        botaoAtrapalha.onClick.AddListener(() => {
-            Debug.Log("Clicou em atrapalhar");
-            botaoAtrapalhaClick = true;
-        });
-
-        for (int i = 0; i < jogadoresRestantes.Count; i++){
-            Debug.Log("Iteracao: " + i);
-            nomeJogador.text = jogadoresRestantes[i].Nome;
-            
-            if (botaoAjudaClick || botaoAtrapalhaClick){
-                botaoAjudaClick = false;
-                botaoAtrapalhaClick = false;
-                continue;
-            }
-        }
-        
-        //menuInterferencia.SetActive(false);
-
-    }*/
-
     
 }

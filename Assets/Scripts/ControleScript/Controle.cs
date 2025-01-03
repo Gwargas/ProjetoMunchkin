@@ -127,6 +127,7 @@ public class Controle : ScriptableObject
         baralhoPorta.Inicializa(baralhoPorta.Embaralha(listaCartasPorta)); //Compartilha a  mesma instancia que BaralhoPorta tem no inicio
                                                                            //Entender se isso se encaixa nessa técnica de polimorfismo
 
+                                                                
         // lista com as informações das cartas de tesouro
         List<string[]> infosCartaTesouro = Extrator.CsvToList("Assets/Resources/tesouro.csv");
 

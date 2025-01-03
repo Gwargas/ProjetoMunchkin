@@ -98,7 +98,8 @@ public class Controle : ScriptableObject
         for (int i = 0; i < GameSettings.qtdJogadores; i++)
         {
             jogador = Jogador.CreateInstance<Jogador>();
-            jogador.Nome = "Jogador " + i;
+            int indexNome = i + 1; 
+            jogador.Nome = "Jogador " + indexNome;
             //resto da inicialização de jogador
             jogadores.Add(jogador);
         }

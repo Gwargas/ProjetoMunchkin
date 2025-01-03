@@ -36,6 +36,11 @@ public class Interferencia : MonoBehaviour
         get => cartasInterferencia;
     }
 
+    public List<Jogador> Ajudantes
+    {
+        get => ajudantes;
+    }
+
     public void IniciarInteracao(Controle controle, Action onInteracaoCompleta)
     {
         StartCoroutine(Interferir(controle, onInteracaoCompleta));

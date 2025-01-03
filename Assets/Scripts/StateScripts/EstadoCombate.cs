@@ -26,12 +26,18 @@ public class EstadoCombate : EstadoJogo
         inter.IniciarInteracao(controle, () =>
         {
             cartasInterferencia = inter.CartasInterferencia;
-            //Movimentação de cartas do JogadorAtual...
-            inter.IniciarEscolhaAjudante(controle, (Jogador ajudanteEscolhido) =>
+            if(inter.Ajudantes.Count == 0)
             {
-                ajudante = ajudanteEscolhido;
                 TratarCombate(controle);
-            });
+                return;
+            }
+            else{
+                inter.IniciarEscolhaAjudante(controle, (Jogador ajudanteEscolhido) =>
+                {
+                    ajudante = ajudanteEscolhido;
+                    TratarCombate(controle);
+                });
+            }
         });
     }
 

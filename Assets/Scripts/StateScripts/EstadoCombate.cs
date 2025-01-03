@@ -37,16 +37,16 @@ public class EstadoCombate : EstadoJogo
         //Interferencia inter = GameObject.FindObjectOfType<Interferencia>();
         refs = FindObjectsByType<Interferencia>(FindObjectsSortMode.None);
         if(refs[0] != null){
-            Debug.Log("encontrou");
+            Debug.Log("Encontrou o gerenciador de interferência");
         }
         Interferencia inter = refs[0];
-        inter.IniciarInteracao(controle);
-
-        ajudante = inter.Ajudante;
-        cartasInterferencia = inter.CartasInterferencia;
-        //Movimentação de cartas do JogadorAtual...
-        TratarCombate(controle);
-        
+        inter.IniciarInteracao(controle, () =>
+        {
+            ajudante = inter.Ajudante;
+            cartasInterferencia = inter.CartasInterferencia;
+            //Movimentação de cartas do JogadorAtual...
+            TratarCombate(controle);
+        });
     }
 
     public override void RunEstado(Controle controle)
@@ -56,6 +56,7 @@ public class EstadoCombate : EstadoJogo
     
     public void TratarCombate(Controle controle)
     {   
+        Debug.Log("Tratando Combate");
         //Achar uma solucao melhor para essa parte, sem o uso do C
         CartaMonstro monstro = (CartaMonstro)controle.CartaJogo;
         foreach(Carta carta in cartasInterferencia){
@@ -67,6 +68,7 @@ public class EstadoCombate : EstadoJogo
         {
             if(controle.JogadorAtual.Nivel + controle.JogadorAtual.Bonus + ajudante.Nivel + ajudante.Bonus > monstro.Nivel)
             {
+                Debug.Log("Venceu o monstro");
                 controle.JogadorAtual.Nivel += monstro.NiveisAGanhar;
                 
                 int cont = 0;
@@ -84,13 +86,15 @@ public class EstadoCombate : EstadoJogo
             else{
                 dado = controle.Dado();
                 if(dado < 5){
+                    Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
             }
         }
         else{
-            if((controle.JogadorAtual.Nivel + controle.JogadorAtual.Bonus > monstro.Nivel))
+            if(controle.JogadorAtual.Nivel + controle.JogadorAtual.Bonus > monstro.Nivel)
             {  
+                Debug.Log("Venceu o monstro");
                 for(int k = 0; k < tesouros; k++)
                 {
                     controle.JogadorAtual.Mao.Add(controle.BaralhoTesouro.CompraCarta());
@@ -99,10 +103,12 @@ public class EstadoCombate : EstadoJogo
             else{
                 dado = controle.Dado();
                 if(dado<5){
+                    Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
             }
         }
+        Debug.Log("Fim do Combate");
         controle.TrocaEstado(EstadoFimTurno.CreateInstance<EstadoFimTurno>());
         
     }

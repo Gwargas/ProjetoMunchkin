@@ -6,6 +6,7 @@ public class EstadoPreparacao : EstadoJogo
     private Button botaoCartaPorta;
     public override void IniciarEstado(Controle controle)
     {
+        Debug.Log("Turno de: " + controle.JogadorAtual.Nome);
         botaoCartaPorta = GameObject.Find("BotaoCartaPorta")?.GetComponent<Button>();
         botaoCartaPorta.onClick.RemoveAllListeners();
         botaoCartaPorta.onClick.AddListener(() => {

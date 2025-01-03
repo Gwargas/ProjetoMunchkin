@@ -11,8 +11,10 @@ public class EstadoFimTurno : EstadoJogo
         controle.Turno++;
         if(controle.JogadorAtual.Morto == true)
         {
+            Debug.Log("Revivendo" + controle.JogadorAtual.Nome);
             controle.ReviveMorto(controle.JogadorAtual);
         }
+        Debug.Log("Fim do Turno de: " + controle.JogadorAtual.Nome);
         controle.JogadorAtual = controle.getJogadorAtual();
         controle.TrocaEstado(EstadoPreparacao.CreateInstance<EstadoPreparacao>());
     }

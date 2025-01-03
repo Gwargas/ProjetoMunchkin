@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,20 +31,20 @@ public class Interferencia : MonoBehaviour
         get => cartasInterferencia;
     }
 
-    public void IniciarInteracao(Controle controle)
+    public void IniciarInteracao(Controle controle, Action onInteracaoCompleta)
     {
-        StartCoroutine(Interferir(controle));
+        StartCoroutine(Interferir(controle, onInteracaoCompleta));
     }
 
-    public IEnumerator Interferir(Controle controle)
+    public IEnumerator Interferir(Controle controle, Action onInteracaoCompleta)
     {
-        Debug.Log("Iniciou o metodo");
+        //Debug.Log("Iniciou o metodo");
         List<Jogador> jogadoresRestantes = controle.Jogadores.Where(j => j != controle.JogadorAtual).ToList();
         //Debug.Log("Jogadores Restantes: " + jogadoresRestantes.Count);
         menuInteracao.SetActive(true);
         bool botaoAjudaClick = false;
         bool botaoAtrapalhaClick = false;
-        Debug.Log("antes do foreach");
+        //Debug.Log("antes do foreach");
         foreach(Jogador jogador in jogadoresRestantes){
 
             nomeJogador.text = jogador.Nome;
@@ -65,13 +66,15 @@ public class Interferencia : MonoBehaviour
                 Debug.Log("Clicou em atrapalhar");
                 botaoAtrapalhaClick = true;
             });
-            Debug.Log("Antes do wait");
+            //Debug.Log("Antes do wait");
             yield return new WaitUntil(() => botaoAjudaClick || botaoAtrapalhaClick);
 
             botaoAjudaClick = false;
             botaoAtrapalhaClick = false;
         }
-        Debug.Log("Terminou o loop");
+        //Debug.Log("Terminou o loop");
         menuInteracao.SetActive(false);
+
+        onInteracaoCompleta?.Invoke();
     }
 }

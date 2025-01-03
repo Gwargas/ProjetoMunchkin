@@ -175,7 +175,7 @@ public class Controle : ScriptableObject
 
     public Jogador getJogadorAtual()
     {
-        int index = turno % jogadores.Count
+        int index = turno % jogadores.Count;
     }
 
 

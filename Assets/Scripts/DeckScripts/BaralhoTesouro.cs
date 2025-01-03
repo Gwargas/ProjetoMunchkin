@@ -5,9 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BaralhoTesouro", menuName = "Scriptable Objects/BaralhoTesouro")]
 public class BaralhoTesouro : Deck<CartaTesouro>
 {
-    public BaralhoTesouro(){}
-    public BaralhoTesouro(List<CartaTesouro> c) 
+
+    public override void Inicializa(List<CartaTesouro> c)
     {
+        // Cannot implicitly convert type 'System.Collections.Generic.List<Carta>' to 'System.Collections.Generic.List<CartaTesouro>'CS0029
         this.baralho = c;
     }
 

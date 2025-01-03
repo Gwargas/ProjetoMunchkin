@@ -7,35 +7,46 @@ class CreateCartaPorta {
     static public CartaPorta Cria(string[] info) {
 
         // 0 - classe, 1 - imagem, 2 - efeito, 3 - descricao, 4 - nome, 5 - nivel, 6 - niveisAGanhar, 7 - recompensa
-        string nome = info[5];
-        string descricao = " ";
+        string nome = info[4];
+        string descricao;
         Efeito efeito = CreateEfeito.Cria(info[2], info[3]);
         string imagem = info[1];
 
         switch (info[0]){
             case "CartaPorta":
-                // toda carta porta que não for especialização é uma aumenta monstro
-                // infelizmente CartaPorta é abstrata portando vira CartaMaldição
-                descricao = $"Com esta carta você {efeito.titulo}.";
-                return new CartaMaldição(nome, descricao, efeito, imagem);
+                // CartaPorta é abstrata portando vira CartaMaldição
+                descricao = $"Com esta carta voce {efeito.titulo}.";
+                CartaMaldição cartaPorta = CartaMaldição.CreateInstance<CartaMaldição>();
+                cartaPorta.Inicializa(nome, descricao, efeito, imagem);
+                return cartaPorta;
 
             case "CartaMonstro":
-                descricao = $"Monstro nível {info[5]}. Coisa ruim: você {efeito.titulo}.";
+                descricao = $"Monstro nivel {info[5]}. Coisa ruim: voce {efeito.titulo}.";
                 int nivel = int.Parse(info[5]);
                 int niveisAGanhar = int.Parse(info[6]);
                 int recompensa = int.Parse(info[7]);
-                return new CartaMonstro(nome, descricao, efeito, imagem, nivel, niveisAGanhar, recompensa);
+                CartaMonstro cartaMonstro = CartaMonstro.CreateInstance<CartaMonstro>();
+                cartaMonstro.Inicializa(nome, descricao, efeito, imagem, nivel, niveisAGanhar, recompensa);
+                return cartaMonstro;
 
             case "CartaMaldicao":
-                descricao = $"Ai não! Você {efeito.titulo}.";
-                return new CartaMaldição(nome, descricao, efeito, imagem);
+                descricao = $"Ai meu deus! Voce {efeito.titulo}.";
+                CartaMaldição cartaMaldicao = CartaMaldição.CreateInstance<CartaMaldição>();
+                cartaMaldicao.Inicializa(nome, descricao, efeito, imagem);
+                return cartaMaldicao;
 
             case "CartaClasse":
-                return new CartaClasse(nome, descricao, efeito, imagem);
+                descricao = $"Agora voce pode ser um nobre {nome}.";
+                CartaClasse cartaClasse = CartaClasse.CreateInstance<CartaClasse>();
+                cartaClasse.Inicializa(nome, descricao, efeito, imagem);
+                return cartaClasse;
 
             // CartaRaca
             default:
-                return new CartaRaca(nome, descricao, efeito, imagem);
+                descricao = $"Pra que ser humano? Seja um {nome}.";
+                CartaRaca cartaRaca = CartaRaca.CreateInstance<CartaRaca>();
+                cartaRaca.Inicializa(nome, descricao, efeito, imagem);
+                return cartaRaca;
         }   
     }
 }

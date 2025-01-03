@@ -4,9 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoPerdeElmo", menuName = "Scriptable Objects/EfeitoPerdeElmo")]
 public class EfeitoPerdeElmo : Efeito
 {
-    public EfeitoPerdeElmo(string titulo, int[] descricao) : base(titulo, descricao)
-    {
-    }
+
     public override void Apply(Controle controle) {
         bool removido = false;
         Hand mao = controle.JogadorAtual.Mao;

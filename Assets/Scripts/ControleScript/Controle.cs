@@ -109,7 +109,7 @@ public class Controle : ScriptableObject
         Jogador jogador;
         for (int i = 0; i < GameSettings.qtdJogadores; i++)
         {
-            jogador = new Jogador();
+            jogador = Jogador.CreateInstance<Jogador>();
             jogador.Nome = "Jogador " + i;
             //resto da inicialização de jogador
             jogadores.Add(jogador);
@@ -122,7 +122,7 @@ public class Controle : ScriptableObject
         // B: to achando que isso devia ir pra dentro da classe baralho
 
         // lista com as informações das cartas de porta
-        List<string[]> infosCartaPorta = Extrator.CsvToList("Factory/porta.csv");
+        List<string[]> infosCartaPorta = Extrator.CsvToList("Assets/Resources/porta.csv");
 
         // lista de cartas de porta
         List<CartaPorta> listaCartasPorta = new List<CartaPorta>();
@@ -134,17 +134,13 @@ public class Controle : ScriptableObject
             listaCartasPorta.Add(novaCarta);
         }
 
-        // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE PORTA
-
         //var xxx = baralhoPorta.Embaralha(listaCartasPorta); //Teste
-
-        baralhoPorta = new BaralhoPorta((baralhoPorta.Embaralha(listaCartasPorta)));//Compartilha a  mesma instancia que BaralhoPorta tem no inicio
-                                                                                    //Entender se isso se encaixa nessa técnica de polimorfismo
-
-
+        baralhoPorta = BaralhoPorta.CreateInstance<BaralhoPorta>();
+        baralhoPorta.Inicializa(baralhoPorta.Embaralha(listaCartasPorta)); //Compartilha a  mesma instancia que BaralhoPorta tem no inicio
+                                                                           //Entender se isso se encaixa nessa técnica de polimorfismo
 
         // lista com as informações das cartas de tesouro
-        List<string[]> infosCartaTesouro = Extrator.CsvToList("Factory/tesouro.csv");
+        List<string[]> infosCartaTesouro = Extrator.CsvToList("Assets/Resources/tesouro.csv");
 
         // lista de cartas de tesouro
         List<CartaTesouro> listaCartasTesouro = new List<CartaTesouro>();
@@ -156,9 +152,8 @@ public class Controle : ScriptableObject
             listaCartasTesouro.Add(novaCarta);
         }
 
-        baralhoTesouro = new BaralhoTesouro(baralhoTesouro.Embaralha(listaCartasTesouro));
-
-        // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE TESOURO
+        baralhoTesouro = BaralhoTesouro.CreateInstance<BaralhoTesouro>();
+        baralhoTesouro.Inicializa(baralhoTesouro.Embaralha(listaCartasTesouro));
 
     }
 

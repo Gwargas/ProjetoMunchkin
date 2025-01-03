@@ -3329,7 +3329,7 @@ MonoBehaviour:
   menuInteracao: {fileID: 1949684094}
   nomeJogador: {fileID: 41189695}
   botaoAjuda: {fileID: 1396104558}
-  botaoAtrapalha: {fileID: 1120434769}
+  botaoAtrapalha: {fileID: 0}
 --- !u!4 &1581997061
 Transform:
   m_ObjectHideFlags: 0
@@ -4286,7 +4286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1949684095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4301,6 +4301,7 @@ RectTransform:
   m_Children:
   - {fileID: 41189694}
   - {fileID: 684639509}
+  - {fileID: 1396104557}
   m_Father: {fileID: 504155494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5498,3 +5499,4 @@ SceneRoots:
   - {fileID: 1536051957}
   - {fileID: 1386188945}
   - {fileID: 1884655190}
+  - {fileID: 1581997061}

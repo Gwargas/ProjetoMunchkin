@@ -3,8 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoAumentaMonstro", menuName = "Scriptable Objects/EfeitoAumentaMonstro")]
 public class EfeitoAumentaMonstro : Efeito
 {
-    public EfeitoAumentaMonstro(string titulo, int[] descricao) : base(titulo, descricao) {}
-    
     public override void Apply(Controle controle)
     {
         CartaMonstro carta = controle.CartaJogo as CartaMonstro;

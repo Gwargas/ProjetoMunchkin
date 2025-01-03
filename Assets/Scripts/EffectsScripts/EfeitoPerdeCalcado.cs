@@ -4,9 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoPerdeCalcado", menuName = "Scriptable Objects/EfeitoPerdeCalcado")]
 public class EfeitoPerdeCalcado : Efeito
 {
-    public EfeitoPerdeCalcado(string titulo, int[] descricao) : base(titulo, descricao)
-    {
-    }
     
     public override void Apply(Controle controle) {
         bool removido = false;

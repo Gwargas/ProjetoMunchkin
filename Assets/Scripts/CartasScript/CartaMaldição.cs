@@ -4,10 +4,6 @@ using UnityEngine;
 public class CartaMaldição : CartaPorta
 {
     //[SerializeField] private Jogador vitima;
-
-    public CartaMaldição(string nome, string descricao, Efeito efeito, string imagem) : base(nome, descricao, efeito, imagem)
-    {
-    }
     
     public override void EfeitoCompra(Controle controle)
     {

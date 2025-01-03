@@ -4,9 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoPerdeItemGrande", menuName = "Scriptable Objects/EfeitoPerdeItemGrande")]
 public class EfeitoPerdeItemGrande : Efeito
 {
-    public EfeitoPerdeItemGrande(string titulo, int[] descricao) : base(titulo, descricao)
-    {
-    }
+
     public override void Apply(Controle controle) {
         bool removido = false;
         Hand mao = controle.JogadorAtual.Mao;

@@ -4,9 +4,6 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "EfeitoPerdeCalca", menuName = "Scriptable Objects/EfeitoPerdeCalca")]
 public class EfeitoPerdeCalca : Efeito
 {
-    public EfeitoPerdeCalca(string titulo, int[] descricao) : base(titulo, descricao)
-    {
-    }
     
     public override void Apply(Controle controle) {
         bool removido = false;

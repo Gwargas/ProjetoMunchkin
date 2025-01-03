@@ -15,6 +15,7 @@ public class Controle : ScriptableObject
     private EstadoJogo estadoAtual;
     private Carta cartaJogo;
     private Jogador jogadorAtual;
+    private int turno = 0; 
 
     public Carta CartaJogo
     {
@@ -22,12 +23,12 @@ public class Controle : ScriptableObject
         set => cartaJogo = value;
     }
 
-    public BaralhoPorta BaralhoPortas
+    public BaralhoPorta BaralhoPorta
     {
         get => baralhoPorta;
         set => baralhoPorta = value;
     }
-    public BaralhoTesouro BaralhoTesouros
+    public BaralhoTesouro BaralhoTesouro
     {
         get => baralhoTesouro;
         set => baralhoTesouro = value;
@@ -43,40 +44,16 @@ public class Controle : ScriptableObject
         get => jogadorAtual;
         set => jogadorAtual = value;
     }
+
+    public int Turno
+    {
+        get => turno;
+        set => turno = value;
+    }
     public int Dado()
     {
         return (UnityEngine.Random.Range(1, 7));
     }
-
-    /* (Note: David) REMOVER => Mecânica de estados substitui esses métodos 
-    public void Turno(int i)
-    {
-        Jogador jogador = jogadores[i];
-        Carta cartaComprada = baralhoPorta.CompraCarta();
-        cartaComprada.EfeitoCompra(this);
-        //O que fazer apos tirar a primeira carta de porta
-        //... //Implementar a questao de estados
-    }
-
-    public void Combate(Jogador jogador, CartaMonstro monstro)
-    {
-        //VerificaAjuda();
-        if (jogador.Bonus > monstro.Nivel){
-            for(int i = 0; i < monstro.Recompensa; i++){
-                Carta cartaComprada = baralhoTesouro.CompraCarta();
-                jogador.Mao.Add(cartaComprada);
-            }
-            jogador.Nivel = monstro.NiveisAGanhar;
-        }
-
-        else{
-            int dado = Dado();
-            if(dado < 5){
-                //Coisa Ruim
-            }
-        }
-    }
-    */
 
     public void DistribuirCartas()
     {
@@ -91,6 +68,18 @@ public class Controle : ScriptableObject
                 jogadores[i].Mao.Add(c);
             }
         }
+    }
+
+    public void ReviveMorto(Jogador jogador)
+    {
+        Carta c;
+            for(int j = 0; j < 4; j++){
+                c = baralhoPorta.CompraCarta();
+                jogador.Mao.Add(c);
+                c = baralhoTesouro.CompraCarta();
+                jogador.Mao.Add(c);
+            }
+            jogador.Morto = false;
     }
 
     public void DescartarCartaPorta(CartaPorta c)
@@ -108,7 +97,7 @@ public class Controle : ScriptableObject
         Jogador jogador;
         for (int i = 0; i < GameSettings.qtdJogadores; i++)
         {
-            jogador = new Jogador();
+            jogador = Jogador.CreateInstance<Jogador>();
             jogador.Nome = "Jogador " + i;
             //resto da inicialização de jogador
             jogadores.Add(jogador);
@@ -121,7 +110,7 @@ public class Controle : ScriptableObject
         // B: to achando que isso devia ir pra dentro da classe baralho
 
         // lista com as informações das cartas de porta
-        List<string[]> infosCartaPorta = Extrator.CsvToList("Factory/porta.csv");
+        List<string[]> infosCartaPorta = Extrator.CsvToList("Assets/Resources/porta.csv");
 
         // lista de cartas de porta
         List<CartaPorta> listaCartasPorta = new List<CartaPorta>();
@@ -133,17 +122,13 @@ public class Controle : ScriptableObject
             listaCartasPorta.Add(novaCarta);
         }
 
-        // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE PORTA
-
         //var xxx = baralhoPorta.Embaralha(listaCartasPorta); //Teste
-
-        baralhoPorta = new BaralhoPorta((baralhoPorta.Embaralha(listaCartasPorta)));//Compartilha a  mesma instancia que BaralhoPorta tem no inicio
-                                                                                    //Entender se isso se encaixa nessa técnica de polimorfismo
-
-
+        baralhoPorta = BaralhoPorta.CreateInstance<BaralhoPorta>();
+        baralhoPorta.Inicializa(baralhoPorta.Embaralha(listaCartasPorta)); //Compartilha a  mesma instancia que BaralhoPorta tem no inicio
+                                                                           //Entender se isso se encaixa nessa técnica de polimorfismo
 
         // lista com as informações das cartas de tesouro
-        List<string[]> infosCartaTesouro = Extrator.CsvToList("Factory/tesouro.csv");
+        List<string[]> infosCartaTesouro = Extrator.CsvToList("Assets/Resources/tesouro.csv");
 
         // lista de cartas de tesouro
         List<CartaTesouro> listaCartasTesouro = new List<CartaTesouro>();
@@ -155,9 +140,8 @@ public class Controle : ScriptableObject
             listaCartasTesouro.Add(novaCarta);
         }
 
-        baralhoTesouro = new BaralhoTesouro(baralhoTesouro.Embaralha(listaCartasTesouro));
-
-        // AI VOCÊ TEM QUE COLOCAR NO DECK DE CARTAS DE TESOURO
+        baralhoTesouro = BaralhoTesouro.CreateInstance<BaralhoTesouro>();
+        baralhoTesouro.Inicializa(baralhoTesouro.Embaralha(listaCartasTesouro));
 
     }
 
@@ -172,10 +156,10 @@ public class Controle : ScriptableObject
         estadoAtual.RunEstado(this);
     }
 
-    /*public Jogador getJogadorAtual()
-    {
-        int index =
-    }*/
+    public Jogador getJogadorAtual() {
+        int index = turno % jogadores.Count;
+        return jogadores[index];
+    }
 
 
 }

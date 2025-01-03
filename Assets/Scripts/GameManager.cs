@@ -14,22 +14,29 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {   
-        controle = new Controle();
-        //criar carta e dps add em Deck(em cada baralho)
+        //controle = new Controle();
+        controle = Controle.CreateInstance<Controle>();
+
         //listacarta.Add(new CartaMonstro());
+
+        //criar carta e dps add em Deck(em cada baralho)
         //Bea vai instanciar as cartas
-        //Teste::
+        controle.CriaCartas();
+        Carta c = controle.BaralhoPorta.CompraCarta();
+
         controle.CriaJogadores();
-        //controle.CriaCartas();
+        
         //controle.DistribuirCartas();
         controle.JogadorAtual = controle.Jogadores[0];
-        controle.TrocaEstado(new EstadoPreparacao());
-        //
-        //criações de todas as insts(deck,carta,jogador...)
+        controle.TrocaEstado(EstadoPreparacao.CreateInstance<EstadoPreparacao>());
     }
 
     void Update()
     {
+        // NullReferenceException: Object reference not set to an instance of an object
+        // Controle.RunEstadoAtual () (at Assets/Scripts/ControleScript/Controle.cs:172)
+        // GameManager.Update () (at Assets/Scripts/GameManager.cs:40)
+
         controle.RunEstadoAtual();
     }
 }

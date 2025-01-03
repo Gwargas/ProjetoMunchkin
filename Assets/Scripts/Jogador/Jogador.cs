@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Jogador", menuName = "Scriptable Objects/Jogador")]
@@ -9,10 +10,15 @@ public class Jogador : ScriptableObject
     private string nome;
     private int nivel = 1;
     private int bonus = 0;
-    private string raca = "humano"; //Botar um header para nao ter que importar toda hora
-    private string classe = "nada";
+    private string raca = "Humano"; //Botar um header para nao ter que importar toda hora
+    private string classe = "N/A";
     private bool morto = false;
-    private Hand mao = new Hand();
+    private Hand mao;
+
+    public void OnEnable()
+    {
+        mao = Hand.CreateInstance<Hand>();
+    }
 
     public int Nivel
     {

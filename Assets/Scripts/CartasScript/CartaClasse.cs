@@ -1,13 +1,11 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CartaClasse", menuName = "Scriptable Objects/CartaClasse")]
-public class CartaClasse : CartaPorta
-{
-    public CartaClasse(string nome, string descricao, Efeito efeito, string imagem) : base(nome, descricao, efeito, imagem)
-    {
-    }
+public class CartaClasse : CartaPorta {
+
     public override void EfeitoCompra(Controle controle)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Comprou carta classe");
+        controle.TrocaEstado(EstadoRacaClasse.CreateInstance<EstadoRacaClasse>());
     }
 }

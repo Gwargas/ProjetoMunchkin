@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoPerdeArmadura", menuName = "Scriptable Objects/EfeitoPerdeArmadura")]
 public class EfeitoPerdeArmadura : Efeito
 {
-    public EfeitoPerdeArmadura(string titulo, int[] descricao) : base(titulo, descricao) {}
 
     public override void Apply(Controle controle) {
         bool removido = false;

@@ -3,8 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EfeitoGanhaBonus", menuName = "Scriptable Objects/EfeitoGanhaBonus")]
 public class EfeitoGanhaBonus : Efeito
 {
-    public EfeitoGanhaBonus(string titulo, int[] descricao) : base(titulo, descricao) {}
-    
+  
     public override void Apply(Controle controle) {
         controle.JogadorAtual.Bonus += descricao[0];
     }

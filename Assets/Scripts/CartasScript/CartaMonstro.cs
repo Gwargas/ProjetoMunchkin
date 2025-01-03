@@ -7,8 +7,13 @@ public class CartaMonstro : CartaPorta
     [SerializeField] private int niveisAGanhar;
     [SerializeField] private int recompensa;
 
-    public CartaMonstro(string nome, string descricao, Efeito efeito, string imagem, int nivel, int niveisAGanhar, int recompensa) : base(nome, descricao, efeito, imagem)
+    // construtor 
+    public void Inicializa(string nome, string descricao, Efeito efeito, string imagem, int nivel, int niveisAGanhar, int recompensa)
     {
+        this.Nome = nome;
+        this.Descricao = descricao;
+        this.Efeito = efeito;
+        this.CartaPath = imagem;
         this.nivel = nivel;
         this.niveisAGanhar = niveisAGanhar;
         this.recompensa = recompensa;
@@ -35,6 +40,7 @@ public class CartaMonstro : CartaPorta
 
     public override void EfeitoCompra(Controle controle)
     {
-        controle.TrocaEstado(new EstadoCombate());
+        Debug.Log("Comprou carta monstro");
+        controle.TrocaEstado(EstadoCombate.CreateInstance<EstadoCombate>());
     }
 }

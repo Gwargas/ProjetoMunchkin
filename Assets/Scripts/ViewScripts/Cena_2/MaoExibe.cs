@@ -5,13 +5,15 @@ public class CartaManager : MonoBehaviour
 {
     [SerializeField] private RectTransform cartaModelo; // Prefab do GameObject "carta"
     [SerializeField] private RectTransform mao;         // Objeto pai onde as cartas serão adicionadas
-    [SerializeField] private List<Carta> naMao = new List<Carta>() {
-            new CartaMaldição("Carta show", "ai meu deus do ceu", null, "morto.jpg"),
-            new CartaMaldição("Carta beleza", "ai meu deus do ceu", null, "morto.jpg"),
-            new CartaMaldição("Carta incrivel", "ai meu deus do ceu", null, "morto.jpg"),
-        };
+    [SerializeField] private List<Carta> naMao = new List<Carta>() {};
     // public void CriarCartas(Hand maoDoJogador) {
     public void CriarCartas() {
+
+        for (int i = 0; i < 5; i++) {
+            CartaMaldição cartaPorta = CartaMaldição.CreateInstance<CartaMaldição>();
+            cartaPorta.Inicializa($"Carta {i+1}", $"Show de bola {i+5}", null, "morto.png");
+            naMao.Add(cartaPorta);
+        }
 
         // Garantir que os parâmetros estejam configurados
         if (cartaModelo == null || mao == null) {

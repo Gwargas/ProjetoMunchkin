@@ -2,9 +2,13 @@ using UnityEngine;
 
 public abstract class CartaPorta : Carta
 {
-    protected CartaPorta(string nome, string descricao, Efeito efeito, string cartaPath) : base(nome, descricao, efeito, cartaPath)
+    public void Inicializa(string nome, string descricao, Efeito efeito, string imagem)
     {
+        this.Nome = nome;
+        this.Descricao = descricao;
+        this.Efeito = efeito;
+        this.CartaPath = imagem;
     }
-
+    
     public override abstract void EfeitoCompra(Controle controle);
 }

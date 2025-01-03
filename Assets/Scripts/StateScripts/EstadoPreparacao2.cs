@@ -12,15 +12,18 @@ public class EstadoPreparacao2 : EstadoJogo
         botaoCartaPorta.onClick.RemoveAllListeners();
         botaoCartaPorta.onClick.AddListener(() => {
             Debug.Log("Botão Clicado");
+            Debug.Log("Escolheu Saquear a Sala");
             controle.TrocaEstado(EstadoSaquear.CreateInstance<EstadoSaquear>());
         });
     }
 
     public override void RunEstado(Controle controle)
     {
-        //Encrenca fica true quando ocorre a movimentacao das cartas
+        //Encrenca fica true quando ocorre a movimentação das cartas
         if(encrenca){
+            Debug.Log("Escolheu arrumar Encrenca");
             controle.TrocaEstado(EstadoEncrenca.CreateInstance<EstadoEncrenca>());
+            // Remover carta da mão do jogador e remover condicional (Estado Encrenca)   
         }
     }
 }

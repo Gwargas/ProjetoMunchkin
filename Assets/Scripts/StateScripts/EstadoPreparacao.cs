@@ -7,7 +7,6 @@ public class EstadoPreparacao : EstadoJogo
     public override void IniciarEstado(Controle controle)
     {
         botaoCartaPorta = GameObject.Find("BotaoCartaPorta")?.GetComponent<Button>();
-        botaoCartaPorta.onClick.RemoveAllListeners();
         botaoCartaPorta.onClick.AddListener(() => {
             Debug.Log("Botão Clicado");
             controle.TrocaEstado(new EstadoCompraPorta());
@@ -17,7 +16,5 @@ public class EstadoPreparacao : EstadoJogo
     public override void RunEstado(Controle controle)
     {
         // Movimentacao de cartas pelo jogador
-        //Depende da funcao de equipar/desequipar cartas
-
     }
 }

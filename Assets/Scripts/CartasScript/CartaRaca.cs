@@ -5,6 +5,6 @@ public class CartaRaca : CartaPorta
 {
     public override void EfeitoCompra(Controle controle)
     {
-        controle.TrocaEstado(new EstadoRacaClasse());
+        throw new System.NotImplementedException();
     }
 }

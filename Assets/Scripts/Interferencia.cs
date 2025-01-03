@@ -11,23 +11,10 @@ public class Interferencia : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nomeJogador;
     [SerializeField] private Button botaoAjuda;
     [SerializeField] private Button botaoAtrapalha;
-    private List<Jogador> ajudantes = new List<Jogador>();
-    private List<Carta> cartasInterferencia = new List<Carta>();
-    private Jogador ajudante;
 
     public GameObject MenuInteracao
     {
         get => menuInteracao;
-    }
-
-    public Jogador Ajudante
-    {
-        get => ajudante;
-    }
-
-    public List<Carta> CartasInterferencia
-    {
-        get => cartasInterferencia;
     }
 
     public void IniciarInteracao(Controle controle)
@@ -45,23 +32,17 @@ public class Interferencia : MonoBehaviour
         bool botaoAtrapalhaClick = false;
         Debug.Log("antes do foreach");
         foreach(Jogador jogador in jogadoresRestantes){
-
             nomeJogador.text = jogador.Nome;
 
             botaoAjuda.onClick.RemoveAllListeners();
             botaoAtrapalha.onClick.RemoveAllListeners();
 
             botaoAjuda.onClick.AddListener(() => {
-                ajudantes.Add(jogador);
                 Debug.Log("Clicou na ajuda");
                 botaoAjudaClick = true;
             });
 
             botaoAtrapalha.onClick.AddListener(() => {
-                // Tratar quais cartas podem interferir (so aumenta monstro ou outras)
-                // lidar com a visualização das cartas que podem interferir para escolha
-                // Atenção em questão de descarte do monstro (resetar o monstro ao seu original)
-                // adicionar as cartas de interferencia na lista
                 Debug.Log("Clicou em atrapalhar");
                 botaoAtrapalhaClick = true;
             });
@@ -70,6 +51,7 @@ public class Interferencia : MonoBehaviour
 
             botaoAjudaClick = false;
             botaoAtrapalhaClick = false;
+            Debug.Log("Fim da primeira Iteracao");
         }
         Debug.Log("Terminou o loop");
         menuInteracao.SetActive(false);

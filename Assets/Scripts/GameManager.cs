@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,22 +13,10 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
     void Start()
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     {   
         //controle = new Controle();
         controle = Controle.CreateInstance<Controle>();
 
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-    {
-        controle = new Controle();
-        //criar carta e dps add em Deck(em cada baralho)
->>>>>>> Stashed changes
         //listacarta.Add(new CartaMonstro());
 
         //criar carta e dps add em Deck(em cada baralho)
@@ -40,21 +27,9 @@ public class GameManager : MonoBehaviour
         controle.CriaJogadores();
         
         //controle.DistribuirCartas();
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         controle.JogadorAtual = controle.Jogadores[0];
         //controle.TrocaEstado(new EstadoPreparacao());
 
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-        controle.JogadorAtual = controle.Jogadores[controle.Turno % controle.Jogadores.Count];
-        controle.TrocaEstado(new EstadoPreparacao());
-        //
->>>>>>> Stashed changes
         //criações de todas as insts(deck,carta,jogador...)
     }
 

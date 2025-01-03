@@ -3,22 +3,13 @@ using UnityEngine;
 
 public class EstadoFimTurno : EstadoJogo
 {
-    public override void IniciarEstado(Controle controle)
+    public override void IniciarEstado(Controle constrole)
     {
-        if(controle.JogadorAtual.Mao.NaMao.Count > 5){
-            //fazer algo(descartar ou equipar/carregar)
-        }
-        controle.Turno++;
-        if(controle.JogadorAtual.Morto == true)
-        {
-            controle.ReviveMorto(controle.JogadorAtual);
-        }
-        controle.JogadorAtual = controle.Jogadores[controle.Turno % controle.Jogadores.Count];
-        controle.TrocaEstado(new EstadoPreparacao());
+        throw new System.NotImplementedException();
     }
 
     public override void RunEstado(Controle controle)
     {
-        
+        throw new System.NotImplementedException();
     }
 }

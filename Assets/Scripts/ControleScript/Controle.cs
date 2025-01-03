@@ -15,29 +15,12 @@ public class Controle : ScriptableObject
     private EstadoJogo estadoAtual;
     private Carta cartaJogo;
     private Jogador jogadorAtual;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     private int turno; 
-=======
-    private int turno = 0;
->>>>>>> Stashed changes
-=======
-    private int turno = 0;
->>>>>>> Stashed changes
-=======
-    private int turno = 0;
->>>>>>> Stashed changes
 
     public Carta CartaJogo
     {
         get => cartaJogo;
         set => cartaJogo = value;
-    }
-    public int Turno
-    {
-        get => turno;
-        set => turno = value;
     }
 
     public BaralhoPorta BaralhoPorta
@@ -45,7 +28,6 @@ public class Controle : ScriptableObject
         get => baralhoPorta;
         set => baralhoPorta = value;
     }
-
     public BaralhoTesouro BaralhoTesouro
     {
         get => baralhoTesouro;
@@ -110,18 +92,6 @@ public class Controle : ScriptableObject
                 jogadores[i].Mao.Add(c);
             }
         }
-    }
-
-    public void ReviveMorto(Jogador jogador)
-    {
-        Carta c;
-            for(int j = 0; j < 4; j++){
-                c = baralhoPorta.CompraCarta();
-                jogador.Mao.Add(c);
-                c = baralhoTesouro.CompraCarta();
-                jogador.Mao.Add(c);
-            }
-            jogador.Morto = false;
     }
 
     public void DescartarCartaPorta(CartaPorta c)
@@ -198,19 +168,10 @@ public class Controle : ScriptableObject
         estadoAtual.RunEstado(this);
     }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    public Jogador getJogadorAtual()
-    {
+    public Jogador getJogadorAtual() {
         int index = turno % jogadores.Count;
+        return jogadores[index];
     }
 
 
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }

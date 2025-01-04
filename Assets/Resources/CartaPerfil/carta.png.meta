@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 2609e45f014b08f44822c96cef853945
+guid: d642717ac75e5da40aed495878467011
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6713985402811772796
-    second: carregadas_0
-  - first:
-      213: -1086595890371364010
-    second: carregadas_1
-  - first:
-      213: 7936334986110980512
-    second: carregadas_2
-  - first:
-      213: -5849043364724438260
-    second: carregadas_3
+      213: 6143731726603372277
+    second: carta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: carregadas_0
+      name: carta_0
       rect:
         serializedVersion: 2
-        x: 161
-        y: 441
-        width: 46
-        height: 54
+        x: 0
+        y: 0
+        width: 760
+        height: 1179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7fe0c1d62edc2d50800000000000000
-      internalID: 6713985402811772796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carregadas_1
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 441
-        width: 30
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65bf3047bc2abe0f0800000000000000
-      internalID: -1086595890371364010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carregadas_2
-      rect:
-        serializedVersion: 2
-        x: 305
-        y: 441
-        width: 46
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a156a11f96832e60800000000000000
-      internalID: 7936334986110980512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carregadas_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 510
-        height: 406
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c0b8eb1ac0604dea0800000000000000
-      internalID: -5849043364724438260
+      spriteID: 5f6cd77547be24550800000000000000
+      internalID: 6143731726603372277
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -209,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      carregadas_0: 6713985402811772796
-      carregadas_1: -1086595890371364010
-      carregadas_2: 7936334986110980512
-      carregadas_3: -5849043364724438260
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

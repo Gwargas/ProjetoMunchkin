@@ -494,7 +494,6 @@ GameObject:
   - component: {fileID: 5513940996600475045}
   - component: {fileID: 5639233433809028147}
   - component: {fileID: 9003591579380227176}
-  - component: {fileID: 5014492755335875082}
   - component: {fileID: 4030874571231238874}
   - component: {fileID: 1547781381393533576}
   - component: {fileID: 8140082527341217632}
@@ -569,19 +568,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5014492755335875082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100855453885923130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeb98766bfac4c498668beb1e6bbdd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carta: {fileID: 0}
 --- !u!114 &4030874571231238874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,7 +630,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5014492755335875082}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CartaDestaca, Assembly-CSharp
           m_MethodName: MouseEntra
           m_Mode: 1
@@ -660,7 +646,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5014492755335875082}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CartaDestaca, Assembly-CSharp
           m_MethodName: MouseSai
           m_Mode: 1

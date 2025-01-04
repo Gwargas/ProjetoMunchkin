@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class CartaDestaca : MonoBehaviour {
-    [SerializeField] private RectTransform carta;
+    [SerializeField] public RectTransform carta;
     private int indiceInicial;
 
     public void MouseEntra() {

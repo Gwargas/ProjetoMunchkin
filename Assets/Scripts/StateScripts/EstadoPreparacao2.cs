@@ -20,6 +20,7 @@ public class EstadoPreparacao2 : EstadoJogo
     public override void RunEstado(Controle controle)
     {
         //Encrenca fica true quando ocorre a movimentação das cartas
+        //Quando a carta estiver na dropZone botar encrenca = true
         if(encrenca){
             Debug.Log("Escolheu arrumar Encrenca");
             controle.TrocaEstado(EstadoEncrenca.CreateInstance<EstadoEncrenca>());

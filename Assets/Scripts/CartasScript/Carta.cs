@@ -4,9 +4,9 @@ public abstract class Carta : ScriptableObject
 {
     [SerializeField] private string nome;
     [SerializeField] private string descricao;
-    [SerializeField] private Efeito efeito;
     [SerializeField] private string cartaPath;
-
+    [SerializeField] private Efeito efeito;
+    
     public string Nome
     {
         get => nome;

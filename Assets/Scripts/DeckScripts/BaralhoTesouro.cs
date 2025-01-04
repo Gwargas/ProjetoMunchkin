@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BaralhoTesouro", menuName = "Scriptable Objects/BaralhoTesouro")]
+
 public class BaralhoTesouro : Deck<CartaTesouro>
 {
 

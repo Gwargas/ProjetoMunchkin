@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class BaralhoPorta : Deck<CartaPorta>
         // Cannot implicitly convert type 'System.Collections.Generic.List<Carta>' to 'System.Collections.Generic.List<CartaTesouro>'CS0029
         this.baralho = c;
     }
+    
 
     public override Carta CompraCarta()
     {

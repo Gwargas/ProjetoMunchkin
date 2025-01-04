@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
         controle.JogadorAtual = controle.Jogadores[0];
 
         maoDisplay.Atualiza(controle);
+
         controle.TrocaEstado(EstadoPreparacao.CreateInstance<EstadoPreparacao>());
-        jogadoresHUD.Atualiza(controle);
     }
 
     void Update()
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         // GameManager.Update () (at Assets/Scripts/GameManager.cs:40)
 
         controle.RunEstadoAtual();
+        jogadoresHUD.Atualiza(controle);
     }
 }
 

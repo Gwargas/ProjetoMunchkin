@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,8 @@ public class Interferencia : MonoBehaviour
     [SerializeField] private GameObject menuAjudantes;
     [SerializeField] private Transform listaAjudantesBox;
     [SerializeField] private GameObject prefabAjudante;
+    [SerializeField] private Button recusar;
+    private bool recusou = false;
 
     public GameObject MenuInteracao
     {
@@ -97,6 +100,17 @@ public class Interferencia : MonoBehaviour
 
     public IEnumerator EscolherAjudante(Controle controle, Action<Jogador> onAjudanteSelecionado)
     {
+        recusar.onClick.RemoveAllListeners();
+        recusar.onClick.AddListener	(() => {
+            Debug.Log("Ajuda Recusada");
+            ajudante = null;
+            ajudantes.Clear();
+            ajudantes.TrimExcess();
+            menuAjudantes.SetActive(false);
+            onAjudanteSelecionado?.Invoke(ajudante);
+            recusou = true;
+        });
+
         Debug.Log("Numero de Ajudantes: " + ajudantes.Count);
         foreach(Transform child in listaAjudantesBox){
             Destroy(child.gameObject);
@@ -128,7 +142,7 @@ public class Interferencia : MonoBehaviour
                 onAjudanteSelecionado?.Invoke(ajudanteAtual);
             });
         }
-        yield return new WaitUntil(() => ajudante != null);
+        yield return new WaitUntil(() => ajudante != null || recusou);
 
         //menuAjudantes.SetActive(false);
     }

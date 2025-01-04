@@ -8,9 +8,10 @@ public class EstadoPreparacao : EstadoJogo
     {
         Debug.Log("Turno de: " + controle.JogadorAtual.Nome);
         botaoCartaPorta = GameObject.Find("BotaoCartaPorta")?.GetComponent<Button>();
-        botaoCartaPorta.onClick.RemoveAllListeners();
+        //botaoCartaPorta.onClick.RemoveAllListeners();
         botaoCartaPorta.onClick.AddListener(() => {
             Debug.Log("Botão Clicado");
+            botaoCartaPorta.onClick.RemoveAllListeners();
             controle.TrocaEstado(EstadoCompraPorta.CreateInstance<EstadoCompraPorta>());
         });
     }

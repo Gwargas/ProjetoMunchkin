@@ -494,9 +494,8 @@ GameObject:
   - component: {fileID: 5513940996600475045}
   - component: {fileID: 5639233433809028147}
   - component: {fileID: 9003591579380227176}
-  - component: {fileID: 4030874571231238874}
+  - component: {fileID: 7439079777929710917}
   - component: {fileID: 1547781381393533576}
-  - component: {fileID: 8140082527341217632}
   - component: {fileID: 9198328928026634906}
   - component: {fileID: 1263778814774476788}
   m_Layer: 6
@@ -568,7 +567,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4030874571231238874
+--- !u!114 &7439079777929710917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -577,10 +576,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6100855453885923130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7182bf8a6ea1544bc38d5b86b8e5b0, type: 3}
+  m_Script: {fileID: 11500000, guid: e27507ad020deda4f954e338faaf7940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
 --- !u!114 &1547781381393533576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +596,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4030874571231238874}
+        - m_Target: {fileID: 7439079777929710917}
           m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
           m_MethodName: StartDrag
           m_Mode: 1
@@ -609,12 +607,12 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 1
   - eventID: 14
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4030874571231238874}
+        - m_Target: {fileID: 7439079777929710917}
           m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
           m_MethodName: EndDrag
           m_Mode: 1
@@ -625,52 +623,7 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CartaDestaca, Assembly-CSharp
-          m_MethodName: MouseEntra
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CartaDestaca, Assembly-CSharp
-          m_MethodName: MouseSai
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &8140082527341217632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100855453885923130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeb98766bfac4c498668beb1e6bbdd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carta: {fileID: 5513940996600475045}
+          m_CallState: 1
 --- !u!61 &9198328928026634906
 BoxCollider2D:
   m_ObjectHideFlags: 0

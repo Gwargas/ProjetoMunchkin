@@ -14,8 +14,7 @@ public class BaralhoPorta : Deck<CartaPorta>
 
     public override Carta CompraCarta()
     {
-        if (baralho.Count == 0)
-        {
+        if (baralho.Count == 0){
             baralho = Embaralha(descarte);
             descarte.Clear();
         }
@@ -29,13 +28,7 @@ public class BaralhoPorta : Deck<CartaPorta>
         return l.OrderBy(x => UnityEngine.Random.Range(0f, 1f)).ToList();
     }
 
-    public override void Descarte(CartaPorta c)
-    {
+    public override void Descarte(CartaPorta c){
         descarte.Add(c);
-    }
-    public List<CartaPorta> Baralho
-    {
-        get => baralho;
-        set => baralho = value;
     }
 }

@@ -34,11 +34,13 @@ public class Interferencia : MonoBehaviour
     public List<Carta> CartasInterferencia
     {
         get => cartasInterferencia;
+        set => cartasInterferencia = value;
     }
 
     public List<Jogador> Ajudantes
     {
         get => ajudantes;
+        set => ajudantes = value;
     }
 
     public void IniciarInteracao(Controle controle, Action onInteracaoCompleta)
@@ -99,13 +101,14 @@ public class Interferencia : MonoBehaviour
         foreach(Transform child in listaAjudantesBox){
             Destroy(child.gameObject);
         }
+        Debug.Log("Lista de botoes resetada");
 
-        if (ajudantes.Count == 0)
+        /*if (ajudantes.Count == 0)
         {
             Debug.Log("Nenhum ajudante disponível.");
             menuAjudantes.SetActive(false);
             yield break;
-        }
+        }*/
 
         menuAjudantes.SetActive(true);
         foreach(Jogador ajudanteAtual in ajudantes){
@@ -120,12 +123,14 @@ public class Interferencia : MonoBehaviour
                 Debug.Log("Ajudante escolhido: " + ajudanteAtual.Nome);
                 ajudante = ajudanteAtual;
                 menuAjudantes.SetActive(false);
+                ajudantes.Clear();
+                ajudantes.TrimExcess();
                 onAjudanteSelecionado?.Invoke(ajudanteAtual);
             });
         }
         yield return new WaitUntil(() => ajudante != null);
 
-        menuAjudantes.SetActive(false);
+        //menuAjudantes.SetActive(false);
     }
       
 }

@@ -28,8 +28,8 @@ public class EstadoCombate : EstadoJogo
             cartasInterferencia = inter.CartasInterferencia;
             if(inter.Ajudantes.Count == 0)
             {
+                Debug.Log("Sem ajudantes");
                 TratarCombate(controle);
-                return;
             }
             else{
                 inter.IniciarEscolhaAjudante(controle, (Jogador ajudanteEscolhido) =>
@@ -51,9 +51,14 @@ public class EstadoCombate : EstadoJogo
         Debug.Log("Tratando Combate");
         //Achar uma solucao melhor para essa parte, sem o uso do C
         CartaMonstro monstro = (CartaMonstro)controle.CartaJogo;
-        foreach(Carta carta in cartasInterferencia){
-            carta.Efeito.Apply(controle);
+        if(cartasInterferencia.Count > 0)
+        {
+            Debug.Log("Aplicando efeitos de interferencias");
+            foreach(Carta carta in cartasInterferencia){
+                carta.Efeito.Apply(controle);
+            }
         }
+        
         int tesouros = monstro.Recompensa;
         int dado;
         if(ajudante != null)
@@ -81,13 +86,15 @@ public class EstadoCombate : EstadoJogo
                     Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
-                Debug.Log("Fugiu");
+                //Debug.Log("Fugiu");
             }
         }
         else{
             if(controle.JogadorAtual.Nivel + controle.JogadorAtual.Bonus > monstro.Nivel)
             {  
                 Debug.Log("Venceu o monstro");
+                controle.JogadorAtual.Nivel += monstro.NiveisAGanhar;
+                
                 for(int k = 0; k < tesouros; k++)
                 {
                     controle.JogadorAtual.Mao.Add(controle.BaralhoTesouro.CompraCarta());
@@ -99,16 +106,24 @@ public class EstadoCombate : EstadoJogo
                     Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
-                Debug.Log("Fugiu");
+                //Debug.Log("Fugiu");
             }
         }
         Debug.Log("Fim do Combate");
+        if(controle.JogadorAtual.Nivel >= 10){
+            //jogar para tela final
+        }
 
         foreach(Carta carta in cartasInterferencia){
             carta.Efeito.Revert(controle);
             controle.BaralhoPorta.Descarte((CartaPorta)carta);
         }
         controle.BaralhoPorta.Descarte(monstro);
+
+        inter.CartasInterferencia.Clear();
+        //inter.CartasInterferencia.TrimExcess();
+        inter.Ajudantes.Clear();
+        //inter.Ajudantes.TrimExcess();
         controle.TrocaEstado(EstadoFimTurno.CreateInstance<EstadoFimTurno>());
         
     }

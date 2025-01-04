@@ -8,7 +8,6 @@ public class BaralhoTeste : MonoBehaviour
 {
     Controle controle;
     public BaralhoPorta deck;
-
     public List<CartaPorta> container = new List<CartaPorta>();
 
     public int x;

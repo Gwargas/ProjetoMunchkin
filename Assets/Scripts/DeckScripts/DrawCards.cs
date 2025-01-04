@@ -18,7 +18,6 @@ public class DrawCards : MonoBehaviour
     {
         for (var i = 0; i < 5; i++)
         {
-
             GameObject playercard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
             playercard.transform.SetParent(Hand.transform, false);
         }

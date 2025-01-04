@@ -3,18 +3,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager Instance;
     public Controle controle;
     //public static List<Carta> listacarta = new List<Carta> { };
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if(Instance == null) Instance = this;
         else Destroy(gameObject);
     }
     void Start()
-    {
+    {   
         //controle = new Controle();
         controle = Controle.CreateInstance<Controle>();
 
@@ -26,7 +25,7 @@ public class GameManager : MonoBehaviour
         Carta c = controle.BaralhoPorta.CompraCarta();
 
         controle.CriaJogadores();
-
+        
         //controle.DistribuirCartas();
         controle.JogadorAtual = controle.Jogadores[0];
         controle.TrocaEstado(EstadoPreparacao.CreateInstance<EstadoPreparacao>());
@@ -37,6 +36,7 @@ public class GameManager : MonoBehaviour
         // NullReferenceException: Object reference not set to an instance of an object
         // Controle.RunEstadoAtual () (at Assets/Scripts/ControleScript/Controle.cs:172)
         // GameManager.Update () (at Assets/Scripts/GameManager.cs:40)
+
         controle.RunEstadoAtual();
     }
 }

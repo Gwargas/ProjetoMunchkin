@@ -12,7 +12,7 @@ class CreateEfeito {
             case "EfeitoAumentaMonstro":
                 int nivel = int.Parse(atributos[0]);
                 int tesouro = int.Parse(atributos[1]);
-                string titulo = $"ajusta o nível do monstro em {nivel} e o tesouro em {tesouro}";
+                string titulo = $"ajusta o nivel do monstro em {nivel} e o tesouro em {tesouro}";
                 EfeitoAumentaMonstro efeitoAumentaMonstro = EfeitoAumentaMonstro.CreateInstance<EfeitoAumentaMonstro>();
                 efeitoAumentaMonstro.Inicializa(titulo, new int[] {nivel, tesouro});
                 return efeitoAumentaMonstro;
@@ -30,13 +30,13 @@ class CreateEfeito {
                 return efeitoPerdeArmadura;
 
             case "EfeitoPerdeCalca":
-                titulo = "perde sua calça";
+                titulo = "perde sua calca";
                 EfeitoPerdeCalca efeitoPerdeCalca = EfeitoPerdeCalca.CreateInstance<EfeitoPerdeCalca>();
                 efeitoPerdeCalca.Inicializa(titulo, new int[] {});
                 return efeitoPerdeCalca;
 
             case "EfeitoPerdeCalcado":
-                titulo = "perde seu calçado";
+                titulo = "perde seu calcado";
                 EfeitoPerdeCalcado efeitoPerdeCalcado = EfeitoPerdeCalcado.CreateInstance<EfeitoPerdeCalcado>();
                 efeitoPerdeCalcado.Inicializa(titulo, new int[] {});
                 return efeitoPerdeCalcado;
@@ -67,27 +67,27 @@ class CreateEfeito {
 
             case "EfeitoPerdeNivel":
                 nivel = int.Parse(atributos[0]);
-                titulo = (nivel != 1) ? $"perde {nivel} níveis" : "perde 1 nível";
+                titulo = (nivel != 1) ? $"perde {nivel} niveis" : "perde 1 nivel";
                 EfeitoPerdeNivel efeitoPerdeNivel = EfeitoPerdeNivel.CreateInstance<EfeitoPerdeNivel>();
                 efeitoPerdeNivel.Inicializa(titulo, new int[] {nivel});
                 return efeitoPerdeNivel;
 
             case "EfeitoPerdeRaca":
-                titulo = "perde sua raça e volta a ser humano";
+                titulo = "perde sua raca e volta a ser humano";
                 EfeitoPerdeRaça efeitoPerdeRaca = EfeitoPerdeRaça.CreateInstance<EfeitoPerdeRaça>();
                 efeitoPerdeRaca.Inicializa(titulo, new int[] {});
                 return efeitoPerdeRaca;
 
             case "EfeitoGanhaBonus":
                 int bonus = int.Parse(atributos[0]);
-                titulo = $"ganha um bônus de {bonus}";
+                titulo = $"ganha um bonus de {bonus}";
                 EfeitoGanhaBonus efeitoGanhaBonus = EfeitoGanhaBonus.CreateInstance<EfeitoGanhaBonus>();
                 efeitoGanhaBonus.Inicializa(titulo, new int[] {bonus});
                 return efeitoGanhaBonus;
 
             case "EfeitoGanhaNivel":
                 nivel = int.Parse(atributos[0]);
-                titulo = (nivel != 1) ? $"ganha {nivel} níveis" : "ganha 1 nível";
+                titulo = (nivel != 1) ? $"ganha {nivel} niveis" : "ganha 1 nivel";
                 EfeitoGanhaNivel efeitoGanhaNivel = EfeitoGanhaNivel.CreateInstance<EfeitoGanhaNivel>();
                 efeitoGanhaNivel.Inicializa(titulo, new int[] {nivel});
                 return efeitoGanhaNivel;

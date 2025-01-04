@@ -14,6 +14,5 @@
 
 ### Diagramas
 
-<img src="https://drive.google.com/uc?id=1AFQGMk2hiTPSMlCgYX9Ialu1EJBZY9aI" width="800" alt="Diagrama de Classes"/>
-
+<img src="https://drive.google.com/uc?id=1CxDpc_ckjDGzCjCWPGXkoCincAuY5MTH" width="800" alt="Diagrama de Classes"/>
 

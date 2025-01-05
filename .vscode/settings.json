@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ProjetoMunchkin.sln"
+    "dotnet.defaultSolution": "testeUnity.sln"
 }

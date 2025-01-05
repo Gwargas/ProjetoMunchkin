@@ -6,6 +6,7 @@ using System.Net.WebSockets;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EstadoCombate : EstadoJogo
@@ -111,7 +112,7 @@ public class EstadoCombate : EstadoJogo
         }
         Debug.Log("Fim do Combate");
         if(controle.JogadorAtual.Nivel >= 10){
-            //jogar para tela final
+            SceneManager.LoadScene("CenaFinal");
         }
 
         foreach(Carta carta in cartasInterferencia){

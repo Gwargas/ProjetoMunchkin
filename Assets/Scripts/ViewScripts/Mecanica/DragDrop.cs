@@ -32,9 +32,12 @@ public class DragDrop : MonoBehaviour {
             Debug.Log("Entrou na area de combate");
         } 
 
-        if (collision.transform.name == "JogadorImagem") {
+        else if (collision.transform.name == "JogadorImagem") {
             isOverDropZone = 1;
             Debug.Log("Vai equipar!");
+        }
+        else{
+            isOverDropZone = -1;
         }
 
         dropZone = collision.gameObject;

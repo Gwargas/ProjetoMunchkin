@@ -17,6 +17,7 @@ public class BaralhoPorta : Deck<CartaPorta>
     public override Carta CompraCarta()
     {
         if (baralho.Count == 0){
+            Debug.Log("Baralho vazio, embaralhando descarte");
             baralho = Embaralha(descarte);
             descarte.Clear();
         }
@@ -32,5 +33,6 @@ public class BaralhoPorta : Deck<CartaPorta>
 
     public override void Descarte(CartaPorta c){
         descarte.Add(c);
+        Debug.Log("Descare " + descarte[^1].Nome);
     }
 }

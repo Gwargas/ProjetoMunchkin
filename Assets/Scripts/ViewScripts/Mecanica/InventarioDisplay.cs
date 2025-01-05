@@ -42,6 +42,10 @@ public class InventarioDisplay : MonoBehaviour {
         string dono = transform.Find("Dono").GetComponent<TextMeshProUGUI>().text;
         Jogador jogador = controle.Jogadores.Find(j => j.Nome.Equals(dono));
 
+        foreach (Carta carta in jogador.Mao.EmUso) {
+            Debug.Log("Carta: " + carta.Nome);
+        }
+
         if(jogador.Mao.EmUso.Count != areaCartas.childCount) {
             foreach (Carta carta in jogador.Mao.EmUso) {
                 cartaDisplay.Atualiza(carta);

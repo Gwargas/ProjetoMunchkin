@@ -10,9 +10,7 @@ public class EfeitoGanhaClasse : Efeito
             List<Carta> emUso = controle.JogadorAtual.Mao.EmUso;
 
             for (int i = 0; i < emUso.Count; i++) {
-                if (emUso[i].Nome.ToLower().Equals("guerreiro")
-                    || emUso[i].Nome.ToLower().Equals("clerigo")
-                    || emUso[i].Nome.ToLower().Equals("mago")) {
+                if (emUso[i].GetType() == typeof(CartaClasse) && !emUso[i].Nome.ToLower().Equals(this.titulo.ToLower())) {
                     controle.DescartarCartaPorta((CartaPorta)emUso[i]);
                     emUso.RemoveAt(i);
                     controle.JogadorAtual.Mao.EmUso = emUso;

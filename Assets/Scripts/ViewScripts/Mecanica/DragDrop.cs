@@ -70,10 +70,8 @@ public class DragDrop : MonoBehaviour {
         } else if (isOverDropZone == 1 && RemoveCartaUso()) {
             Debug.Log("Equipa!");
             
-        } else if (isOverDropZone == 2) {
+        } else if (isOverDropZone == 2 && RemoveMaldicao()) {
             Debug.Log("Amaldiçoa!");
-            transform.position = startPosition;
-            transform.SetParent(startParent.transform, false);
 
         } else {
             transform.position = startPosition;
@@ -116,6 +114,34 @@ public class DragDrop : MonoBehaviour {
                 controle.JogadorAtual.Mao.equiparItem(naMao[i]);
                 naMao[i].Efeito.Apply(controle);
                 controle.JogadorAtual.Mao.NaMao.RemoveAt(i);
+                break;
+            }
+        }
+
+        return true;
+    }
+
+    private bool RemoveMaldicao() {
+        List<Carta> naMao = controle.JogadorAtual.Mao.NaMao;
+        string childNome = transform.name;
+
+        for (int i = 0; i < naMao.Count; i++) {
+            if (naMao[i].Nome.Equals(childNome)) {
+                if (naMao[i].GetType() != typeof(CartaMaldição)) {
+                    return false;
+                }
+
+                Jogador jogadorPrincipal = controle.JogadorAtual;
+                foreach (Jogador jogadorSecundario in controle.Jogadores) {
+                    if (!jogadorSecundario.Nome.Equals(jogadorPrincipal.Nome)) {
+                        controle.JogadorAtual = jogadorSecundario;
+                        naMao[i].Efeito.Apply(controle);
+                        Debug.Log($"Aplicando efeito em {controle.JogadorAtual.Nome}");
+                    }
+                }
+                controle.JogadorAtual = jogadorPrincipal;
+                controle.JogadorAtual.Mao.NaMao.RemoveAt(i);
+                
                 break;
             }
         }

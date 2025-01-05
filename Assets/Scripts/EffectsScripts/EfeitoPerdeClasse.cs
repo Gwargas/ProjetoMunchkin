@@ -10,14 +10,12 @@ public class EfeitoPerdeClasse : Efeito
 
         for (int i = 0; i < emUso.Count; i++) {
             if (emUso[i].GetType() == typeof(CartaClasse)) {
-                if (emUso[i].Nome.ToLower() is not "nada") {
-                    emUso.RemoveAt(i);
-                    controle.JogadorAtual.Classe = "nada";
-                    mao.EmUso = emUso;
-                    controle.JogadorAtual.Mao = mao;
-                    controle.DescartarCartaPorta((CartaPorta)emUso[i]);
-                    break;
-                }
+                emUso.RemoveAt(i);
+                controle.JogadorAtual.Classe = "nada";
+                mao.EmUso = emUso;
+                controle.JogadorAtual.Mao = mao;
+                controle.DescartarCartaPorta(emUso[i] as CartaPorta);
+                break;
             }
         }
     }

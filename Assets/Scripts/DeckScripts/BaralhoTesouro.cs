@@ -16,6 +16,7 @@ public class BaralhoTesouro : Deck<CartaTesouro>
     public override Carta CompraCarta()
     {
         if (baralho.Count == 0){
+            Debug.Log("Baralho vazio, embaralhando descarte");
             baralho = Embaralha(descarte);
             descarte.Clear();
         }

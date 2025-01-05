@@ -9,15 +9,15 @@ public class EfeitoPerdeRaça : Efeito
         List<Carta> emUso = mao.EmUso;
 
         for (int i = 0; i < emUso.Count; i++) {
-            CartaPorta cartaPorta = (CartaPorta)emUso[i];
-
-            if (cartaPorta.Nome.ToLower() is not "humano") {
-                emUso.RemoveAt(i);
-                controle.JogadorAtual.Raca = "humano";
-                mao.EmUso = emUso;
-                controle.JogadorAtual.Mao = mao;
-                controle.DescartarCartaPorta(cartaPorta);
-                break;
+            if (emUso[i].GetType() == typeof(CartaRaca)) {
+                if (emUso[i].Nome.ToLower() is not "humano") {
+                    emUso.RemoveAt(i);
+                    controle.JogadorAtual.Raca = "humano";
+                    mao.EmUso = emUso;
+                    controle.JogadorAtual.Mao = mao;
+                    controle.DescartarCartaPorta((CartaPorta)emUso[i]);
+                    break;
+                }
             }
         }
     }

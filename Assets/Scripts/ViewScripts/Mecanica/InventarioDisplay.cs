@@ -7,28 +7,37 @@ using Unity.VisualScripting;
 
 public class InventarioDisplay : MonoBehaviour {
  
-    [SerializeField] public GameObject menuInventario;
     [SerializeField] public RectTransform areaCartas;
     [SerializeField] private CartaDisplay cartaDisplay;
+    [SerializeField] public GameObject menuInventario;
+    private GameObject areaCombate;
 
     private Controle controle;
 
     private void Start(){
         controle = GameObject.Find("GameManager").GetComponent<GameManager>().controle;
-        //cartaDisplay = menuInventario.GetComponent<CartaDisplay>();
-        //areaCartas = cartaDisplay.areaCartas;
+        areaCombate = GameObject.Find("AreaCombate");
+
+        if (menuInventario == null) {
+            menuInventario = GameObject.Find("ViewManager").GetComponent<InventarioDisplay>().menuInventario;
+            cartaDisplay = menuInventario.GetComponent<CartaDisplay>();
+        }
 
         transform.GetComponent<Button>().onClick.RemoveAllListeners();
         transform.GetComponent<Button>().onClick.AddListener(
             () => {
                 Debug.Log($"cliquei para abrir {transform.Find("Dono").GetComponent<TextMeshProUGUI>().text}");
+                AbreInventario();
             }
         );
     }
 
     public void AbreInventario() {
-        GameObject.Find("AreaCombate").SetActive(false);
+        areaCombate.SetActive(false);
         menuInventario.SetActive(true);
+
+        cartaDisplay = GameObject.Find("CartasEmUso").GetComponent<CartaDisplay>();
+        areaCartas = cartaDisplay.areaCartas;
 
         string dono = transform.Find("Dono").GetComponent<TextMeshProUGUI>().text;
         Jogador jogador = controle.Jogadores.Find(j => j.Nome.Equals(dono));
@@ -42,7 +51,7 @@ public class InventarioDisplay : MonoBehaviour {
 
     public void FechaInventario() {
 
-        GameObject.Find("AreaCombate").SetActive(true);
+        areaCombate.SetActive(true);
         menuInventario.SetActive(false);
 
         foreach (Transform child in areaCartas) {

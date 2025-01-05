@@ -42,6 +42,7 @@ public class JogadoresHUD : MonoBehaviour {
                 Sprite classe = Resources.Load<Sprite>($"CartaPerfil/{jogador.Classe.ToLower()}");
                 jogadorObject.transform.Find("Badge").Find("Classe").GetComponent<UnityEngine.UI.Image>().sprite = classe;
             }
+            jogadorObject.transform.Find("JogadorNome").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = jogador.Nome;
 
             jogadorObject.transform.Find("JogadorNivel").Find("Nivel").GetComponent<TextMeshProUGUI>().text = jogador.Nivel.ToString();
             jogadorObject.transform.Find("JogadorBonus").Find("Bonus").GetComponent<TextMeshProUGUI>().text = jogador.Bonus.ToString();

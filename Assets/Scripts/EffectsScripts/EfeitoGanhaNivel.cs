@@ -9,7 +9,8 @@ public class EfeitoGanhaNivel : Efeito
         {
             controle.JogadorAtual.Nivel += descricao[0];
             Debug.Log("Nivel teste");
-        }     
+        } 
+        Debug.Log("Impossível chegar ao nível 10 sem matar um monstro");    
         
     }
 

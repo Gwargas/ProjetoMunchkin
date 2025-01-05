@@ -25,7 +25,7 @@ public class Hand : ScriptableObject
     {
         emUso.Add(c);
     }
-    public void desequiparItem(Carta c)
+    public void DescarregarItem(Carta c)
     {
         carregada.Remove(c);
         naMao.Add(c);
@@ -41,5 +41,11 @@ public class Hand : ScriptableObject
     {
         get => naMao;
         set => naMao = value;
+    }
+
+    public List<Carta> EmUso
+    {
+        get => emUso;
+        set => emUso = value;
     }
 }

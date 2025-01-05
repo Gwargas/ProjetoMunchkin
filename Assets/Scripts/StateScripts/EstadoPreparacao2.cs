@@ -9,10 +9,11 @@ public class EstadoPreparacao2 : EstadoJogo
     public override void IniciarEstado(Controle controle)
     {
         botaoCartaPorta = GameObject.Find("BotaoCartaPorta")?.GetComponent<Button>();
-        botaoCartaPorta.onClick.RemoveAllListeners();
+        //botaoCartaPorta.onClick.RemoveAllListeners();
         botaoCartaPorta.onClick.AddListener(() => {
             Debug.Log("Botão Clicado");
             Debug.Log("Escolheu Saquear a Sala");
+            botaoCartaPorta.onClick.RemoveAllListeners();
             controle.TrocaEstado(EstadoSaquear.CreateInstance<EstadoSaquear>());
         });
     }

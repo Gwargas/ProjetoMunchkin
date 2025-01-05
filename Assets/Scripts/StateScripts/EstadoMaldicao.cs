@@ -9,7 +9,7 @@ public class EstadoMaldicao : EstadoJogo
         Efeito efeito = c.Efeito;
 
         if (efeito.GetType() != typeof(EfeitoAumentaMonstro)) {
-            Debug.Log("Efeito não é de aumento de monstro");
+            Debug.Log(efeito.titulo);
             efeito.Apply(controle);
             Debug.Log("Maldição aplicada");
             controle.DescartarCartaPorta((CartaPorta)c);

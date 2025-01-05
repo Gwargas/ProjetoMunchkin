@@ -13,6 +13,7 @@ public class InventarioDisplay : MonoBehaviour {
     private GameObject areaCombate;
 
     private Controle controle;
+    private bool onClicked = false;
 
     private void Start(){
         controle = GameObject.Find("GameManager").GetComponent<GameManager>().controle;
@@ -22,10 +23,11 @@ public class InventarioDisplay : MonoBehaviour {
             menuInventario = GameObject.Find("ViewManager").GetComponent<InventarioDisplay>().menuInventario;
             cartaDisplay = menuInventario.GetComponent<CartaDisplay>();
         }
-
+        
         transform.GetComponent<Button>().onClick.RemoveAllListeners();
         transform.GetComponent<Button>().onClick.AddListener(
             () => {
+                //transform.GetComponent<Button>().onClick.RemoveAllListeners();
                 Debug.Log($"cliquei para abrir {transform.Find("Dono").GetComponent<TextMeshProUGUI>().text}");
                 AbreInventario();
             }
@@ -44,13 +46,18 @@ public class InventarioDisplay : MonoBehaviour {
         Hand jogadorMao = jogador.Mao;
         List<Carta> cartasEmUso = jogadorMao.EmUso;
 
+        if(cartasEmUso.Count != areaCartas.childCount) {
+            foreach (Carta carta in cartasEmUso) {
+            cartaDisplay.Atualiza(carta);
+            }   
+        }
+        /*
         foreach (Carta carta in cartasEmUso) {
             cartaDisplay.Atualiza(carta);
-        }
+        }*/
     }
 
     public void FechaInventario() {
-
         areaCombate.SetActive(true);
         menuInventario.SetActive(false);
 

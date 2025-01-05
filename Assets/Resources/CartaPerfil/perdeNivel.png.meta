@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 90bed026e44466845af2ac4dbefc63c3
+guid: ba678980e353efc4ca9e154a3c795b5f
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -106,37 +106,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: perdeNivel_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 150
-        width: 46
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b5bb00e0e5abce900800000000000000
-      internalID: 715151353969687387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: perdeNivel_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 356
-        height: 347
+        width: 316
+        height: 344
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,33 +127,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: perdeNivel_2
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 84
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d076e08a2170d7660800000000000000
-      internalID: 7385066740667803405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b0097e25a08b7b42b8c6b23feec815e
     internalID: 0
     vertices: []
     indices: 

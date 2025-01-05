@@ -7,7 +7,7 @@ public class EstadoSaquear : EstadoJogo
     public override void IniciarEstado(Controle controle)
     {
         Debug.Log("Saqueando a Sala");
-        Debug.Log("Comprando Carta Porta");
+        //Debug.Log("Comprando Carta Porta");
         Carta c = controle.BaralhoPorta.CompraCarta();
         controle.JogadorAtual.Mao.Add(c);
         controle.TrocaEstado(EstadoFimTurno.CreateInstance<EstadoFimTurno>());

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 879a6878ac006be4cabbee4f67b2859c
+guid: 241f15d37d5fc884ea219f6df1e14a13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2038774060953781090
-    second: racaAnao_0
+      213: 24033182862075866
+    second: fundoVertical_0
+  - first:
+      213: -4197867490516421990
+    second: fundoVertical_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: racaAnao_0
+      name: fundoVertical_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 374
-        height: 327
+        width: 1125
+        height: 1533
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2634e60e43e2b4c10800000000000000
-      internalID: 2038774060953781090
+      spriteID: ad7e05f6d02655000800000000000000
+      internalID: 24033182862075866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fundoVertical_1
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 0
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92bb9532cd2eb5c0800000000000000
+      internalID: -4197867490516421990
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      racaAnao_0: 2038774060953781090
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

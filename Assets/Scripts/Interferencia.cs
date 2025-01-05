@@ -96,8 +96,19 @@ public class Interferencia : MonoBehaviour
                     foreach(Carta carta in cartasDeAumentaMonstro){
                         Debug.Log(carta.Nome);
                         cartaDisplay.Atualiza(carta);
+
+                        Transform cartaView = painelCartasInterferencia.Find(carta.Nome);
+                        Button botaoCarta = cartaView.Find("BotaoCarta").GetComponent<Button>();
+                        botaoCarta.onClick.AddListener(() => {
+                            botaoCarta.onClick.RemoveAllListeners();
+                            cartasInterferencia.Add(carta);
+                            jogador.Mao.NaMao.Remove(carta);
+                            Debug.Log("Carta adicionada: " + carta.Nome);
+                            botaoAtrapalhaClick = true;
+                        }); 
                     }
                 }
+
                 cartasDeAumentaMonstro.Clear();
                 cartasDeAumentaMonstro.TrimExcess();
             });

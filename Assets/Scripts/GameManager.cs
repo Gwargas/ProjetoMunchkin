@@ -33,8 +33,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        maoDisplay.Atualiza(controle);
-        jogadoresHUD.Atualiza(controle);
+        maoDisplay.Atualiza(controle, jogadoresHUD);
         controle.RunEstadoAtual();
     }
 }

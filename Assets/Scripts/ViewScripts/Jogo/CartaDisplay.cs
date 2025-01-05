@@ -22,14 +22,15 @@ public class CartaDisplay : MonoBehaviour {
         if (carta.GetType() == typeof(CartaMonstro)) {
             CartaMonstro cartaMonstro = carta as CartaMonstro;
             cartaObject.transform.Find("Nivel").GetComponent<TextMeshProUGUI>().text = $"{cartaMonstro.NiveisAGanhar.ToString()} em nivel";
-        } else {
-            cartaObject.transform.Find("Nivel").GetComponent<TextMeshProUGUI>().enabled = false;
-        }
+            cartaObject.transform.Find("Tesouro").GetComponent<TextMeshProUGUI>().enabled = false;
 
-        if (carta.GetType() == typeof(CartaTesouro)) {
+        } else if (carta.GetType() == typeof(CartaEquipamento) || carta.GetType() == typeof(CartaItem)) {
             CartaTesouro cartaTesouro = carta as CartaTesouro;
             cartaObject.transform.Find("Tesouro").GetComponent<TextMeshProUGUI>().text = $"{cartaTesouro.Preco.ToString()} em tesouro";
+            cartaObject.transform.Find("Nivel").GetComponent<TextMeshProUGUI>().enabled = false;
+
         } else {
+            cartaObject.transform.Find("Nivel").GetComponent<TextMeshProUGUI>().enabled = false;
             cartaObject.transform.Find("Tesouro").GetComponent<TextMeshProUGUI>().enabled = false;
         }
 

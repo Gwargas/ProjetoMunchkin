@@ -92,6 +92,18 @@ class CreateEfeito {
                 efeitoGanhaNivel.Inicializa(titulo, new int[] {nivel});
                 return efeitoGanhaNivel;
 
+            case "EfeitoGanhaClasse":
+                titulo = atributos[0];
+                EfeitoGanhaClasse efeitoGanhaClasse = EfeitoGanhaClasse.CreateInstance<EfeitoGanhaClasse>();
+                efeitoGanhaClasse.Inicializa(titulo, new int[] {});
+                return efeitoGanhaClasse;
+
+            case "EfeitoGanhaRaca":
+                titulo = atributos[0];
+                EfeitoGanhaRaca efeitoGanhaRaca = EfeitoGanhaRaca.CreateInstance<EfeitoGanhaRaca>();
+                efeitoGanhaRaca.Inicializa(titulo, new int[] {});
+                return efeitoGanhaRaca;
+
             default:
                 return null;
         }

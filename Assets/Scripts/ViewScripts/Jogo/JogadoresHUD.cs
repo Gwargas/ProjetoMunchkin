@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 public class JogadoresHUD : MonoBehaviour {
 
@@ -46,6 +47,8 @@ public class JogadoresHUD : MonoBehaviour {
 
             jogadorObject.transform.Find("JogadorNivel").Find("Nivel").GetComponent<TextMeshProUGUI>().text = jogador.Nivel.ToString();
             jogadorObject.transform.Find("JogadorBonus").Find("Bonus").GetComponent<TextMeshProUGUI>().text = jogador.Bonus.ToString();
+
+            jogadorObject.transform.Find("JogadorInventario").Find("Dono").GetComponent<TextMeshProUGUI>().text = jogador.Nome;
         }
     }
 }

@@ -7,18 +7,22 @@ public class MaoDisplay : MonoBehaviour {
     [SerializeField] public RectTransform areaMao;
     [SerializeField] private CartaDisplay cartaDisplay;
 
-    public void Atualiza(Controle controle) {
-
-        foreach(Transform child in areaMao) {
-            Destroy(child.gameObject);
-        }
+    public void Atualiza(Controle controle, JogadoresHUD jogadoresHUD) {
 
         Jogador jogador = controle.JogadorAtual;
         Hand jogadorMao = jogador.Mao;
         List<Carta> cartasMao = jogadorMao.NaMao;
 
-        foreach (Carta carta in cartasMao) {
-            cartaDisplay.Atualiza(carta);
+        if (areaMao.childCount != cartasMao.Count) {
+            jogadoresHUD.Atualiza(controle);
+            Debug.Log("Mudou!");
+            foreach(Transform child in areaMao) {
+                Destroy(child.gameObject);
+            }
+
+            foreach (Carta carta in cartasMao) {
+                cartaDisplay.Atualiza(carta);
+            }
         }
     }
 }

@@ -54,9 +54,9 @@ CartaMonstro,monstro3,EfeitoPerdeNivel,2,Ras voadoras,2,1,1
 CartaMonstro,monstro4,EfeitoPerdeNivel,1,Ratricinha com malho,1,1,1
 CartaMaldicao,perdeRaca,EfeitoPerdeRaca,,Maldicao! Perca sua raca,,,
 CartaMonstro,monstro2,EfeitoPerdeRaca,,Planticora,6,1,2
-CartaClasse,classeGuerreiro,,,Guerreiro,,,
-CartaClasse,classeClerigo,,,Clerigo,,,
-CartaClasse,classeMago,,,Mago,,,
-CartaRaca,racaHalfling,,,Halfling,,,
-CartaRaca,racaElfo,,,Elfo,,,
-CartaRaca,racaAnao,,,Anao,,,
+CartaClasse,classeGuerreiro,EfeitoGanhaClasse,guerreiro,Guerreiro,,,
+CartaClasse,classeClerigo,EfeitoGanhaClasse,clerigo,Clerigo,,,
+CartaClasse,classeMago,EfeitoGanhaClasse,mago,Mago,,,
+CartaRaca,racaHalfling,EfeitoGanhaRaca,halfling,Halfling,,,
+CartaRaca,racaElfo,EfeitoGanhaRaca,elfo,Elfo,,,
+CartaRaca,racaAnao,EfeitoGanhaRaca,anao,Anao,,,

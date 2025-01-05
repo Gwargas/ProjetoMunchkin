@@ -15,7 +15,6 @@ public class MaoDisplay : MonoBehaviour {
 
         if (areaMao.childCount != cartasMao.Count) {
             jogadoresHUD.Atualiza(controle);
-            Debug.Log("Mudou!");
             foreach(Transform child in areaMao) {
                 Destroy(child.gameObject);
             }

@@ -27,8 +27,6 @@ public class InventarioDisplay : MonoBehaviour {
         transform.GetComponent<Button>().onClick.RemoveAllListeners();
         transform.GetComponent<Button>().onClick.AddListener(
             () => {
-                //transform.GetComponent<Button>().onClick.RemoveAllListeners();
-                Debug.Log($"cliquei para abrir {transform.Find("Dono").GetComponent<TextMeshProUGUI>().text}");
                 AbreInventario();
             }
         );
@@ -43,18 +41,12 @@ public class InventarioDisplay : MonoBehaviour {
 
         string dono = transform.Find("Dono").GetComponent<TextMeshProUGUI>().text;
         Jogador jogador = controle.Jogadores.Find(j => j.Nome.Equals(dono));
-        Hand jogadorMao = jogador.Mao;
-        List<Carta> cartasEmUso = jogadorMao.EmUso;
 
-        if(cartasEmUso.Count != areaCartas.childCount) {
-            foreach (Carta carta in cartasEmUso) {
-            cartaDisplay.Atualiza(carta);
+        if(jogador.Mao.EmUso.Count != areaCartas.childCount) {
+            foreach (Carta carta in jogador.Mao.EmUso) {
+                cartaDisplay.Atualiza(carta);
             }   
         }
-        /*
-        foreach (Carta carta in cartasEmUso) {
-            cartaDisplay.Atualiza(carta);
-        }*/
     }
 
     public void FechaInventario() {

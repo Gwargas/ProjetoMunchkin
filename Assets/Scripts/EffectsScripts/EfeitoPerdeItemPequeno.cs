@@ -26,25 +26,6 @@ public class EfeitoPerdeItemPequeno : Efeito
         }
 
         if (!removido) {
-            List<Carta> carregadas = mao.Carregada;
-            for (int i = 0; i < carregadas.Count; i++) {
-                if (carregadas[i].GetType() == typeof(CartaEquipamento)) {
-                    CartaEquipamento equipamento = (CartaEquipamento) carregadas[i];
-                    if (equipamento.EhGrande == 0) {
-                        equipamento.Efeito.Revert(controle);
-                        carregadas.RemoveAt(i);
-                        mao.Carregada = carregadas;
-                        controle.JogadorAtual.Mao = mao;
-                        controle.DescartarCartaTesouro(equipamento);
-                        removido = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-
-        if (!removido) {
             List<Carta> naMao = mao.NaMao;
             for (int j = 0; j < naMao.Count; j++) {
                 if (naMao[j].GetType() == typeof(CartaEquipamento)) {

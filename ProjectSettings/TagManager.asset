@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Clone
   - MenuInventario
+  - JogadorAdversario
+  - JogadorPrincipal
   layers:
   - Default
   - TransparentFX

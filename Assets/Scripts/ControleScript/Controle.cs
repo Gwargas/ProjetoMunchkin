@@ -50,6 +50,11 @@ public class Controle : ScriptableObject
         get => turno;
         set => turno = value;
     }
+
+    public EstadoJogo EstadoAtual {
+        get => estadoAtual;
+    }
+    
     public int Dado()
     {
         return (UnityEngine.Random.Range(1, 7));

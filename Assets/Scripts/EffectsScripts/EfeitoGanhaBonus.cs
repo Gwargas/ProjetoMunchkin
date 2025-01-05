@@ -10,7 +10,7 @@ public class EfeitoGanhaBonus : Efeito
 
     public override void Revert(Controle controle) {
         if (controle.JogadorAtual.Bonus - descricao[0] < 0) {
-            controle.JogadorAtual.Nivel = 0;
+            controle.JogadorAtual.Nivel = 1;
         } else {
             controle.JogadorAtual.Bonus -= descricao[0];
         }

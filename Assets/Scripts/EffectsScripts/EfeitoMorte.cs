@@ -35,18 +35,6 @@ public class EfeitoMorte : Efeito
                 controle.DescartarCartaTesouro((CartaTesouro)c);
             }
         }
-
-        // Removendo cartas da lista Carregada
-        for (int i = controle.JogadorAtual.Mao.Carregada.Count - 1; i >= 0; i--) {
-            Carta c = controle.JogadorAtual.Mao.Carregada[i];
-            controle.JogadorAtual.Mao.Carregada.RemoveAt(i);
-            if(c.GetType() == typeof(CartaPorta)){
-                controle.DescartarCartaPorta((CartaPorta)c);
-            }
-            else if(c.GetType() == typeof(CartaTesouro)){
-                controle.DescartarCartaTesouro((CartaTesouro)c);
-            }
-        }
     }
 
     public override void Revert(Controle controle)

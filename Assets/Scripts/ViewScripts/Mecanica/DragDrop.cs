@@ -31,8 +31,11 @@ public class DragDrop : MonoBehaviour {
         if (collision.transform.name == "AreaCombate") {
             isOverDropZone = 0;
 
-        } else if (collision.transform.name == "JogadorImagem") {
+        } else if (collision.transform.tag == "JogadorPrincipal") {
             isOverDropZone = 1;
+
+        } else if (collision.transform.tag == "JogadorAdversario") {
+            isOverDropZone = 2;
 
         } else{
             isOverDropZone = -1;
@@ -58,16 +61,20 @@ public class DragDrop : MonoBehaviour {
         // se a carta estiver sobre a area de combate, ela é jogada
         // questiona se pode usar na área de combate, tira a carta da mão caso positivo
         if (isOverDropZone == 0 && RemoveCartaCombate()) {
-            Debug.Log("Entrou na area de combate");
-            
             transform.SetParent(dropZone.transform, false);
             isDraggable = false;
+            
 
         // se a carta estiver sobre a area do jogador, ela é equipada
         // questiona se pode equipar, equipa e tira a carta da mão caso positivo
         } else if (isOverDropZone == 1 && RemoveCartaUso()) {
-            Debug.Log("Vai equipar!");
+            Debug.Log("Equipa!");
             
+        } else if (isOverDropZone == 2) {
+            Debug.Log("Amaldiçoa!");
+            transform.position = startPosition;
+            transform.SetParent(startParent.transform, false);
+
         } else {
             transform.position = startPosition;
             transform.SetParent(startParent.transform, false);
@@ -81,10 +88,12 @@ public class DragDrop : MonoBehaviour {
 
         for (int i = 0; i < naMao.Count; i++) {
             if (naMao[i].Nome.Equals(childNome) && naMao[i].Descricao.Equals(childDescricao)) {
-                if (naMao[i].GetType() != typeof(CartaMaldição) && naMao[i].GetType() != typeof(CartaMonstro)) {
+                if (naMao[i].GetType() != typeof(CartaMonstro) 
+                    || controle.EstadoAtual.GetType() != typeof(EstadoPreparacao2)) {
+                    Debug.Log(controle.EstadoAtual.GetType().ToString());
                     return false;
                 }
-
+                
                 controle.DescartarCartaPorta((CartaPorta)naMao[i]);
                 controle.JogadorAtual.Mao.NaMao.RemoveAt(i);
                 break;

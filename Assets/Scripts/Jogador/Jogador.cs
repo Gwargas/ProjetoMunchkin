@@ -10,7 +10,7 @@ public class Jogador : ScriptableObject
     private string nome;
     private int nivel = 1;
     private int bonus = 0;
-    private string raca = "Humano"; //Botar um header para nao ter que importar toda hora
+    private string raca = "humano"; //Botar um header para nao ter que importar toda hora
     private string classe = "nada";
     private bool morto = false;
     private Hand mao;

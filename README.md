@@ -1,18 +1,28 @@
-# Testando Unity LFS
-### Decisões
-- Começar pelo back-end,não pelo front-end
+# Munchkin 
 
-### Peguntas e dúvidas
-- Botar um header para não ter que importar toda hora.
-- Vai ser nulo a função compra ou não teremos a função compra como abstrata?
+### 👥 Equipe
+- Beatriz de Oliveira Piedade
+- David Neves Dias
+- Gabriel Wargas de Faria Baptista
+- Joao Pedro Teixeira Alberto
+- Leonardo Amorim Mendes
+- Luiz Henrique Gomes de Oliveira
 
-### To-Do 
+### 🛠️ Tecnologias e Ferramentas
+- Imagens e Design: Canva, GIMP.
+- Programação: Unity, Visual Studio Code.
+- Diagramas: Excalidraw, Draw.io.
 
-#### Efeitos funcionais
+### 📝 Mecânica do Jogo
+O jogador pode:
+- Colocar Itens e Equipamentos no uso arrastando a carta da mão para sua foto no canto inferior esquerdo;
+- Lançar uma Maldição nos outros jogadores arrastando a carta da mão para a foto de qualquer outro jogador no canto superior esquerdo;
+- Comprar uma Carta de Porta clicando sobre o botão com a imagem do verso de uma carta com porta desenhada à direita da tela;
+- Buscar encrenca arrastando uma carta de monstro da mão até a Área de Combate no meio da tela;
+- Descartar qualquer carta ao arrastar para o botão com desenho de lixeira no canto inferior direito;
+- Abrir o inventário de qualquer jogador clicando no baú do perfil deste outro jogador;
 
-- Todos só tem que passar pro genérico;
-
-### Diagramas
+### Diagrama de classes
 
 <img src="https://drive.google.com/uc?id=1CxDpc_ckjDGzCjCWPGXkoCincAuY5MTH" width="800" alt="Diagrama de Classes"/>
 

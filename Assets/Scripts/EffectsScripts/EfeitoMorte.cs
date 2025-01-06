@@ -16,10 +16,10 @@ public class EfeitoMorte : Efeito
             if (c.GetType() != typeof(CartaRaca) && c.GetType() != typeof(CartaClasse)) {
                 controle.JogadorAtual.Mao.EmUso.RemoveAt(i);
                 if (c.GetType() == typeof(CartaPorta)){
-                    controle.DescartarCartaPorta((CartaPorta)c);
+                    controle.DescartarCartaPorta(c as CartaPorta);
                 }
                 else if (c.GetType() == typeof(CartaTesouro)){
-                    controle.DescartarCartaTesouro((CartaTesouro)c);
+                    controle.DescartarCartaTesouro(c as CartaTesouro);
                 }
             }
         }
@@ -29,10 +29,10 @@ public class EfeitoMorte : Efeito
             Carta c = controle.JogadorAtual.Mao.NaMao[i];
             controle.JogadorAtual.Mao.NaMao.RemoveAt(i);
             if (c.GetType() == typeof(CartaPorta)){
-                controle.DescartarCartaPorta((CartaPorta)c);
+                controle.DescartarCartaPorta(c as CartaPorta);
             }
             else if (c.GetType() == typeof(CartaTesouro)){
-                controle.DescartarCartaTesouro((CartaTesouro)c);
+                controle.DescartarCartaTesouro(c as CartaTesouro);
             }
         }
     }

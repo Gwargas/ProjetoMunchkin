@@ -33,7 +33,6 @@ public class BaralhoTesouro : Deck<CartaTesouro>
     public override void Descarte(CartaTesouro c)
     {
         descarte.Add(c);
-        Debug.Log("Descarte " + descarte[^1].Nome);
     }
 
 }

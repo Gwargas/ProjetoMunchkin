@@ -21,7 +21,7 @@ public class Interferencia : MonoBehaviour
     [SerializeField] private GameObject menuAjudantes;
     [SerializeField] private Transform listaAjudantesBox;
     [SerializeField] private GameObject prefabAjudante;
-    private bool recusou = false;
+    //private bool recusou = false;
     [SerializeField] private Button botaoRecusar;
 
     [SerializeField] private Transform painelCartasInterferencia;
@@ -142,7 +142,7 @@ public class Interferencia : MonoBehaviour
 
     public IEnumerator EscolherAjudante(Controle controle, Action<Jogador> onAjudanteSelecionado)
     {
-        recusou = false;
+        //recusou = false;
         Debug.Log("Numero de Ajudantes: " + ajudantes.Count);
         foreach(Transform child in listaAjudantesBox){
             Destroy(child.gameObject);

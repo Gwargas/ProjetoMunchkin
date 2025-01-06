@@ -12,7 +12,7 @@ public class EfeitoPerdeCalcado : Efeito
         List<Carta> emUso = mao.EmUso;
         for (int i = 0; i < emUso.Count; i++) {
             if (emUso[i].GetType() == typeof(CartaEquipamento)) {
-                CartaEquipamento equipamento = (CartaEquipamento) emUso[i];
+                CartaEquipamento equipamento = emUso[i] as CartaEquipamento;
                 if (equipamento.ParteCorpo.Equals("calcado")) {
                     equipamento.Efeito.Revert(controle);
                     emUso.RemoveAt(i);
@@ -29,7 +29,7 @@ public class EfeitoPerdeCalcado : Efeito
             List<Carta> naMao = mao.NaMao;
             for (int j = 0; j < naMao.Count; j++) {
                 if (naMao[j].GetType() == typeof(CartaEquipamento)) {
-                    CartaEquipamento equipamento = (CartaEquipamento) naMao[j];
+                    CartaEquipamento equipamento = naMao[j] as CartaEquipamento;
                     if (equipamento.ParteCorpo.Equals("calcado")) {
                         equipamento.Efeito.Revert(controle);
                         naMao.RemoveAt(j);

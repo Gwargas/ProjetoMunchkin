@@ -10,7 +10,7 @@ public class EfeitoGanhaRaca : Efeito
             
             for (int i = 0; i < emUso.Count; i++) {
                 if (emUso[i].GetType() == typeof(CartaRaca) && !emUso[i].Nome.ToLower().Equals(this.titulo.ToLower())) {
-                    controle.DescartarCartaPorta((CartaPorta)emUso[i]);
+                    controle.DescartarCartaPorta(emUso[i] as CartaPorta);
                     emUso.RemoveAt(i);
                     controle.JogadorAtual.Mao.EmUso = emUso;
                 }

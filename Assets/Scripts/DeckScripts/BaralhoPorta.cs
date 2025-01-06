@@ -33,6 +33,5 @@ public class BaralhoPorta : Deck<CartaPorta>
 
     public override void Descarte(CartaPorta c){
         descarte.Add(c);
-        Debug.Log("Descarte " + descarte[^1].Nome);
     }
 }

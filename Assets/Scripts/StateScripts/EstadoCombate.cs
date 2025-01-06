@@ -50,7 +50,7 @@ public class EstadoCombate : EstadoJogo
     public void TratarCombate(Controle controle)
     {   
         Debug.Log("Tratando Combate");
-        CartaMonstro monstro = (CartaMonstro)controle.CartaJogo;
+        CartaMonstro monstro = controle.CartaJogo as CartaMonstro;
         if(cartasInterferencia.Count > 0)
         {
             Debug.Log("Aplicando efeitos de interferencias");
@@ -115,7 +115,7 @@ public class EstadoCombate : EstadoJogo
 
         foreach(Carta carta in cartasInterferencia){
             carta.Efeito.Revert(controle);
-            controle.BaralhoPorta.Descarte((CartaPorta)carta);
+            controle.BaralhoPorta.Descarte(carta as CartaPorta);
         }
         controle.BaralhoPorta.Descarte(monstro);
 

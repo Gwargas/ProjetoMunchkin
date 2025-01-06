@@ -7,8 +7,7 @@ using System;
 
 public class CenaFinalDisplay : MonoBehaviour {
 
-    [SerializeField] public RectTransform tela;
-    private Controle controle;
+    [SerializeField] public GameObject vencedor;
     private Jogador jogador;
 
     public void Start() {
@@ -16,15 +15,13 @@ public class CenaFinalDisplay : MonoBehaviour {
         if (jogador != null){
             Debug.Log("Vencedor encontrado");
         }
+        Atualiza();
     }
 
     public void Atualiza() {
-
-        GameObject vencedor = GameObject.Find("Canvas");
-        vencedor.transform.Find("Nome").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = jogador.Nome;
-        
-        Sprite imagem = Resources.Load<Sprite>($"CartaPerfil/{jogador.Classe.ToLower()}");
-        vencedor.transform.Find("Jogador").Find("Imagem").GetComponent<UnityEngine.UI.Image>().sprite = imagem;
+        vencedor.transform.Find("Nome").Find("Texto").GetComponent<TextMeshProUGUI>().text = jogador.Nome;
+        Sprite imagem = Resources.Load<Sprite>($"CartaPerfil/{jogador.Raca.ToLower()}");
+        vencedor.transform.Find("Imagem").GetComponent<UnityEngine.UI.Image>().sprite = imagem;
     }
 
     public void OnButtonClick() {

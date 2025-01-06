@@ -1,16 +1,24 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using System.Linq.Expressions;
+using UnityEngine.UI;
 using Unity.VisualScripting;
 
-public class CartaDisplay : MonoBehaviour {
+public class CartaAtualDisplay : MonoBehaviour {
+ 
+    [SerializeField] private CartaDisplay cartaDisplay;
+    private Controle controle;
 
-    public GameObject cartaModelo; 
-    [SerializeField] public RectTransform areaCartas;
+    private void Start(){
+        controle = GameObject.Find("GameManager").GetComponent<GameManager>().controle;
+        cartaDisplay = GameObject.Find("AreaCombate").GetComponent<CartaDisplay>();
+    }
 
-    public void Atualiza(Carta carta) {
+    public void Atualiza() {
+        Carta carta = controle.CartaJogo;
 
-        GameObject cartaObject = Instantiate(cartaModelo, areaCartas);
+        GameObject cartaObject = GameObject.Find("CartaJogo");
 
         cartaObject.transform.Find("Titulo").GetComponent<TextMeshProUGUI>().text = carta.Nome;
         
@@ -24,7 +32,7 @@ public class CartaDisplay : MonoBehaviour {
             CartaMonstro cartaMonstro = carta as CartaMonstro;
             cartaObject.transform.Find("Nivel").GetComponent<TextMeshProUGUI>().text = $"{cartaMonstro.NiveisAGanhar.ToString()} em nivel";
             cartaObject.transform.Find("Tesouro").GetComponent<TextMeshProUGUI>().enabled = false;
-
+            
         } else if (carta.GetType() == typeof(CartaEquipamento) || carta.GetType() == typeof(CartaItem)) {
             CartaTesouro cartaTesouro = carta as CartaTesouro;
             cartaObject.transform.Find("Tesouro").GetComponent<TextMeshProUGUI>().text = $"{cartaTesouro.Preco.ToString()} em tesouro";

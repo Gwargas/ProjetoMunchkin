@@ -11,6 +11,7 @@ public class EstadoPreparacao2 : EstadoJogo
         botaoCartaPorta = GameObject.Find("BotaoCartaPorta")?.GetComponent<Button>();
         botaoCartaPorta.onClick.RemoveAllListeners();
         botaoCartaPorta.onClick.AddListener(() => {
+            botaoCartaPorta.onClick.RemoveAllListeners();
             Debug.Log("Botão Clicado");
             Debug.Log("Escolheu Saquear a Sala");
             controle.TrocaEstado(EstadoSaquear.CreateInstance<EstadoSaquear>());

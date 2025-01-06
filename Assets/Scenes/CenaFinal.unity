@@ -1125,7 +1125,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jogador 6
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0246118573597f1488a72a5acf47f0de, type: 2}
   m_sharedMaterial: {fileID: 2376000213421054839, guid: 0246118573597f1488a72a5acf47f0de, type: 2}

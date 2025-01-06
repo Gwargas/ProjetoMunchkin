@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,11 +21,14 @@ public class Interferencia : MonoBehaviour
     [SerializeField] private GameObject menuAjudantes;
     [SerializeField] private Transform listaAjudantesBox;
     [SerializeField] private GameObject prefabAjudante;
+    private bool recusou = false;
+    [SerializeField] private Button botaoRecusar;
 
     [SerializeField] private Transform painelCartasInterferencia;
-    [SerializeField] private GameObject prefabCarta;
     [SerializeField] private Button botaoIgnorar;
     [SerializeField] private CartaDisplay cartaDisplay;
+
+    private List<Carta> cartasDeAumentaMonstro = new List<Carta>();
 
     public GameObject MenuInteracao
     {
@@ -60,16 +64,23 @@ public class Interferencia : MonoBehaviour
         bool botaoAjudaClick = false;
         bool botaoAtrapalhaClick = false;
         bool botaoIgnorarClick = false;
+
         foreach(Jogador jogador in jogadoresRestantes){
 
-            foreach(Transform child in painelCartasInterferencia){
-                    Destroy(child.gameObject);
-                }
+            Debug.Log("COMEÇO DO FOREACH: ");
+            cartasDeAumentaMonstro.Clear();
+            cartasDeAumentaMonstro.TrimExcess();
 
-            nomeJogador.text = jogador.Nome;
+            foreach(Transform child in painelCartasInterferencia){
+                Destroy(child.gameObject);
+            }
 
             botaoAjuda.onClick.RemoveAllListeners();
             botaoIgnorar.onClick.RemoveAllListeners();
+            botaoAtrapalha.onClick.RemoveAllListeners();
+
+            nomeJogador.text = jogador.Nome;
+            cartasDeAumentaMonstro = jogador.Mao.NaMao.Where(c => c.Efeito != null && c.Efeito.GetType() == typeof(EfeitoAumentaMonstro)).ToList();
 
             botaoAjuda.onClick.AddListener(() => {
                 ajudantes.Add(jogador);
@@ -79,22 +90,20 @@ public class Interferencia : MonoBehaviour
 
             botaoIgnorar.onClick.AddListener(() => {
                 Debug.Log(jogador.Nome + " escolheu ignorar");
+
                 botaoIgnorarClick = true;
             });
 
             botaoAtrapalha.onClick.AddListener(() => {
-                botaoAtrapalha.onClick.RemoveAllListeners();
                 Debug.Log(jogador.Nome + " Clicou em atrapalhar");
-                
-                List<Carta> cartasDeAumentaMonstro = jogador.Mao.NaMao.Where(c => c.Efeito != null && c.Efeito.GetType() == typeof(EfeitoAumentaMonstro)).ToList();
-                
+
                 if(cartasDeAumentaMonstro.Count == 0){
                     Debug.Log("Você não possui cartas que aumentam monstro");
                     botaoIgnorarClick = true;
+
                 } else{
-                    Debug.Log("Cartas de aumenta monstro: " + cartasDeAumentaMonstro.Count);
+                    Debug.Log("Cartas de aumenta monstro:");
                     foreach(Carta carta in cartasDeAumentaMonstro){
-                        Debug.Log(carta.Nome);
                         cartaDisplay.Atualiza(carta);
 
                         Transform cartaView = painelCartasInterferencia.Find(carta.Nome);
@@ -104,13 +113,12 @@ public class Interferencia : MonoBehaviour
                             cartasInterferencia.Add(carta);
                             jogador.Mao.NaMao.Remove(carta);
                             Debug.Log("Carta adicionada: " + carta.Nome);
+    
                             botaoAtrapalhaClick = true;
                         }); 
                     }
                 }
 
-                cartasDeAumentaMonstro.Clear();
-                cartasDeAumentaMonstro.TrimExcess();
             });
 
             yield return new WaitUntil(() => botaoAjudaClick || botaoAtrapalhaClick || botaoIgnorarClick);
@@ -118,9 +126,12 @@ public class Interferencia : MonoBehaviour
             botaoAjudaClick = false;
             botaoAtrapalhaClick = false;
             botaoIgnorarClick = false;
+            
+            Debug.Log("FIM DO FOREACH: " + cartasDeAumentaMonstro.Count);
+            cartasDeAumentaMonstro.Clear();
+            cartasDeAumentaMonstro.TrimExcess();
         }
         menuInteracao.SetActive(false);
-
         onInteracaoCompleta?.Invoke();
     }
 
@@ -131,18 +142,12 @@ public class Interferencia : MonoBehaviour
 
     public IEnumerator EscolherAjudante(Controle controle, Action<Jogador> onAjudanteSelecionado)
     {
+        recusou = false;
         Debug.Log("Numero de Ajudantes: " + ajudantes.Count);
         foreach(Transform child in listaAjudantesBox){
             Destroy(child.gameObject);
         }
         Debug.Log("Lista de botoes resetada");
-
-        /*if (ajudantes.Count == 0)
-        {
-            Debug.Log("Nenhum ajudante disponível.");
-            menuAjudantes.SetActive(false);
-            yield break;
-        }*/
 
         menuAjudantes.SetActive(true);
         foreach(Jogador ajudanteAtual in ajudantes){
@@ -162,9 +167,16 @@ public class Interferencia : MonoBehaviour
                 onAjudanteSelecionado?.Invoke(ajudanteAtual);
             });
         }
-        yield return new WaitUntil(() => ajudante != null);
 
-        //menuAjudantes.SetActive(false);
+        botaoRecusar.onClick.AddListener(() => {
+            Debug.Log("Ajuda recusada");
+            menuAjudantes.SetActive(false);
+            ajudantes.Clear();
+            ajudantes.TrimExcess();
+            onAjudanteSelecionado?.Invoke(null);
+        });
+
+        yield return new WaitUntil(() => ajudante != null);
     }
       
 }

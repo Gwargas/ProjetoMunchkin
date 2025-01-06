@@ -50,7 +50,6 @@ public class EstadoCombate : EstadoJogo
     public void TratarCombate(Controle controle)
     {   
         Debug.Log("Tratando Combate");
-        //Achar uma solucao melhor para essa parte, sem o uso do C
         CartaMonstro monstro = (CartaMonstro)controle.CartaJogo;
         if(cartasInterferencia.Count > 0)
         {
@@ -87,7 +86,6 @@ public class EstadoCombate : EstadoJogo
                     Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
-                //Debug.Log("Fugiu");
             }
         }
         else{
@@ -107,11 +105,11 @@ public class EstadoCombate : EstadoJogo
                     Debug.Log("Perdeu o combate, recebendo Coisa Ruim");
                     monstro.Efeito.Apply(controle);
                 }
-                //Debug.Log("Fugiu");
             }
         }
         Debug.Log("Fim do Combate");
         if(controle.JogadorAtual.Nivel >= 10){
+            GameSettings.vencedor = controle.JogadorAtual;
             SceneManager.LoadScene("CenaFinal");
         }
 

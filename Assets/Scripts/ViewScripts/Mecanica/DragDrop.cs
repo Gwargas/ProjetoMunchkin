@@ -37,6 +37,9 @@ public class DragDrop : MonoBehaviour {
         } else if (collision.transform.tag == "JogadorAdversario") {
             isOverDropZone = 2;
 
+        } else if (collision.transform.tag == "AreaDelete") {
+            isOverDropZone = 3;
+
         } else{
             isOverDropZone = -1;
         }
@@ -61,17 +64,18 @@ public class DragDrop : MonoBehaviour {
         // se a carta estiver sobre a area de combate, ela é jogada
         // questiona se pode usar na área de combate, tira a carta da mão caso positivo
         if (isOverDropZone == 0 && RemoveCartaCombate()) {
-            transform.SetParent(dropZone.transform, false);
             isDraggable = false;
-            
 
         // se a carta estiver sobre a area do jogador, ela é equipada
         // questiona se pode equipar, equipa e tira a carta da mão caso positivo
         } else if (isOverDropZone == 1 && RemoveCartaUso()) {
-            Debug.Log("Equipa!");
+            Debug.Log("Equipando");
             
         } else if (isOverDropZone == 2 && RemoveMaldicao()) {
-            Debug.Log("Amaldiçoa!");
+            Debug.Log("Amaldiçoando");
+
+        } else if (isOverDropZone == 3 && RemoveDescarte()) {
+            Debug.Log("Descartando");
 
         } else {
             transform.position = startPosition;
@@ -88,12 +92,12 @@ public class DragDrop : MonoBehaviour {
             if (naMao[i].Nome.Equals(childNome) && naMao[i].Descricao.Equals(childDescricao)) {
                 if (naMao[i].GetType() != typeof(CartaMonstro) 
                     || controle.EstadoAtual.GetType() != typeof(EstadoPreparacao2)) {
-                    Debug.Log(controle.EstadoAtual.GetType().ToString());
                     return false;
                 }
                 
-                controle.DescartarCartaPorta((CartaPorta)naMao[i]);
+                controle.CartaJogo = naMao[i];
                 controle.JogadorAtual.Mao.NaMao.RemoveAt(i);
+                controle.TrocaEstado(EstadoEncrenca.CreateInstance<EstadoEncrenca>());
                 break;
             }
         }
@@ -127,7 +131,7 @@ public class DragDrop : MonoBehaviour {
 
         for (int i = 0; i < naMao.Count; i++) {
             if (naMao[i].Nome.Equals(childNome)) {
-                if (naMao[i].GetType() != typeof(CartaMaldição)) {
+                if (naMao[i].GetType() != typeof(CartaMaldição) || naMao[i].Efeito.GetType() == typeof(EfeitoAumentaMonstro)) {
                     return false;
                 }
 
@@ -142,6 +146,29 @@ public class DragDrop : MonoBehaviour {
                 controle.JogadorAtual = jogadorPrincipal;
                 controle.JogadorAtual.Mao.NaMao.RemoveAt(i);
                 
+                break;
+            }
+        }
+
+        return true;
+    }
+
+    private bool RemoveDescarte() {
+        List<Carta> naMao = controle.JogadorAtual.Mao.NaMao;
+        string childNome = transform.name;
+        string childDescricao = transform.Find("Descricao").GetComponent<TextMeshProUGUI>().text;
+
+        for (int i = 0; i < naMao.Count; i++) {
+            if (naMao[i].Nome.Equals(childNome) && naMao[i].Descricao.Equals(childDescricao)) {
+                
+                if (naMao[i].GetType() == typeof(CartaEquipamento) || naMao[i].GetType() == typeof(CartaItem)) {
+                    controle.DescartarCartaTesouro(naMao[i] as CartaTesouro);
+
+                } else {
+                    controle.DescartarCartaPorta(naMao[i] as CartaPorta);
+                }
+
+                controle.JogadorAtual.Mao.NaMao.RemoveAt(i);
                 break;
             }
         }

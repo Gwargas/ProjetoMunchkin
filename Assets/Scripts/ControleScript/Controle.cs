@@ -116,7 +116,9 @@ public class Controle : ScriptableObject
         // B: to achando que isso devia ir pra dentro da classe baralho
 
         // lista com as informações das cartas de porta
-        List<string[]> infosCartaPorta = Extrator.CsvToList("Assets/Resources/porta.csv");
+        string portaPath = System.IO.Path.Combine(Application.streamingAssetsPath, "porta.csv");
+        string fileDataP = System.IO.File.ReadAllText(portaPath);
+        List<string[]> infosCartaPorta = Extrator.CsvToList(portaPath);
 
         // lista de cartas de porta
         List<CartaPorta> listaCartasPorta = new List<CartaPorta>();
@@ -135,7 +137,9 @@ public class Controle : ScriptableObject
 
                                                                 
         // lista com as informações das cartas de tesouro
-        List<string[]> infosCartaTesouro = Extrator.CsvToList("Assets/Resources/tesouro.csv");
+        string tesouroPath = System.IO.Path.Combine(Application.streamingAssetsPath, "tesouro.csv");
+        string fileDataT = System.IO.File.ReadAllText(tesouroPath);
+        List<string[]> infosCartaTesouro = Extrator.CsvToList(tesouroPath);
 
         // lista de cartas de tesouro
         List<CartaTesouro> listaCartasTesouro = new List<CartaTesouro>();

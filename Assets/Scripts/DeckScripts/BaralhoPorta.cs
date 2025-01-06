@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Unity.VisualStudio.Editor;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BaralhoPorta", menuName = "Scriptable Objects/BaralhoPorta")]

@@ -95,6 +95,7 @@ public class Interferencia : MonoBehaviour
             });
 
             botaoAtrapalha.onClick.AddListener(() => {
+                botaoAtrapalha.onClick.RemoveAllListeners();
                 Debug.Log(jogador.Nome + " Clicou em atrapalhar");
 
                 if(cartasDeAumentaMonstro.Count == 0){

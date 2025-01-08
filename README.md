@@ -24,5 +24,13 @@ O jogador pode:
 
 ### Diagrama de classes
 
-<img src="https://drive.google.com/uc?id=1CxDpc_ckjDGzCjCWPGXkoCincAuY5MTH" width="800" alt="Diagrama de Classes"/>
+<img src="https://drive.google.com/uc?id=1C-lLs5N79j1rkD2dlVoKOxd81l9o1UXh" width="800" alt="Diagrama de Classes"/>
+
+### Diagrama de sequência
+
+#### Estado Fim de Turno
+<img src="https://drive.google.com/uc?id=1TVPhYnfcCsyBM34bzc3P3jJd9a1fVXVd" width="800" alt="Diagrama de Classes"/>
+
+#### Estado Combate
+<img src="https://drive.google.com/uc?id=1qryfRpzA9vCLWYDJeLwtqAii4soXk3o9" width="800" alt="Diagrama de Classes"/>
 
